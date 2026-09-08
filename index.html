@@ -1,1410 +1,2013 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>Lumina Clothing | Pakistani Fashion for Women</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<meta name="description" content="Lumina Clothing — Where fashion meets elegance. Discover elegant Pakistani clothing for girls and women. Nationwide and worldwide shipping. Order via WhatsApp.">
+    <title>Luminara | Pakistani Fashion Where Elegance Meets Style</title>
 
-<meta name="keywords" content="Lumina Clothing, Pakistani clothes, Pakistani clothing for girls, women's clothing Pakistan, Pakistani dresses, Islamabad clothing brand, Pakistani fashion">
+    <meta name="description"
+        content="Luminara brings elegant Pakistani fashion for women, from everyday sophistication to festive and signature looks. Shop Luminara and order directly through WhatsApp.">
 
-<meta name="author" content="Lumina Clothing">
+    <meta name="keywords"
+        content="Luminara, Pakistani clothing, Pakistani fashion, women's clothing Pakistan, ladies suits, luxury Pakistani wear, festive dresses, Pakistani fashion online">
 
-<meta property="og:title" content="Lumina Clothing | Where Fashion Meets Elegance">
-<meta property="og:description" content="Elegant Pakistani clothing for girls and women. Shipping nationwide and worldwide.">
-<meta property="og:type" content="website">
+    <meta name="author" content="Luminara">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="theme-color" content="#f8f4ee">
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta property="og:title"
+        content="Luminara | Where Fashion Meets Elegance">
 
-<style>
+    <meta property="og:description"
+        content="Elegant Pakistani fashion designed for women who believe elegance never goes out of style.">
 
-    :root {
-        --cream: #faf7f2;
-        --white: #ffffff;
-        --black: #171515;
-        --soft-black: #2a2626;
-        --gold: #b9945b;
-        --light-gold: #d8bd8d;
-        --rose: #eadbd6;
-        --gray: #77716e;
-        --border: #e9e1d9;
-    }
+    <meta property="og:type" content="website">
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    html {
-        scroll-behavior: smooth;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    body {
-        font-family: "Montserrat", sans-serif;
-        background: var(--cream);
-        color: var(--black);
-        line-height: 1.6;
-    }
+    <style>
 
-    img {
-        width: 100%;
-        display: block;
-        object-fit: cover;
-    }
+        /* =====================================================
+           LUMINARA — PREMIUM FASHION WEBSITE
+        ===================================================== */
 
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
+        :root {
+            --cream: #f8f4ee;
+            --cream-dark: #eee7dc;
+            --white: #ffffff;
+            --black: #171513;
+            --text: #393531;
+            --muted: #77716a;
+            --gold: #a58a62;
+            --gold-dark: #816946;
+            --border: rgba(23, 21, 19, 0.10);
+            --shadow: 0 20px 60px rgba(23, 21, 19, 0.08);
 
-    button {
-        font-family: inherit;
-    }
+            --serif: "Cormorant Garamond", Georgia, serif;
+            --sans: "DM Sans", Arial, sans-serif;
 
-    /* =========================
-       ANNOUNCEMENT BAR
-    ========================= */
+            --container: 1180px;
+            --radius: 2px;
+        }
 
-    .announcement {
-        background: var(--black);
-        color: white;
-        text-align: center;
-        padding: 9px 15px;
-        font-size: 11px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* =========================
-       HEADER
-    ========================= */
+        html {
+            scroll-behavior: smooth;
+        }
 
-    header {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        background: rgba(250,247,242,.96);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--border);
-    }
-
-    .navbar {
-        max-width: 1250px;
-        margin: auto;
-        height: 82px;
-        padding: 0 25px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .logo {
-        font-family: "DM Serif Display", serif;
-        font-size: 32px;
-        letter-spacing: 1px;
-    }
-
-    .logo span {
-        color: var(--gold);
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 34px;
-        list-style: none;
-        font-size: 12px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .nav-links a {
-        transition: .3s;
-    }
-
-    .nav-links a:hover {
-        color: var(--gold);
-    }
-
-    .nav-actions {
-        display: flex;
-        align-items: center;
-        gap: 17px;
-    }
-
-    .nav-actions a {
-        font-size: 18px;
-    }
-
-    .menu-btn {
-        display: none;
-        border: 0;
-        background: none;
-        font-size: 25px;
-        cursor: pointer;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-        min-height: 720px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        background:
-            linear-gradient(
-                90deg,
-                rgba(20,16,15,.80),
-                rgba(20,16,15,.35),
-                rgba(20,16,15,.05)
-            ),
-            url("https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1800&q=85")
-            center/cover;
-    }
-
-    .hero-content {
-        max-width: 1250px;
-        width: 100%;
-        margin: auto;
-        padding: 80px 25px;
-        color: white;
-    }
-
-    .hero-small {
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        font-size: 12px;
-        margin-bottom: 20px;
-    }
-
-    .hero h1 {
-        font-family: "DM Serif Display", serif;
-        font-size: clamp(58px, 8vw, 105px);
-        line-height: .95;
-        font-weight: 400;
-        max-width: 720px;
-        margin-bottom: 28px;
-    }
-
-    .hero p {
-        max-width: 520px;
-        font-size: 15px;
-        font-weight: 300;
-        margin-bottom: 35px;
-    }
-
-    .hero-buttons {
-        display: flex;
-        gap: 13px;
-        flex-wrap: wrap;
-    }
-
-    .btn {
-        display: inline-block;
-        padding: 15px 29px;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        font-size: 11px;
-        font-weight: 700;
-        transition: .3s;
-    }
-
-    .btn-dark {
-        background: var(--black);
-        color: white;
-    }
-
-    .btn-dark:hover {
-        background: var(--gold);
-    }
-
-    .btn-light {
-        background: white;
-        color: var(--black);
-    }
-
-    .btn-light:hover {
-        background: var(--gold);
-        color: white;
-    }
-
-    /* =========================
-       SECTION
-    ========================= */
-
-    .section {
-        max-width: 1250px;
-        margin: auto;
-        padding: 100px 25px;
-    }
-
-    .section-heading {
-        text-align: center;
-        margin-bottom: 50px;
-    }
-
-    .section-heading span {
-        color: var(--gold);
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        font-size: 11px;
-        font-weight: 700;
-    }
-
-    .section-heading h2 {
-        font-family: "DM Serif Display", serif;
-        font-size: 50px;
-        font-weight: 400;
-        margin-top: 8px;
-    }
-
-    .section-heading p {
-        max-width: 580px;
-        margin: 12px auto 0;
-        color: var(--gray);
-        font-size: 14px;
-    }
-
-    /* =========================
-       CATEGORIES
-    ========================= */
-
-    .categories {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-    }
-
-    .category {
-        position: relative;
-        height: 450px;
-        overflow: hidden;
-    }
-
-    .category img {
-        height: 100%;
-        transition: transform .7s;
-    }
-
-    .category:hover img {
-        transform: scale(1.05);
-    }
-
-    .category-overlay {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: flex-end;
-        padding: 30px;
-        color: white;
-        background: linear-gradient(transparent, rgba(0,0,0,.72));
-    }
-
-    .category-overlay h3 {
-        font-family: "DM Serif Display", serif;
-        font-size: 30px;
-        font-weight: 400;
-    }
-
-    .category-overlay p {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-top: 4px;
-    }
-
-    /* =========================
-       PRODUCTS
-    ========================= */
-
-    .products {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-    }
-
-    .product-card {
-        background: white;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .product-image {
-        height: 390px;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .product-image img {
-        height: 100%;
-        transition: transform .5s;
-    }
-
-    .product-card:hover .product-image img {
-        transform: scale(1.04);
-    }
-
-    .badge {
-        position: absolute;
-        top: 14px;
-        left: 14px;
-        background: var(--black);
-        color: white;
-        padding: 6px 10px;
-        font-size: 9px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        z-index: 2;
-    }
-
-    .product-info {
-        padding: 18px;
-    }
-
-    .product-info h3 {
-        font-family: "DM Serif Display", serif;
-        font-size: 21px;
-        font-weight: 400;
-    }
-
-    .product-info p {
-        color: var(--gray);
-        font-size: 12px;
-        margin: 3px 0 10px;
-    }
-
-    .price {
-        font-weight: 700;
-        font-size: 13px;
-    }
-
-    .order-btn {
-        display: block;
-        text-align: center;
-        margin-top: 14px;
-        padding: 11px;
-        border: 1px solid var(--black);
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: .3s;
-    }
-
-    .order-btn:hover {
-        background: var(--black);
-        color: white;
-    }
-
-    /* =========================
-       ABOUT
-    ========================= */
-
-    .about {
-        background: var(--rose);
-    }
-
-    .about-container {
-        max-width: 1100px;
-        margin: auto;
-        padding: 100px 25px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: 70px;
-    }
-
-    .about-image {
-        height: 570px;
-    }
-
-    .about-image img {
-        height: 100%;
-    }
-
-    .about-text span {
-        color: var(--gold);
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        font-size: 11px;
-        font-weight: 700;
-    }
-
-    .about-text h2 {
-        font-family: "DM Serif Display", serif;
-        font-size: 52px;
-        line-height: 1;
-        font-weight: 400;
-        margin: 15px 0 25px;
-    }
-
-    .about-text p {
-        color: #625b58;
-        font-size: 14px;
-        margin-bottom: 17px;
-    }
-
-    /* =========================
-       SERVICES
-    ========================= */
-
-    .features {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        border-top: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
-    }
-
-    .feature {
-        padding: 35px 25px;
-        text-align: center;
-        border-right: 1px solid var(--border);
-    }
-
-    .feature:last-child {
-        border-right: 0;
-    }
-
-    .feature-icon {
-        font-size: 26px;
-        margin-bottom: 10px;
-    }
-
-    .feature h3 {
-        font-family: "DM Serif Display", serif;
-        font-size: 22px;
-        font-weight: 400;
-    }
-
-    .feature p {
-        color: var(--gray);
-        font-size: 12px;
-        margin-top: 5px;
-    }
-
-    /* =========================
-       CTA
-    ========================= */
-
-    .cta {
-        background:
-            linear-gradient(rgba(0,0,0,.67), rgba(0,0,0,.67)),
-            url("https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=1800&q=85")
-            center/cover;
-        color: white;
-        text-align: center;
-        padding: 120px 25px;
-    }
-
-    .cta span {
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        font-size: 11px;
-    }
-
-    .cta h2 {
-        font-family: "DM Serif Display", serif;
-        font-size: clamp(42px, 6vw, 70px);
-        font-weight: 400;
-        margin: 12px 0 20px;
-    }
-
-    .cta p {
-        max-width: 580px;
-        margin: auto auto 30px;
-        font-size: 14px;
-        font-weight: 300;
-    }
-
-    /* =========================
-       SOCIAL
-    ========================= */
-
-    .social {
-        text-align: center;
-        padding: 90px 25px;
-    }
-
-    .social h2 {
-        font-family: "DM Serif Display", serif;
-        font-size: 45px;
-        font-weight: 400;
-    }
-
-    .social p {
-        color: var(--gray);
-        font-size: 13px;
-        margin: 8px 0 25px;
-    }
-
-    .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        flex-wrap: wrap;
-    }
-
-    .social-links a {
-        border: 1px solid var(--border);
-        padding: 12px 22px;
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: .3s;
-    }
-
-    .social-links a:hover {
-        background: var(--black);
-        color: white;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-        background: var(--black);
-        color: white;
-        padding: 65px 25px 25px;
-    }
-
-    .footer-container {
-        max-width: 1150px;
-        margin: auto;
-        display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr;
-        gap: 50px;
-    }
-
-    .footer-logo {
-        font-family: "DM Serif Display", serif;
-        font-size: 35px;
-    }
-
-    .footer-logo span {
-        color: var(--gold);
-    }
-
-    footer p {
-        color: #aaa;
-        font-size: 12px;
-        margin-top: 10px;
-        max-width: 350px;
-    }
-
-    footer h4 {
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 10px;
-        margin-bottom: 15px;
-    }
-
-    footer ul {
-        list-style: none;
-    }
-
-    footer li {
-        color: #aaa;
-        font-size: 12px;
-        margin: 8px 0;
-    }
-
-    footer li a:hover {
-        color: white;
-    }
-
-    .copyright {
-        max-width: 1150px;
-        margin: 50px auto 0;
-        padding-top: 20px;
-        border-top: 1px solid #333;
-        text-align: center;
-        color: #777;
-        font-size: 10px;
-    }
-
-    /* =========================
-       WHATSAPP
-    ========================= */
-
-    .whatsapp {
-        position: fixed;
-        right: 22px;
-        bottom: 22px;
-        width: 58px;
-        height: 58px;
-        border-radius: 50%;
-        background: #25D366;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 26px;
-        z-index: 999;
-        box-shadow: 0 8px 25px rgba(0,0,0,.2);
-        transition: .3s;
-    }
-
-    .whatsapp:hover {
-        transform: scale(1.08);
-    }
-
-    /* =========================
-       RESPONSIVE
-    ========================= */
-
-    @media (max-width: 900px) {
-
-        .nav-links {
-            display: none;
-            position: absolute;
-            top: 82px;
-            left: 0;
-            right: 0;
+        body {
+            font-family: var(--sans);
             background: var(--cream);
-            padding: 25px;
-            flex-direction: column;
-            gap: 20px;
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        .container {
+            width: min(92%, var(--container));
+            margin: auto;
+        }
+
+        /* =====================================================
+           ANNOUNCEMENT BAR
+        ===================================================== */
+
+        .announcement {
+            background: var(--black);
+            color: white;
+            text-align: center;
+            padding: 9px 15px;
+            font-size: 11px;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(248, 244, 238, 0.94);
+            backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border);
         }
 
-        .nav-links.active {
+        .nav {
+            min-height: 82px;
             display: flex;
-        }
-
-        .menu-btn {
-            display: block;
-        }
-
-        .nav-actions {
-            display: none;
-        }
-
-        .categories {
-            grid-template-columns: 1fr;
-        }
-
-        .category {
-            height: 400px;
-        }
-
-        .products {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .about-container {
-            grid-template-columns: 1fr;
-            gap: 40px;
-        }
-
-        .about-image {
-            height: 450px;
-        }
-
-        .footer-container {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-
-    @media (max-width: 600px) {
-
-        .announcement {
-            font-size: 8px;
-            letter-spacing: 1px;
-        }
-
-        .navbar {
-            height: 70px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
         }
 
         .logo {
-            font-size: 26px;
+            font-family: var(--serif);
+            font-size: 34px;
+            font-weight: 600;
+            letter-spacing: 7px;
+            color: var(--black);
+        }
+
+        .logo span {
+            display: block;
+            font-family: var(--sans);
+            font-size: 8px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-align: center;
+            margin-top: -7px;
+            color: var(--gold-dark);
         }
 
         .nav-links {
-            top: 70px;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
         }
 
-        .hero {
-            min-height: 650px;
+        .nav-links a {
+            position: relative;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            font-weight: 500;
         }
 
-        .hero h1 {
-            font-size: 60px;
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 1px;
+            background: var(--black);
+            transition: width .3s ease;
         }
 
-        .hero p {
-            font-size: 13px;
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
-        .section {
-            padding: 70px 18px;
-        }
-
-        .section-heading h2 {
-            font-size: 40px;
-        }
-
-        .products {
-            grid-template-columns: 1fr 1fr;
+        .nav-actions {
+            display: flex;
+            align-items: center;
             gap: 10px;
         }
 
+        .nav-whatsapp {
+            padding: 10px 17px;
+            background: var(--black);
+            color: white;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: .3s ease;
+        }
+
+        .nav-whatsapp:hover {
+            background: var(--gold-dark);
+        }
+
+        .menu-toggle {
+            display: none;
+            border: none;
+            background: transparent;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: calc(100vh - 117px);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--cream);
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px max(6vw, 30px);
+        }
+
+        .eyebrow {
+            color: var(--gold-dark);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-family: var(--serif);
+            font-size: clamp(58px, 7vw, 105px);
+            line-height: .86;
+            font-weight: 500;
+            color: var(--black);
+            max-width: 650px;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .hero-text {
+            max-width: 500px;
+            margin: 30px 0;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 14px 24px;
+            min-width: 150px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            transition: .3s ease;
+            cursor: pointer;
+        }
+
+        .btn-dark {
+            background: var(--black);
+            color: white;
+        }
+
+        .btn-dark:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--black);
+            color: var(--black);
+        }
+
+        .btn-outline:hover {
+            background: var(--black);
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+            min-height: 650px;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-label {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            background: rgba(255,255,255,.93);
+            padding: 17px 22px;
+            min-width: 190px;
+        }
+
+        .hero-label small {
+            display: block;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold-dark);
+        }
+
+        .hero-label strong {
+            display: block;
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        /* =====================================================
+           MARQUEE
+        ===================================================== */
+
+        .marquee {
+            background: var(--black);
+            color: white;
+            overflow: hidden;
+            padding: 15px 0;
+            white-space: nowrap;
+        }
+
+        .marquee-track {
+            display: inline-flex;
+            gap: 45px;
+            animation: marquee 25s linear infinite;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .marquee-track span::after {
+            content: "✦";
+            margin-left: 45px;
+            color: #c3ad88;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* =====================================================
+           SECTION
+        ===================================================== */
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 55px;
+        }
+
+        .section-heading .eyebrow {
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            font-family: var(--serif);
+            font-size: clamp(42px, 5vw, 64px);
+            font-weight: 500;
+            line-height: 1;
+            color: var(--black);
+        }
+
+        .section-heading p {
+            margin-top: 17px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =====================================================
+           COLLECTIONS
+        ===================================================== */
+
+        .collections {
+            background: var(--white);
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .collection-card {
+            position: relative;
+            height: 520px;
+            overflow: hidden;
+        }
+
+        .collection-card img {
+            height: 100%;
+            object-fit: cover;
+            transition: transform .7s ease;
+        }
+
+        .collection-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .collection-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            background: linear-gradient(
+                transparent 30%,
+                rgba(0,0,0,.70)
+            );
+            color: white;
+        }
+
+        .collection-overlay small {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 9px;
+        }
+
+        .collection-overlay h3 {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 500;
+            line-height: 1;
+            margin: 6px 0 15px;
+        }
+
+        .collection-link {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid rgba(255,255,255,.7);
+            width: fit-content;
+            padding-bottom: 5px;
+        }
+
+        /* =====================================================
+           PRODUCTS
+        ===================================================== */
+
+        .products {
+            background: var(--cream);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .product-card {
+            background: white;
+            overflow: hidden;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
         .product-image {
-            height: 270px;
+            position: relative;
+            height: 410px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.04);
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--black);
+            color: white;
+            padding: 6px 9px;
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .product-info {
-            padding: 12px;
+            padding: 20px;
         }
 
         .product-info h3 {
-            font-size: 17px;
+            font-family: var(--serif);
+            font-size: 25px;
+            font-weight: 500;
+            color: var(--black);
         }
 
         .product-info p {
-            font-size: 10px;
+            font-size: 11px;
+            color: var(--muted);
+            margin: 2px 0 8px;
         }
 
-        .about-container {
-            padding: 70px 18px;
+        .price {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--black);
         }
 
-        .about-text h2 {
-            font-size: 43px;
+        .product-order {
+            display: block;
+            margin-top: 14px;
+            padding: 11px;
+            text-align: center;
+            background: var(--cream);
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            transition: .3s ease;
+        }
+
+        .product-order:hover {
+            background: var(--black);
+            color: white;
+        }
+
+        /* =====================================================
+           FEATURE BANNER
+        ===================================================== */
+
+        .feature-banner {
+            padding: 0;
+            background: var(--black);
+            color: white;
+        }
+
+        .feature-inner {
+            min-height: 580px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .feature-image {
+            overflow: hidden;
+        }
+
+        .feature-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .feature-content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 70px;
+        }
+
+        .feature-content .eyebrow {
+            color: #c5ab82;
+        }
+
+        .feature-content h2 {
+            font-family: var(--serif);
+            font-size: clamp(45px, 5vw, 70px);
+            font-weight: 400;
+            line-height: .95;
+            margin-bottom: 25px;
+        }
+
+        .feature-content p {
+            color: #c7c2bc;
+            max-width: 470px;
+            font-size: 14px;
+        }
+
+        .feature-content .btn {
+            width: fit-content;
+            margin-top: 30px;
+            border: 1px solid rgba(255,255,255,.5);
+        }
+
+        .feature-content .btn:hover {
+            background: white;
+            color: var(--black);
+        }
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            align-items: center;
+            gap: 90px;
         }
 
         .about-image {
-            height: 400px;
+            height: 600px;
         }
 
-        .features {
-            grid-template-columns: 1fr;
+        .about-image img {
+            height: 100%;
+            object-fit: cover;
         }
 
-        .feature {
-            border-right: 0;
+        .about-content .eyebrow {
+            margin-bottom: 15px;
+        }
+
+        .about-content h2 {
+            font-family: var(--serif);
+            font-size: clamp(45px, 5vw, 70px);
+            line-height: .95;
+            font-weight: 500;
+            color: var(--black);
+            margin-bottom: 25px;
+        }
+
+        .about-content p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 17px;
+            max-width: 570px;
+        }
+
+        .signature {
+            font-family: var(--serif);
+            font-size: 30px;
+            font-style: italic;
+            color: var(--gold-dark);
+            margin-top: 25px;
+        }
+
+        /* =====================================================
+           BENEFITS
+        ===================================================== */
+
+        .benefits {
+            border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
+            background: var(--cream);
         }
 
-        .feature:last-child {
-            border-bottom: 0;
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
         }
 
-        .footer-container {
-            grid-template-columns: 1fr;
+        .benefit {
+            padding: 25px 40px;
+            text-align: center;
+            border-right: 1px solid var(--border);
         }
 
-        .whatsapp {
-            width: 54px;
-            height: 54px;
-            right: 17px;
-            bottom: 17px;
+        .benefit:last-child {
+            border-right: none;
         }
-    }
 
-</style>
-```
+        .benefit-icon {
+            font-family: var(--serif);
+            font-size: 30px;
+            color: var(--gold-dark);
+        }
 
+        .benefit h3 {
+            font-family: var(--serif);
+            font-size: 25px;
+            font-weight: 500;
+            color: var(--black);
+        }
+
+        .benefit p {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .cta {
+            background:
+                linear-gradient(
+                    rgba(23,21,19,.65),
+                    rgba(23,21,19,.65)
+                ),
+                url("https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=2000&q=85")
+                center/cover;
+            color: white;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+        }
+
+        .cta-content {
+            width: 100%;
+        }
+
+        .cta .eyebrow {
+            color: #d0b88f;
+        }
+
+        .cta h2 {
+            font-family: var(--serif);
+            font-size: clamp(55px, 7vw, 90px);
+            font-weight: 400;
+            line-height: .9;
+        }
+
+        .cta p {
+            max-width: 540px;
+            margin: 22px auto 30px;
+            color: #e3dfda;
+            font-size: 14px;
+        }
+
+        /* =====================================================
+           SOCIAL
+        ===================================================== */
+
+        .social {
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .social-title {
+            font-family: var(--serif);
+            font-size: 45px;
+            color: var(--black);
+        }
+
+        .social-text {
+            max-width: 520px;
+            margin: 10px auto 28px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .social-links a {
+            border: 1px solid var(--border);
+            background: white;
+            padding: 12px 20px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: .3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--black);
+            color: white;
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: var(--black);
+            color: white;
+            padding: 70px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 60px;
+            padding-bottom: 55px;
+        }
+
+        .footer-logo {
+            font-family: var(--serif);
+            font-size: 42px;
+            letter-spacing: 6px;
+        }
+
+        .footer-brand p {
+            color: #aaa49d;
+            max-width: 380px;
+            font-size: 12px;
+            margin-top: 12px;
+        }
+
+        .footer h4 {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #cbb38b;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .footer-links a {
+            color: #aaa49d;
+            font-size: 12px;
+            transition: .2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.1);
+            padding-top: 22px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            color: #77716b;
+            font-size: 10px;
+        }
+
+        /* =====================================================
+           FLOATING WHATSAPP
+        ===================================================== */
+
+        .floating-whatsapp {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 1500;
+            width: 57px;
+            height: 57px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1f1f1f;
+            color: white;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0,0,0,.25);
+            font-size: 24px;
+            transition: .3s ease;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.08);
+            background: var(--gold-dark);
+        }
+
+        /* =====================================================
+           SCROLL REVEAL
+        ===================================================== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity .8s ease, transform .8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 950px) {
+
+            .nav-links {
+                gap: 18px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                gap: 45px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 760px) {
+
+            .announcement {
+                font-size: 9px;
+                letter-spacing: 1px;
+            }
+
+            .nav {
+                min-height: 70px;
+            }
+
+            .logo {
+                font-size: 28px;
+            }
+
+            .nav-links,
+            .nav-actions {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .mobile-menu {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 70px;
+                background: var(--cream);
+                border-bottom: 1px solid var(--border);
+                padding: 25px;
+                display: none;
+            }
+
+            .mobile-menu.active {
+                display: block;
+            }
+
+            .mobile-menu a {
+                display: block;
+                padding: 12px 0;
+                border-bottom: 1px solid var(--border);
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                padding: 75px 25px;
+            }
+
+            .hero-image {
+                min-height: 530px;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .collection-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .collection-card {
+                height: 500px;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .product-image {
+                height: 300px;
+            }
+
+            .product-info {
+                padding: 14px;
+            }
+
+            .product-info h3 {
+                font-size: 22px;
+            }
+
+            .feature-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-image {
+                min-height: 450px;
+            }
+
+            .feature-content {
+                padding: 60px 25px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 480px;
+            }
+
+            .benefit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefit {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding: 25px;
+            }
+
+            .benefit:last-child {
+                border-bottom: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 420px) {
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .product-image {
+                height: 260px;
+            }
+
+            .product-order {
+                font-size: 8px;
+                padding: 9px 5px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .hero-buttons {
+                width: 100%;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
-```
-<!-- ANNOUNCEMENT -->
-<div class="announcement">
-    Worldwide & Nationwide Shipping • Order Now on WhatsApp
-</div>
+    <!-- =====================================================
+         ANNOUNCEMENT
+    ====================================================== -->
 
-<!-- HEADER -->
-<header>
+    <div class="announcement">
+        Worldwide & Nationwide Shipping • Order Directly on WhatsApp
+    </div>
 
-    <nav class="navbar">
 
-        <a href="#home" class="logo">
-            Lumina<span>.</span>
-        </a>
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#collections">Collections</a></li>
-            <li><a href="#new-arrivals">New Arrivals</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <header>
 
-        <div class="nav-actions">
-            <a href="https://www.instagram.com/luminaraclothing0/" target="_blank">◎</a>
-            <a href="https://www.tiktok.com/@luminaraclothing0" target="_blank">♪</a>
-        </div>
+        <div class="container nav">
 
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-    </nav>
-
-</header>
-
-<!-- HERO -->
-<section class="hero" id="home">
-
-    <div class="hero-content">
-
-        <div class="hero-small">
-            Pakistani Fashion • Worldwide Shipping
-        </div>
-
-        <h1>
-            Where Fashion<br>
-            Meets Elegance.
-        </h1>
-
-        <p>
-            Discover thoughtfully selected Pakistani clothing designed
-            for women who believe elegance never goes out of style.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#new-arrivals" class="btn btn-light">
-                Shop Collection
+            <a href="#home" class="logo">
+                LUMINARA
+                <span>WHERE FASHION MEETS ELEGANCE</span>
             </a>
 
-            <a href="https://wa.me/923705260258?text=Hello%20Lumina%20Clothing%2C%20I%20would%20like%20to%20place%20an%20order."
-               target="_blank"
-               class="btn btn-dark">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#new-arrivals">New Arrivals</a></li>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a
+                    class="nav-whatsapp"
+                    href="https://wa.me/923705260258?text=Hello%20Luminara%2C%20I%20would%20like%20to%20place%20an%20order."
+                    target="_blank"
+                    rel="noopener">
+                    WhatsApp
+                </a>
+            </div>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open menu">
+                ☰
+            </button>
+
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+
+            <a href="#home">Home</a>
+            <a href="#collections">Collections</a>
+            <a href="#new-arrivals">New Arrivals</a>
+            <a href="#about">Our Story</a>
+            <a href="#contact">Contact</a>
+
+            <a
+                href="https://wa.me/923705260258?text=Hello%20Luminara%2C%20I%20would%20like%20to%20place%20an%20order."
+                target="_blank">
                 Order on WhatsApp
             </a>
 
         </div>
 
-    </div>
+    </header>
 
-</section>
 
-<!-- COLLECTIONS -->
-<section class="section" id="collections">
+    <main>
 
-    <div class="section-heading">
-        <span>Explore</span>
-        <h2>Our Collections</h2>
-        <p>
-            Elegant Pakistani fashion curated for every mood,
-            moment and occasion.
-        </p>
-    </div>
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
 
-    <div class="categories">
+        <section class="hero" id="home">
 
-        <a href="#new-arrivals" class="category">
+            <div class="hero-content">
 
-            <img
-                src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=85"
-                alt="Pakistani traditional clothing">
-
-            <div class="category-overlay">
-                <div>
-                    <h3>Everyday Elegance</h3>
-                    <p>Effortless Pakistani Style</p>
-                </div>
-            </div>
-
-        </a>
-
-        <a href="#new-arrivals" class="category">
-
-            <img
-                src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=85"
-                alt="Elegant women's fashion">
-
-            <div class="category-overlay">
-                <div>
-                    <h3>Festive Edit</h3>
-                    <p>Celebrate in Style</p>
-                </div>
-            </div>
-
-        </a>
-
-        <a href="#new-arrivals" class="category">
-
-            <img
-                src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=900&q=85"
-                alt="Luxury women's clothing">
-
-            <div class="category-overlay">
-                <div>
-                    <h3>Signature Looks</h3>
-                    <p>Made for Special Moments</p>
-                </div>
-            </div>
-
-        </a>
-
-    </div>
-
-</section>
-
-<!-- NEW ARRIVALS -->
-<section class="section" id="new-arrivals">
-
-    <div class="section-heading">
-
-        <span>Fresh From Lumina</span>
-
-        <h2>New Arrivals</h2>
-
-        <p>
-            Discover our latest pieces and find your next
-            favourite look.
-        </p>
-
-    </div>
-
-    <div class="products">
-
-        <!-- PRODUCT 1 -->
-        <div class="product-card">
-
-            <div class="product-image">
-
-                <span class="badge">New</span>
-
-                <img
-                    src="https://images.unsplash.com/photo-1610030469668-8e9f641aafaa?auto=format&fit=crop&w=700&q=85"
-                    alt="Lumina Pakistani dress">
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>Ivory Grace</h3>
-
-                <p>Elegant Pakistani Wear</p>
-
-                <div class="price">
-                    PKR 4,999
+                <div class="eyebrow">
+                    Pakistani Fashion • Worldwide Shipping
                 </div>
 
-                <a
-                    class="order-btn"
-                    target="_blank"
-                    href="https://wa.me/923705260258?text=Hello%20Lumina%20Clothing%2C%20I%20am%20interested%20in%20the%20Ivory%20Grace%20dress.">
-                    Order on WhatsApp
-                </a>
-
-            </div>
-
-        </div>
-
-        <!-- PRODUCT 2 -->
-        <div class="product-card">
-
-            <div class="product-image">
-
-                <span class="badge">Bestseller</span>
-
-                <img
-                    src="https://images.unsplash.com/photo-1583391733981-849840c2a6f7?auto=format&fit=crop&w=700&q=85"
-                    alt="Lumina Pakistani outfit">
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>Rose Charm</h3>
-
-                <p>Contemporary Pakistani Style</p>
-
-                <div class="price">
-                    PKR 5,499
-                </div>
-
-                <a
-                    class="order-btn"
-                    target="_blank"
-                    href="https://wa.me/923705260258?text=Hello%20Lumina%20Clothing%2C%20I%20am%20interested%20in%20the%20Rose%20Charm%20dress.">
-                    Order on WhatsApp
-                </a>
-
-            </div>
-
-        </div>
-
-        <!-- PRODUCT 3 -->
-        <div class="product-card">
-
-            <div class="product-image">
-
-                <span class="badge">New</span>
-
-                <img
-                    src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=85"
-                    alt="Lumina women's fashion">
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>Midnight Muse</h3>
-
-                <p>Elegant Evening Edit</p>
-
-                <div class="price">
-                    PKR 6,499
-                </div>
-
-                <a
-                    class="order-btn"
-                    target="_blank"
-                    href="https://wa.me/923705260258?text=Hello%20Lumina%20Clothing%2C%20I%20am%20interested%20in%20the%20Midnight%20Muse%20dress.">
-                    Order on WhatsApp
-                </a>
-
-            </div>
-
-        </div>
-
-        <!-- PRODUCT 4 -->
-        <div class="product-card">
-
-            <div class="product-image">
-
-                <span class="badge">Featured</span>
-
-                <img
-                    src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=700&q=85"
-                    alt="Lumina luxury clothing">
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>Golden Aura</h3>
-
-                <p>Luxury Festive Collection</p>
-
-                <div class="price">
-                    PKR 7,499
-                </div>
-
-                <a
-                    class="order-btn"
-                    target="_blank"
-                    href="https://wa.me/923705260258?text=Hello%20Lumina%20Clothing%2C%20I%20am%20interested%20in%20the%20Golden%20Aura%20dress.">
-                    Order on WhatsApp
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-
-    <div class="about-container">
-
-        <div class="about-image">
-
-            <img
-                src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=1000&q=85"
-                alt="Lumina Clothing Pakistani fashion">
-
-        </div>
-
-        <div class="about-text">
-
-            <span>Our Story</span>
-
-            <h2>
-                Elegance,
-                Designed for You.
-            </h2>
-
-            <p>
-                Lumina Clothing is a Pakistani fashion brand
-                created for girls and women who love timeless
-                elegance with a modern touch.
-            </p>
-
-            <p>
-                From everyday outfits to special occasions,
-                we bring together beautiful Pakistani clothing
-                that helps you express your individual style.
-            </p>
-
-            <p>
-                Whether you're shopping from Pakistan or
-                somewhere across the world, Lumina is here
-                to bring elegance closer to you.
-            </p>
-
-            <a
-                href="https://wa.me/923705260258?text=Hello%20Lumina%20Clothing%2C%20I%20would%20like%20to%20know%20more%20about%20your%20collection."
-                target="_blank"
-                class="btn btn-dark">
-                Discover Lumina
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- FEATURES -->
-<section class="section">
-
-    <div class="features">
-
-        <div class="feature">
-
-            <div class="feature-icon">✦</div>
-
-            <h3>Worldwide Shipping</h3>
-
-            <p>
-                We deliver Lumina pieces around the world.
-            </p>
-
-        </div>
-
-        <div class="feature">
-
-            <div class="feature-icon">◇</div>
-
-            <h3>Pakistani Fashion</h3>
-
-            <p>
-                Beautiful styles inspired by Pakistani fashion.
-            </p>
-
-        </div>
-
-        <div class="feature">
-
-            <div class="feature-icon">♡</div>
-
-            <h3>Personal Service</h3>
-
-            <p>
-                Contact us directly for orders and assistance.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- CTA -->
-<section class="cta">
-
-    <span>Ready to Find Your Look?</span>
-
-    <h2>
-        Your Style.<br>
-        Your Lumina.
-    </h2>
-
-    <p>
-        Browse our latest collection and contact us directly
-        on WhatsApp to place your order.
-    </p>
-
-    <a
-        href="https://wa.me/923705260258?text=Hello%20Lumina%20Clothing%2C%20I%20would%20like%20to%20place%20an%20order."
-        target="_blank"
-        class="btn btn-light">
-        Shop via WhatsApp
-    </a>
-
-</section>
-
-<!-- SOCIAL -->
-<section class="social" id="contact">
-
-    <h2>Follow Lumina</h2>
-
-    <p>
-        Follow us for new arrivals, styling inspiration
-        and exclusive updates.
-    </p>
-
-    <div class="social-links">
-
-        <a
-            href="https://www.instagram.com/luminaraclothing0/"
-            target="_blank">
-            Instagram
-        </a>
-
-        <a
-            href="https://www.tiktok.com/@luminaraclothing0"
-            target="_blank">
-            TikTok
-        </a>
-
-        <a
-            href="https://www.facebook.com/profile.php?id=61565618582675"
-            target="_blank">
-            Facebook
-        </a>
-
-        <a
-            href="https://wa.me/923705260258"
-            target="_blank">
-            WhatsApp
-        </a>
-
-    </div>
-
-</section>
-
-<!-- FOOTER -->
-<footer>
-
-    <div class="footer-container">
-
-        <div>
-
-            <div class="footer-logo">
-                Lumina<span>.</span>
-            </div>
-
-            <p>
-                Where fashion meets elegance.
-                Pakistani clothing for girls and women,
-                delivered nationwide and worldwide.
-            </p>
-
-        </div>
-
-        <div>
-
-            <h4>Quick Links</h4>
-
-            <ul>
-
-                <li>
-                    <a href="#home">Home</a>
-                </li>
-
-                <li>
-                    <a href="#collections">Collections</a>
-                </li>
-
-                <li>
-                    <a href="#new-arrivals">New Arrivals</a>
-                </li>
-
-                <li>
-                    <a href="#about">About Us</a>
-                </li>
-
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-
-            </ul>
-
-        </div>
-
-        <div>
-
-            <h4>Contact</h4>
-
-            <ul>
-
-                <li>
-                    WhatsApp:
-                    <a href="https://wa.me/923705260258">
-                        0370 5260258
+                <h1>
+                    Where Fashion
+                    <em>Meets Elegance.</em>
+                </h1>
+
+                <p class="hero-text">
+                    Discover thoughtfully selected Pakistani clothing
+                    designed for women who believe elegance never goes
+                    out of style.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#new-arrivals" class="btn btn-dark">
+                        Shop Collection
                     </a>
-                </li>
 
-                <li>
+                    <a
+                        href="https://wa.me/923705260258?text=Hello%20Luminara%2C%20I%20would%20like%20to%20explore%20your%20collection."
+                        target="_blank"
+                        class="btn btn-outline">
+                        Order on WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=90"
+                    alt="Luminara Pakistani fashion">
+
+                <div class="hero-label">
+
+                    <small>Luminara Edit</small>
+
+                    <strong>Timeless Elegance</strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MARQUEE
+        ====================================================== -->
+
+        <div class="marquee">
+
+            <div class="marquee-track">
+
+                <span>Pakistani Fashion</span>
+                <span>Timeless Elegance</span>
+                <span>Worldwide Shipping</span>
+                <span>Made for Every Moment</span>
+                <span>Luminara</span>
+
+                <span>Pakistani Fashion</span>
+                <span>Timeless Elegance</span>
+                <span>Worldwide Shipping</span>
+                <span>Made for Every Moment</span>
+                <span>Luminara</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             COLLECTIONS
+        ====================================================== -->
+
+        <section class="collections" id="collections">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="eyebrow">
+                        Explore
+                    </div>
+
+                    <h2>Our Collections</h2>
+
+                    <p>
+                        Elegant Pakistani fashion curated for every mood,
+                        moment and occasion.
+                    </p>
+
+                </div>
+
+
+                <div class="collection-grid">
+
+                    <a href="#new-arrivals" class="collection-card reveal">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=1000&q=85"
+                            alt="Everyday Pakistani fashion">
+
+                        <div class="collection-overlay">
+
+                            <small>01 — Collection</small>
+
+                            <h3>Everyday Elegance</h3>
+
+                            <span class="collection-link">
+                                Explore Collection →
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a href="#new-arrivals" class="collection-card reveal">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=1000&q=85"
+                            alt="Festive Pakistani fashion">
+
+                        <div class="collection-overlay">
+
+                            <small>02 — Collection</small>
+
+                            <h3>Festive Edit</h3>
+
+                            <span class="collection-link">
+                                Celebrate in Style →
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a href="#new-arrivals" class="collection-card reveal">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=1000&q=85"
+                            alt="Signature Pakistani fashion">
+
+                        <div class="collection-overlay">
+
+                            <small>03 — Collection</small>
+
+                            <h3>Signature Looks</h3>
+
+                            <span class="collection-link">
+                                Discover More →
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             NEW ARRIVALS
+        ====================================================== -->
+
+        <section class="products" id="new-arrivals">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="eyebrow">
+                        Fresh From Luminara
+                    </div>
+
+                    <h2>New Arrivals</h2>
+
+                    <p>
+                        Discover our latest pieces and find your next
+                        favourite look.
+                    </p>
+
+                </div>
+
+
+                <div class="product-grid">
+
+
+                    <!-- PRODUCT 1 -->
+
+                    <article class="product-card reveal">
+
+                        <div class="product-image">
+
+                            <span class="product-tag">
+                                New
+                            </span>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=85"
+                                alt="Luminara Ivory Grace Pakistani dress">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <h3>Ivory Grace</h3>
+
+                            <p>Elegant Pakistani Wear</p>
+
+                            <div class="price">
+                                PKR 4,999
+                            </div>
+
+                            <a
+                                class="product-order"
+                                href="https://wa.me/923705260258?text=Hello%20Luminara%2C%20I%20am%20interested%20in%20Ivory%20Grace%20(PKR%204%2C999)."
+                                target="_blank">
+                                Order on WhatsApp
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCT 2 -->
+
+                    <article class="product-card reveal">
+
+                        <div class="product-image">
+
+                            <span class="product-tag">
+                                Bestseller
+                            </span>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=800&q=85"
+                                alt="Luminara Rose Charm Pakistani outfit">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <h3>Rose Charm</h3>
+
+                            <p>Contemporary Pakistani Style</p>
+
+                            <div class="price">
+                                PKR 5,499
+                            </div>
+
+                            <a
+                                class="product-order"
+                                href="https://wa.me/923705260258?text=Hello%20Luminara%2C%20I%20am%20interested%20in%20Rose%20Charm%20(PKR%205%2C499)."
+                                target="_blank">
+                                Order on WhatsApp
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCT 3 -->
+
+                    <article class="product-card reveal">
+
+                        <div class="product-image">
+
+                            <span class="product-tag">
+                                New
+                            </span>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=85"
+                                alt="Luminara Midnight Muse evening wear">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <h3>Midnight Muse</h3>
+
+                            <p>Elegant Evening Edit</p>
+
+                            <div class="price">
+                                PKR 6,499
+                            </div>
+
+                            <a
+                                class="product-order"
+                                href="https://wa.me/923705260258?text=Hello%20Luminara%2C%20I%20am%20interested%20in%20Midnight%20Muse%20(PKR%206%2C499)."
+                                target="_blank">
+                                Order on WhatsApp
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCT 4 -->
+
+                    <article class="product-card reveal">
+
+                        <div class="product-image">
+
+                            <span class="product-tag">
+                                Featured
+                            </span>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?auto=format&fit=crop&w=800&q=85"
+                                alt="Luminara Golden Aura festive collection">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <h3>Golden Aura</h3>
+
+                            <p>Luxury Festive Collection</p>
+
+                            <div class="price">
+                                PKR 7,499
+                            </div>
+
+                            <a
+                                class="product-order"
+                                href="https://wa.me/923705260258?text=Hello%20Luminara%2C%20I%20am%20interested%20in%20Golden%20Aura%20(PKR%207%2C499)."
+                                target="_blank">
+                                Order on WhatsApp
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FEATURE
+        ====================================================== -->
+
+        <section class="feature-banner">
+
+            <div class="feature-inner">
+
+                <div class="feature-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=1200&q=90"
+                        alt="Luminara signature fashion">
+
+                </div>
+
+                <div class="feature-content">
+
+                    <div class="eyebrow">
+                        The Luminara Edit
+                    </div>
+
+                    <h2>
+                        Designed to be remembered.
+                    </h2>
+
+                    <p>
+                        From graceful silhouettes to statement details,
+                        Luminara celebrates the beauty of Pakistani fashion
+                        with a modern and timeless perspective.
+                    </p>
+
+                    <a
+                        href="https://wa.me/923705260258?text=Hello%20Luminara%2C%20I%20would%20like%20to%20discover%20your%20latest%20collection."
+                        target="_blank"
+                        class="btn">
+                        Discover Luminara
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section class="about" id="about">
+
+            <div class="container">
+
+                <div class="about-grid">
+
+                    <div class="about-image reveal">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=1000&q=90"
+                            alt="Luminara fashion collection">
+
+                    </div>
+
+
+                    <div class="about-content reveal">
+
+                        <div class="eyebrow">
+                            Our Story
+                        </div>
+
+                        <h2>
+                            Elegance,
+                            designed for you.
+                        </h2>
+
+                        <p>
+                            Luminara is a Pakistani fashion brand created
+                            for girls and women who love timeless elegance
+                            with a modern touch.
+                        </p>
+
+                        <p>
+                            From everyday outfits to special occasions,
+                            we bring together beautiful Pakistani clothing
+                            that helps you express your individual style.
+                        </p>
+
+                        <p>
+                            Whether you're shopping from Pakistan or
+                            somewhere across the world, Luminara is here
+                            to bring elegance closer to you.
+                        </p>
+
+                        <a
+                            href="https://wa.me/923705260258?text=Hello%20Luminara%2C%20I%20would%20like%20to%20know%20more%20about%20your%20collection."
+                            target="_blank"
+                            class="btn btn-dark">
+                            Discover Luminara
+                        </a>
+
+                        <div class="signature">
+                            Luminara
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             BENEFITS
+        ====================================================== -->
+
+        <section class="benefits">
+
+            <div class="container">
+
+                <div class="benefit-grid">
+
+                    <div class="benefit reveal">
+
+                        <div class="benefit-icon">
+                            ✦
+                        </div>
+
+                        <h3>Worldwide Shipping</h3>
+
+                        <p>
+                            We deliver Luminara pieces around the world.
+                        </p>
+
+                    </div>
+
+
+                    <div class="benefit reveal">
+
+                        <div class="benefit-icon">
+                            ◇
+                        </div>
+
+                        <h3>Pakistani Fashion</h3>
+
+                        <p>
+                            Beautiful styles inspired by Pakistani fashion.
+                        </p>
+
+                    </div>
+
+
+                    <div class="benefit reveal">
+
+                        <div class="benefit-icon">
+                            ♡
+                        </div>
+
+                        <h3>Personal Service</h3>
+
+                        <p>
+                            Contact us directly for orders and assistance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="cta" id="contact">
+
+            <div class="container">
+
+                <div class="cta-content reveal">
+
+                    <div class="eyebrow">
+                        Your Next Look Awaits
+                    </div>
+
+                    <h2>
+                        Your Style.<br>
+                        Your Luminara.
+                    </h2>
+
+                    <p>
+                        Browse our latest collection and contact us
+                        directly on WhatsApp to place your order.
+                    </p>
+
+                    <a
+                        href="https://wa.me/923705260258?text=Hello%20Luminara%2C%20I%20would%20like%20to%20place%20an%20order."
+                        target="_blank"
+                        class="btn btn-outline">
+                        Shop via WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SOCIAL
+        ====================================================== -->
+
+        <section class="social">
+
+            <div class="container">
+
+                <div class="eyebrow">
+                    Stay Connected
+                </div>
+
+                <h2 class="social-title">
+                    Follow Luminara
+                </h2>
+
+                <p class="social-text">
+                    Follow us for new arrivals, styling inspiration,
+                    fashion updates and exclusive pieces.
+                </p>
+
+                <div class="social-links">
+
                     <a
                         href="https://www.instagram.com/luminaraclothing0/"
-                        target="_blank">
+                        target="_blank"
+                        rel="noopener">
                         Instagram
                     </a>
-                </li>
 
-                <li>
                     <a
                         href="https://www.tiktok.com/@luminaraclothing0"
-                        target="_blank">
+                        target="_blank"
+                        rel="noopener">
                         TikTok
                     </a>
-                </li>
 
-                <li>
                     <a
                         href="https://www.facebook.com/profile.php?id=61565618582675"
-                        target="_blank">
+                        target="_blank"
+                        rel="noopener">
                         Facebook
                     </a>
-                </li>
 
-            </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+
+                    <div class="footer-logo">
+                        LUMINARA
+                    </div>
+
+                    <p>
+                        Where fashion meets elegance.
+                        Pakistani clothing for girls and women,
+                        delivered nationwide and worldwide.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h4>
+                        Quick Links
+                    </h4>
+
+                    <div class="footer-links">
+
+                        <a href="#home">Home</a>
+
+                        <a href="#collections">
+                            Collections
+                        </a>
+
+                        <a href="#new-arrivals">
+                            New Arrivals
+                        </a>
+
+                        <a href="#about">
+                            About Us
+                        </a>
+
+                        <a href="#contact">
+                            Contact
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <h4>
+                        Connect
+                    </h4>
+
+                    <div class="footer-links">
+
+                        <a
+                            href="https://wa.me/923705260258"
+                            target="_blank">
+                            WhatsApp: 0370 5260258
+                        </a>
+
+                        <a
+                            href="https://www.instagram.com/luminaraclothing0/"
+                            target="_blank">
+                            Instagram
+                        </a>
+
+                        <a
+                            href="https://www.tiktok.com/@luminaraclothing0"
+                            target="_blank">
+                            TikTok
+                        </a>
+
+                        <a
+                            href="https://www.facebook.com/profile.php?id=61565618582675"
+                            target="_blank">
+                            Facebook
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 Luminara. All Rights Reserved.
+                </span>
+
+                <span>
+                    Pakistani Fashion • Worldwide Shipping
+                </span>
+
+            </div>
 
         </div>
 
-    </div>
+    </footer>
 
-    <div class="copyright">
-        © 2026 Lumina Clothing. All Rights Reserved.
-    </div>
 
-</footer>
+    <!-- =====================================================
+         FLOATING WHATSAPP
+    ====================================================== -->
 
-<!-- WHATSAPP -->
-<a
-    class="whatsapp"
-    href="https://wa.me/923705260258?text=Hello%20Lumina%20Clothing%2C%20I%20would%20like%20to%20place%20an%20order."
-    target="_blank"
-    aria-label="Order on WhatsApp">
-    ☎
-</a>
+    <a
+        href="https://wa.me/923705260258?text=Hello%20Luminara%2C%20I%20would%20like%20to%20place%20an%20order."
+        class="floating-whatsapp"
+        target="_blank"
+        rel="noopener"
+        aria-label="Order on WhatsApp">
 
-<script>
+        ☎
 
-    function toggleMenu() {
+    </a>
 
-        const nav = document.getElementById("navLinks");
 
-        nav.classList.toggle("active");
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
 
-    }
+    <script>
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+        /* Mobile Menu */
 
-        link.addEventListener("click", () => {
+        const menuToggle = document.getElementById("menuToggle");
+        const mobileMenu = document.getElementById("mobileMenu");
 
-            document
-                .getElementById("navLinks")
-                .classList.remove("active");
+        menuToggle.addEventListener("click", function () {
+
+            mobileMenu.classList.toggle("active");
 
         });
 
-    });
 
-</script>
-```
+        /* Close mobile menu when link clicked */
+
+        document.querySelectorAll(".mobile-menu a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                mobileMenu.classList.remove("active");
+
+            });
+
+        });
+
+
+        /* Scroll Reveal */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+        const observer =
+            new IntersectionObserver(
+
+                function (entries) {
+
+                    entries.forEach(function (entry) {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("visible");
+
+                            observer.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
+
+
+        revealElements.forEach(function (element) {
+
+            observer.observe(element);
+
+        });
+
+
+        /* Prevent menu from staying open after resizing */
+
+        window.addEventListener("resize", function () {
+
+            if (window.innerWidth > 760) {
+
+                mobileMenu.classList.remove("active");
+
+            }
+
+        });
+
+    </script>
 
 </body>
+
 </html>
