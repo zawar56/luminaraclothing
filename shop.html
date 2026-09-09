@@ -305,21 +305,41 @@ header{
     margin-bottom:17px;
 }
 
-.add-btn{
-    width:100%;
-    padding:13px;
-    background:#111;
-    color:#fff;
-    border:1px solid #111;
-    font-size:10px;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    transition:.3s;
+.product-actions{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:4px;
 }
 
-.add-btn:hover{
+.product-lock-button{
+    width:48px;
+    height:48px;
+    padding:0;
+    border:1px solid #111;
+    border-radius:50%;
     background:#fff;
     color:#111;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.25s;
+}
+
+.product-lock-button svg{
+    width:20px;
+    height:20px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.7;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.product-lock-button:hover{
+    background:#111;
+    color:#fff;
+    transform:translateY(-2px);
 }
 
 
@@ -409,6 +429,62 @@ header{
     font-weight:400;
 }
 
+
+/* =========================
+   PRODUCT DETAILS MODAL
+========================= */
+
+.product-modal-overlay{
+    position:fixed;
+    inset:0;
+    z-index:2500;
+    background:rgba(0,0,0,.62);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    overflow-y:auto;
+}
+
+.product-modal-overlay.active{display:flex;}
+
+.product-modal-box{
+    width:min(900px,100%);
+    min-height:540px;
+    background:#fff;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    position:relative;
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.product-modal-image{min-height:540px;background:#e5e0db;overflow:hidden;}
+.product-modal-image img{width:100%;height:100%;min-height:540px;object-fit:cover;object-position:top center;display:block;}
+.product-modal-details{padding:55px 45px;display:flex;flex-direction:column;justify-content:center;}
+.product-modal-close{position:absolute;top:0;right:0;width:40px;height:40px;border:0;background:#111;color:#fff;font-size:24px;font-weight:300;line-height:1;z-index:2;}
+.product-modal-label{color:#777;font-size:10px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;}
+.product-modal-title{font-family:Georgia,serif;font-size:clamp(30px,4vw,44px);font-weight:400;line-height:1.05;}
+.product-modal-price-row{display:flex;align-items:center;gap:18px;margin-top:18px;}
+.product-modal-price{font-size:14px;font-weight:600;}
+.product-modal-delivery{color:#d71920;font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;}
+.product-modal-divider{border:0;border-top:1px solid #e5e1dc;margin:25px 0;}
+.product-modal-option-label{display:block;margin-bottom:12px;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;}
+.product-modal-sizes{display:flex;gap:10px;flex-wrap:wrap;}
+.product-size{min-width:45px;height:36px;padding:0 13px;border:1px solid #111;background:#fff;color:#111;font-size:9px;transition:.2s;}
+.product-size:hover,.product-size.selected{background:#111;color:#fff;}
+.product-modal-quantity{display:flex;align-items:center;width:max-content;border:1px solid #ddd;}
+.product-modal-quantity button{width:38px;height:38px;border:0;background:#fff;font-size:16px;}
+.product-modal-quantity span{width:38px;text-align:center;font-size:10px;}
+.product-modal-add{width:100%;padding:15px;margin-top:25px;background:#111;color:#fff;border:1px solid #111;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;transition:.3s;}
+.product-modal-add:hover{background:#fff;color:#111;}
+
+@media(max-width:600px){
+    .product-modal-overlay{padding:12px;align-items:flex-start;}
+    .product-modal-box{grid-template-columns:1fr;margin:0 auto;}
+    .product-modal-image{height:55vh;min-height:360px;max-height:520px;}
+    .product-modal-image img{min-height:0;height:100%;}
+    .product-modal-details{padding:32px 24px 28px;}
+}
 
 /* =========================
    CART
@@ -814,9 +890,9 @@ footer h3{
         font-size:10px;
     }
 
-    .add-btn{
-        font-size:9px;
-        padding:11px 5px;
+    .product-lock-button{
+        width:46px;
+        height:46px;
     }
 
     .shop-hero{
@@ -988,14 +1064,16 @@ footer h3{
                 </div>
 
                 <button
-                    class="add-btn"
-                    onclick="addToCart(
-                        'Mahogany Muse',
-                        6499,
-                        './Mahogany%20muse.jpg'
-                    )"
+                    type="button"
+                    class="product-lock-button"
+                    onclick="openProductModal('Mahogany Muse', 6499, './Mahogany%20muse.jpg')"
+                    aria-label="View product details"
+                    title="View product details"
                 >
-                    Add to Cart
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="6" y="10" width="12" height="10" rx="1.5"></rect>
+                        <path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"></path>
+                    </svg>
                 </button>
 
             </div>
@@ -1033,14 +1111,16 @@ footer h3{
                 </div>
 
                 <button
-                    class="add-btn"
-                    onclick="addToCart(
-                        'Velvet Noor',
-                        5499,
-                        './pic.jpg'
-                    )"
+                    type="button"
+                    class="product-lock-button"
+                    onclick="openProductModal('Velvet Noor', 5499, './pic.jpg')"
+                    aria-label="View product details"
+                    title="View product details"
                 >
-                    Add to Cart
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="6" y="10" width="12" height="10" rx="1.5"></rect>
+                        <path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"></path>
+                    </svg>
                 </button>
 
             </div>
@@ -1078,14 +1158,16 @@ footer h3{
                 </div>
 
                 <button
-                    class="add-btn"
-                    onclick="addToCart(
-                        'Gulbadan',
-                        5499,
-                        './Gulbadan.jpg'
-                    )"
+                    type="button"
+                    class="product-lock-button"
+                    onclick="openProductModal('Gulbadan', 5499, './Gulbadan.jpg')"
+                    aria-label="View product details"
+                    title="View product details"
                 >
-                    Add to Cart
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="6" y="10" width="12" height="10" rx="1.5"></rect>
+                        <path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"></path>
+                    </svg>
                 </button>
 
             </div>
@@ -1123,14 +1205,16 @@ footer h3{
                 </div>
 
                 <button
-                    class="add-btn"
-                    onclick="addToCart(
-                        'Mahru',
-                        7499,
-                        './Mahru.jpg'
-                    )"
+                    type="button"
+                    class="product-lock-button"
+                    onclick="openProductModal('Mahru', 7499, './Mahru.jpg')"
+                    aria-label="View product details"
+                    title="View product details"
                 >
-                    Add to Cart
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="6" y="10" width="12" height="10" rx="1.5"></rect>
+                        <path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"></path>
+                    </svg>
                 </button>
 
             </div>
@@ -1347,6 +1431,47 @@ footer h3{
     </div>
 
 </section>
+
+
+<!-- =========================
+     PRODUCT DETAILS MODAL
+========================= -->
+
+<div class="product-modal-overlay" id="productModalOverlay">
+    <div class="product-modal-box" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+        <button type="button" class="product-modal-close" onclick="closeProductModal()" aria-label="Close product details">×</button>
+        <div class="product-modal-image">
+            <img id="productModalImage" src="" alt="">
+        </div>
+        <div class="product-modal-details">
+            <div class="product-modal-label">Product Details</div>
+            <h2 class="product-modal-title" id="productModalTitle">Product</h2>
+            <div class="product-modal-price-row">
+                <div class="product-modal-price" id="productModalPrice">PKR 0</div>
+                <div class="product-modal-delivery">Free Delivery</div>
+            </div>
+            <hr class="product-modal-divider">
+            <div>
+                <span class="product-modal-option-label">Size</span>
+                <div class="product-modal-sizes">
+                    <button type="button" class="product-size" data-size="XS">XS</button>
+                    <button type="button" class="product-size" data-size="S">S</button>
+                    <button type="button" class="product-size" data-size="M">M</button>
+                    <button type="button" class="product-size" data-size="L">L</button>
+                </div>
+            </div>
+            <div style="margin-top:25px;">
+                <span class="product-modal-option-label">Quantity</span>
+                <div class="product-modal-quantity">
+                    <button type="button" onclick="changeProductModalQuantity(-1)" aria-label="Decrease quantity">−</button>
+                    <span id="productModalQuantity">1</span>
+                    <button type="button" onclick="changeProductModalQuantity(1)" aria-label="Increase quantity">+</button>
+                </div>
+            </div>
+            <button type="button" class="product-modal-add" onclick="addSelectedProductToCart()">Add to Cart</button>
+        </div>
+    </div>
+</div>
 
 
 <!-- =========================
@@ -1678,43 +1803,118 @@ function saveCart(){
 function addToCart(
     name,
     price,
-    image
+    image,
+    size=""
 ){
 
     const existing =
         cart.find(
-            item => item.name === name
+            item =>
+                item.name === name &&
+                (item.size || "") === size
         );
 
     if(existing){
-
         existing.quantity += 1;
-
     }else{
-
         cart.push({
-
             name:name,
-
             price:Number(price),
-
             image:image,
-
+            size:size,
             quantity:1
-
         });
-
     }
 
     saveCart();
-
     openCart();
-
     showToast(
-        name + " added to your cart"
+        name + " added to your cart" +
+        (size ? " (Size " + size + ")" : "")
     );
-
 }
+
+
+/* =========================
+   PRODUCT DETAILS MODAL
+========================= */
+
+let selectedProduct = null;
+let selectedProductSize = "S";
+let selectedProductQuantity = 1;
+
+function openProductModal(name, price, image){
+    selectedProduct = {
+        name:name,
+        price:Number(price),
+        image:image
+    };
+
+    selectedProductSize = "S";
+    selectedProductQuantity = 1;
+
+    document.getElementById("productModalImage").src = image;
+    document.getElementById("productModalImage").alt = name;
+    document.getElementById("productModalTitle").textContent = name;
+    document.getElementById("productModalPrice").textContent =
+        "PKR " + Number(price).toLocaleString();
+    document.getElementById("productModalQuantity").textContent = "1";
+
+    document.querySelectorAll(".product-size").forEach(function(button){
+        button.classList.toggle(
+            "selected",
+            button.dataset.size === selectedProductSize
+        );
+    });
+
+    closeCart();
+    document.getElementById("productModalOverlay").classList.add("active");
+}
+
+function closeProductModal(){
+    document.getElementById("productModalOverlay").classList.remove("active");
+    selectedProduct = null;
+}
+
+function changeProductModalQuantity(change){
+    selectedProductQuantity = Math.max(1, selectedProductQuantity + change);
+    document.getElementById("productModalQuantity").textContent = selectedProductQuantity;
+}
+
+document.querySelectorAll(".product-size").forEach(function(button){
+    button.addEventListener("click", function(){
+        selectedProductSize = this.dataset.size;
+        document.querySelectorAll(".product-size").forEach(function(sizeButton){
+            sizeButton.classList.toggle(
+                "selected",
+                sizeButton.dataset.size === selectedProductSize
+            );
+        });
+    });
+});
+
+function addSelectedProductToCart(){
+    if(!selectedProduct){
+        return;
+    }
+
+    for(let i=0; i<selectedProductQuantity; i++){
+        addToCart(
+            selectedProduct.name,
+            selectedProduct.price,
+            selectedProduct.image,
+            selectedProductSize
+        );
+    }
+
+    closeProductModal();
+}
+
+document.getElementById("productModalOverlay").addEventListener("click", function(event){
+    if(event.target === this){
+        closeProductModal();
+    }
+});
 
 
 /* =========================
@@ -1828,6 +2028,7 @@ function renderCart(){
 
                                 <div class="cart-item-price">
                                     PKR ${Number(item.price).toLocaleString()}
+                                    ${item.size ? ` · Size ${escapeHTML(item.size)}` : ""}
                                 </div>
 
                                 <div class="quantity">
@@ -2058,6 +2259,7 @@ document
                 productsText +=
                     "• " +
                     item.name +
+                    (item.size ? " (Size " + item.size + ")" : "") +
                     " × " +
                     item.quantity +
                     " — PKR " +
@@ -2271,6 +2473,8 @@ document.addEventListener(
             closeCart();
 
             closeCheckout();
+
+            closeProductModal();
 
         }
 
