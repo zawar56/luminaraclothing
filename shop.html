@@ -405,6 +405,10 @@ header{
     transition:.6s;
 }
 
+.collection-lock-button{position:absolute;right:18px;top:18px;width:46px;height:46px;border:1px solid #111;border-radius:50%;background:#fff;color:#111;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:3;transition:.25s;}
+.collection-lock-button svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.collection-lock-button:hover{background:#111;color:#fff;transform:translateY(-2px);}
+
 .collection-item:hover img{
     transform:scale(1.04);
 }
@@ -1326,6 +1330,10 @@ footer h3{
                     alt="Raat ki Rani 1"
                 >
 
+                <button type="button" class="collection-lock-button" onclick="openCollectionModal('Raat ki Rani','./Raat%20ki%20Rani1.jpg')" aria-label="View Raat ki Rani" title="View Raat ki Rani">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="10" width="12" height="10" rx="1.5"></rect><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"></path></svg>
+                </button>
+
                 <div class="collection-overlay">
                     <h3>Raat ki Rani</h3>
                 </div>
@@ -1340,6 +1348,10 @@ footer h3{
                     alt="Raat ki Rani 3"
                 >
 
+                <button type="button" class="collection-lock-button" onclick="openCollectionModal('Raat ki Rani','./Raat%20ki%20Rani3.jpg')" aria-label="View Raat ki Rani" title="View Raat ki Rani">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="10" width="12" height="10" rx="1.5"></rect><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"></path></svg>
+                </button>
+
                 <div class="collection-overlay">
                     <h3>Raat ki Rani</h3>
                 </div>
@@ -1353,6 +1365,10 @@ footer h3{
                     src="./Raat%20ki%20Rani4.jpg"
                     alt="Raat ki Rani 4"
                 >
+
+                <button type="button" class="collection-lock-button" onclick="openCollectionModal('Raat ki Rani','./Raat%20ki%20Rani4.jpg')" aria-label="View Raat ki Rani" title="View Raat ki Rani">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="10" width="12" height="10" rx="1.5"></rect><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"></path></svg>
+                </button>
 
                 <div class="collection-overlay">
                     <h3>Raat ki Rani</h3>
@@ -1392,6 +1408,10 @@ footer h3{
                     alt="Noor e Gul 2"
                 >
 
+                <button type="button" class="collection-lock-button" onclick="openCollectionModal('Noor e Gul','./Noor%20e%20Gul2.jpg')" aria-label="View Noor e Gul" title="View Noor e Gul">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="10" width="12" height="10" rx="1.5"></rect><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"></path></svg>
+                </button>
+
                 <div class="collection-overlay">
                     <h3>Noor e Gul</h3>
                 </div>
@@ -1406,6 +1426,10 @@ footer h3{
                     alt="Noor e Gul 3"
                 >
 
+                <button type="button" class="collection-lock-button" onclick="openCollectionModal('Noor e Gul','./Noor%20e%20Gul3.jpg')" aria-label="View Noor e Gul" title="View Noor e Gul">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="10" width="12" height="10" rx="1.5"></rect><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"></path></svg>
+                </button>
+
                 <div class="collection-overlay">
                     <h3>Noor e Gul</h3>
                 </div>
@@ -1419,6 +1443,10 @@ footer h3{
                     src="./Noor%20e%20Gul4.jpg"
                     alt="Noor e Gul 4"
                 >
+
+                <button type="button" class="collection-lock-button" onclick="openCollectionModal('Noor e Gul','./Noor%20e%20Gul4.jpg')" aria-label="View Noor e Gul" title="View Noor e Gul">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="10" width="12" height="10" rx="1.5"></rect><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"></path></svg>
+                </button>
 
                 <div class="collection-overlay">
                     <h3>Noor e Gul</h3>
@@ -1844,6 +1872,7 @@ let selectedProductSize = "S";
 let selectedProductQuantity = 1;
 
 function openProductModal(name, price, image){
+    restoreProductModal();
     selectedProduct = {
         name:name,
         price:Number(price),
@@ -1871,7 +1900,32 @@ function openProductModal(name, price, image){
     document.getElementById("productModalOverlay").classList.add("active");
 }
 
+function openCollectionModal(collectionName, imageSrc){
+    document.getElementById("productModalImage").src = imageSrc;
+    document.getElementById("productModalImage").alt = collectionName;
+    document.getElementById("productModalTitle").textContent = collectionName;
+    document.querySelector(".product-modal-label").textContent = "Collection";
+
+    document.querySelector(".product-modal-price-row").style.display = "none";
+    document.querySelector(".product-modal-divider").style.display = "none";
+    document.querySelector(".product-modal-sizes").parentElement.style.display = "none";
+    document.querySelector(".product-modal-quantity").parentElement.style.display = "none";
+    document.querySelector(".product-modal-add").style.display = "none";
+
+    closeCart();
+    document.getElementById("productModalOverlay").classList.add("active");
+}
+
+function restoreProductModal(){
+    document.querySelector(".product-modal-price-row").style.display = "flex";
+    document.querySelector(".product-modal-divider").style.display = "block";
+    document.querySelector(".product-modal-sizes").parentElement.style.display = "block";
+    document.querySelector(".product-modal-quantity").parentElement.style.display = "block";
+    document.querySelector(".product-modal-add").style.display = "block";
+}
+
 function closeProductModal(){
+    restoreProductModal();
     document.getElementById("productModalOverlay").classList.remove("active");
     selectedProduct = null;
 }
