@@ -40,23 +40,15 @@
 :root {
 
     --black: #111111;
-
     --white: #ffffff;
-
     --cream: #f8f6f2;
-
     --cream-dark: #eeeae3;
-
     --gold: #b49767;
-
     --grey: #777777;
-
     --dark-grey: #444444;
-
     --border: rgba(0,0,0,.12);
 
     --serif: "Cormorant Garamond", Georgia, serif;
-
     --sans: "Montserrat", Arial, sans-serif;
 
     --max-width: 1240px;
@@ -69,66 +61,40 @@
 ========================================================= */
 
 * {
-
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
-
 }
-
 
 html {
-
     scroll-behavior: smooth;
-
 }
-
 
 body {
-
     font-family: var(--sans);
-
     color: var(--black);
-
     background: var(--white);
-
     overflow-x: hidden;
-
 }
-
 
 body.cart-open,
 body.checkout-open {
-
     overflow: hidden;
-
 }
-
 
 button,
 input,
 textarea {
-
     font-family: inherit;
-
 }
-
 
 button {
-
     border: 0;
-
 }
 
-
 a {
-
     color: inherit;
-
     text-decoration: none;
-
 }
 
 
@@ -139,17 +105,12 @@ a {
 .announcement {
 
     background: var(--black);
-
     color: var(--white);
-
     text-align: center;
-
     padding: 10px 15px;
 
     font-size: 9px;
-
     letter-spacing: 2px;
-
     text-transform: uppercase;
 
 }
@@ -162,11 +123,8 @@ a {
 .header {
 
     position: sticky;
-
     top: 0;
-
     left: 0;
-
     width: 100%;
 
     z-index: 1000;
@@ -233,9 +191,7 @@ a {
 
 
 .logo {
-
     text-align: center;
-
 }
 
 
@@ -306,7 +262,6 @@ a {
 .header-tool svg {
 
     width: 21px;
-
     height: 21px;
 
     fill: none;
@@ -323,11 +278,9 @@ a {
     position: absolute;
 
     top: -9px;
-
     right: -11px;
 
     width: 17px;
-
     height: 17px;
 
     border-radius: 50%;
@@ -410,7 +363,7 @@ a {
 
 
 /* =========================================================
-   COLLECTION SECTION
+   SECTION
 ========================================================= */
 
 .shop-section {
@@ -481,7 +434,7 @@ a {
 
 
 /* =========================================================
-   SINGLE COLLECTION GRID
+   SIGNATURE GRID
 ========================================================= */
 
 .single-grid {
@@ -546,7 +499,6 @@ a {
     position: absolute;
 
     top: 15px;
-
     left: 15px;
 
     z-index: 2;
@@ -641,6 +593,14 @@ a {
 
     transition: .25s;
 
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
 }
 
 
@@ -679,7 +639,7 @@ a {
 
 
 /* =========================================================
-   SLIDER COLLECTION
+   HORIZONTAL COLLECTION SLIDER
 ========================================================= */
 
 .slider-section {
@@ -689,106 +649,136 @@ a {
 }
 
 
-.slider-card {
+.collection-slider {
 
-    max-width: 850px;
-
-    margin: 0 auto;
+    position: relative;
 
 }
 
 
-.slider-wrapper {
+.horizontal-track {
 
-    position: relative;
+    display: flex;
+
+    gap: 18px;
+
+    overflow-x: auto;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+
+    padding: 5px 2px 15px;
+
+    scroll-snap-type: x mandatory;
+
+}
+
+
+.horizontal-track::-webkit-scrollbar {
+    display: none;
+}
+
+
+.collection-slide {
+
+    flex: 0 0 280px;
+
+    scroll-snap-align: start;
+
+}
+
+
+.collection-image {
 
     width: 100%;
 
-    height: min(760px, 75vh);
-
-    min-height: 500px;
+    height: 440px;
 
     background: var(--cream-dark);
 
     overflow: hidden;
 
+    position: relative;
+
 }
 
 
-.slider-wrapper img {
+.collection-image img {
 
     width: 100%;
 
     height: 100%;
 
-    object-fit: contain;
+    object-fit: cover;
 
     display: block;
 
-    background: var(--cream-dark);
+    transition: transform .6s ease;
 
 }
 
 
-.slider-badge {
+.collection-slide:hover img {
+
+    transform: scale(1.035);
+
+}
+
+
+.collection-image-number {
 
     position: absolute;
 
-    top: 18px;
+    top: 14px;
+    left: 14px;
 
-    left: 18px;
-
-    z-index: 3;
+    z-index: 2;
 
     background: var(--white);
 
-    padding: 9px 12px;
+    padding: 8px 10px;
 
     font-size: 8px;
 
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
+    letter-spacing: 1.5px;
 
 }
 
 
-.slider-arrow {
-
-    position: absolute;
-
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    z-index: 4;
-
-    width: 48px;
-
-    height: 48px;
-
-    border-radius: 50%;
-
-    background: rgba(255,255,255,.92);
-
-    color: var(--black);
-
-    cursor: pointer;
+.collection-scroll-buttons {
 
     display: flex;
 
-    align-items: center;
-
     justify-content: center;
 
-    font-size: 23px;
+    gap: 10px;
+
+    margin-top: 15px;
+
+}
+
+
+.collection-scroll-button {
+
+    width: 45px;
+
+    height: 45px;
+
+    border: 1px solid var(--black);
+
+    background: var(--white);
+
+    cursor: pointer;
+
+    font-size: 22px;
 
     transition: .25s;
 
 }
 
 
-.slider-arrow:hover {
+.collection-scroll-button:hover {
 
     background: var(--black);
 
@@ -797,129 +787,46 @@ a {
 }
 
 
-.slider-arrow.previous {
+.collection-product-info {
 
-    left: 18px;
-
-}
-
-
-.slider-arrow.next {
-
-    right: 18px;
+    padding-top: 13px;
 
 }
 
 
-.slider-dots {
+.collection-product-name {
 
-    display: flex;
+    font-family: var(--serif);
 
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 9px;
-
-    margin-top: 17px;
+    font-size: 24px;
 
 }
 
 
-.slider-dot {
-
-    width: 7px;
-
-    height: 7px;
-
-    border-radius: 50%;
-
-    border: 1px solid var(--black);
-
-    background: transparent;
-
-    cursor: pointer;
-
-    transition: .25s;
-
-}
-
-
-.slider-dot.active {
-
-    background: var(--black);
-
-}
-
-
-.slide-counter {
-
-    text-align: center;
-
-    margin-top: 10px;
+.collection-product-number {
 
     color: var(--grey);
 
     font-size: 8px;
 
-    letter-spacing: 2px;
+    margin-top: 4px;
 
     text-transform: uppercase;
+
+    letter-spacing: 1px;
 
 }
 
 
 /* =========================================================
-   SLIDER INFO
+   COLLECTION ACTIONS
 ========================================================= */
 
-.slider-info {
-
-    text-align: center;
-
-    padding-top: 25px;
-
-}
-
-
-.slider-name {
-
-    font-family: var(--serif);
-
-    font-size: 36px;
-
-    font-weight: 500;
-
-}
-
-
-.slider-subtitle {
-
-    color: var(--grey);
-
-    font-size: 9px;
-
-    margin-top: 5px;
-
-}
-
-
-.slider-price {
-
-    font-size: 11px;
-
-    font-weight: 600;
-
-    margin-top: 10px;
-
-}
-
-
-.slider-actions {
+.collection-actions {
 
     width: min(500px, 100%);
 
-    margin: 18px auto 0;
+    margin: 30px auto 0;
 
     display: grid;
 
@@ -930,7 +837,7 @@ a {
 }
 
 
-.slider-actions .whatsapp-button {
+.collection-actions .whatsapp-button {
 
     grid-column: 1 / -1;
 
@@ -938,7 +845,7 @@ a {
 
 
 /* =========================================================
-   ALL COLLECTIONS DIVIDER
+   COLLECTION DIVIDER
 ========================================================= */
 
 .collection-divider {
@@ -1021,7 +928,6 @@ body.cart-open .cart-overlay {
     position: fixed;
 
     top: 0;
-
     right: 0;
 
     width: min(460px, 100%);
@@ -1079,7 +985,6 @@ body.cart-open .cart-drawer {
 .cart-close {
 
     width: 38px;
-
     height: 38px;
 
     border: 1px solid var(--border);
@@ -1172,7 +1077,6 @@ body.cart-open .cart-drawer {
 .cart-item-image img {
 
     width: 100%;
-
     height: 100%;
 
     object-fit: cover;
@@ -1181,9 +1085,7 @@ body.cart-open .cart-drawer {
 
 
 .cart-item-info {
-
     min-width: 0;
-
 }
 
 
@@ -1232,7 +1134,6 @@ body.cart-open .cart-drawer {
 .quantity button {
 
     width: 29px;
-
     height: 29px;
 
     background: transparent;
@@ -1448,7 +1349,6 @@ body.checkout-open .checkout-overlay {
 .checkout-close {
 
     width: 38px;
-
     height: 38px;
 
     background: transparent;
@@ -1575,7 +1475,6 @@ body.checkout-open .checkout-overlay {
 .cod-radio {
 
     width: 16px;
-
     height: 16px;
 
     border-radius: 50%;
@@ -1592,7 +1491,6 @@ body.checkout-open .checkout-overlay {
     content: "";
 
     width: 6px;
-
     height: 6px;
 
     background: var(--white);
@@ -1602,7 +1500,6 @@ body.checkout-open .checkout-overlay {
     position: absolute;
 
     top: 5px;
-
     left: 5px;
 
 }
@@ -1710,6 +1607,8 @@ body.checkout-open .checkout-overlay {
 
     font-size: 10px;
 
+    text-align: right;
+
 }
 
 
@@ -1749,6 +1648,124 @@ body.checkout-open .checkout-overlay {
 
 
 /* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.order-success {
+
+    display: none;
+
+    text-align: center;
+
+    padding: 45px 30px;
+
+}
+
+
+.order-success.show {
+
+    display: block;
+
+}
+
+
+.order-success-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    font-size: 25px;
+
+}
+
+
+.order-success h3 {
+
+    font-family: var(--serif);
+
+    font-size: 38px;
+
+    font-weight: 500;
+
+}
+
+
+.order-success p {
+
+    color: var(--grey);
+
+    font-size: 10px;
+
+    line-height: 1.8;
+
+    max-width: 450px;
+
+    margin: 12px auto;
+
+}
+
+
+.order-number-display {
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+
+    margin: 20px 0;
+
+}
+
+
+.success-whatsapp {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 0 25px;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+}
+
+
+.success-whatsapp:hover {
+
+    background: var(--gold);
+
+}
+
+
+/* =========================================================
    WHATSAPP
 ========================================================= */
 
@@ -1757,13 +1774,11 @@ body.checkout-open .checkout-overlay {
     position: fixed;
 
     right: 20px;
-
     bottom: 20px;
 
     z-index: 1600;
 
     width: 58px;
-
     height: 58px;
 
     border-radius: 50%;
@@ -1795,7 +1810,6 @@ body.checkout-open .checkout-overlay {
 .whatsapp-float svg {
 
     width: 27px;
-
     height: 27px;
 
     fill: currentColor;
@@ -1812,7 +1826,6 @@ body.checkout-open .checkout-overlay {
     position: fixed;
 
     left: 50%;
-
     bottom: 25px;
 
     transform: translate(-50%, 30px);
@@ -1990,7 +2003,6 @@ body.checkout-open .checkout-overlay {
     .header-tool svg {
 
         width: 18px;
-
         height: 18px;
 
     }
@@ -2068,55 +2080,28 @@ body.checkout-open .checkout-overlay {
     }
 
 
-    .slider-wrapper {
+    .collection-slide {
 
-        height: 72vh;
-
-        min-height: 440px;
+        flex: 0 0 76vw;
 
     }
 
 
-    .slider-arrow {
+    .collection-image {
 
-        width: 40px;
-
-        height: 40px;
-
-        font-size: 19px;
+        height: 460px;
 
     }
 
 
-    .slider-arrow.previous {
-
-        left: 10px;
-
-    }
-
-
-    .slider-arrow.next {
-
-        right: 10px;
-
-    }
-
-
-    .slider-name {
-
-        font-size: 31px;
-
-    }
-
-
-    .slider-actions {
+    .collection-actions {
 
         grid-template-columns: 1fr;
 
     }
 
 
-    .slider-actions .whatsapp-button {
+    .collection-actions .whatsapp-button {
 
         grid-column: auto;
 
@@ -2155,11 +2140,9 @@ body.checkout-open .checkout-overlay {
     .whatsapp-float {
 
         width: 53px;
-
         height: 53px;
 
         right: 14px;
-
         bottom: 14px;
 
     }
@@ -2183,11 +2166,16 @@ body.checkout-open .checkout-overlay {
     }
 
 
-    .slider-wrapper {
+    .collection-slide {
 
-        height: 68vh;
+        flex: 0 0 84vw;
 
-        min-height: 420px;
+    }
+
+
+    .collection-image {
+
+        height: 500px;
 
     }
 
@@ -2236,7 +2224,6 @@ textarea:focus-visible {
 
     <div class="header-inner">
 
-
         <a
             href="index.html"
             class="back-button"
@@ -2269,7 +2256,6 @@ textarea:focus-visible {
 
 
         <div class="header-tools">
-
 
             <button
                 class="header-tool"
@@ -2304,7 +2290,7 @@ textarea:focus-visible {
 
 
 <!-- =======================================================
-     SHOP HERO
+     HERO
 ======================================================= -->
 
 <section class="shop-hero">
@@ -2329,13 +2315,12 @@ textarea:focus-visible {
 
 
 <!-- =======================================================
-     SINGLE COLLECTIONS
+     SIGNATURE COLLECTION
 ======================================================= -->
 
 <section class="shop-section">
 
     <div class="container">
-
 
         <div class="section-heading">
 
@@ -2349,7 +2334,7 @@ textarea:focus-visible {
 
             <p class="section-description">
 
-                Explore some of our signature designs,
+                Explore our signature designs,
                 each selected to bring effortless elegance
                 to your wardrobe.
 
@@ -2361,17 +2346,9 @@ textarea:focus-visible {
         <div class="single-grid">
 
 
-            <!-- =================================================
-                 MAHOGANY MUSE
-            ================================================== -->
+            <!-- MAHOGANY MUSE -->
 
-            <article
-                class="single-card"
-                data-product-id="mahogany-muse"
-                data-name="Mahogany Muse"
-                data-price="0"
-                data-image="Mahogany muse.jpg">
-
+            <article class="single-card">
 
                 <div class="image-container">
 
@@ -2381,7 +2358,7 @@ textarea:focus-visible {
 
                     <img
                         src="Mahogany muse.jpg"
-                        alt="Mahogany Muse collection"
+                        alt="Mahogany Muse"
                         loading="lazy">
 
                 </div>
@@ -2417,7 +2394,7 @@ textarea:focus-visible {
                             class="card-button checkout buy-now"
                             data-id="mahogany-muse">
 
-                            Checkout
+                            Buy Now
 
                         </button>
 
@@ -2439,17 +2416,9 @@ textarea:focus-visible {
             </article>
 
 
-            <!-- =================================================
-                 VELVET NOOR
-            ================================================== -->
+            <!-- VELVET NOOR -->
 
-            <article
-                class="single-card"
-                data-product-id="velvet-noor"
-                data-name="Velvet Noor"
-                data-price="0"
-                data-image="Velvet Noor.jpg">
-
+            <article class="single-card">
 
                 <div class="image-container">
 
@@ -2459,7 +2428,7 @@ textarea:focus-visible {
 
                     <img
                         src="Velvet Noor.jpg"
-                        alt="Velvet Noor collection"
+                        alt="Velvet Noor"
                         loading="lazy">
 
                 </div>
@@ -2495,7 +2464,7 @@ textarea:focus-visible {
                             class="card-button checkout buy-now"
                             data-id="velvet-noor">
 
-                            Checkout
+                            Buy Now
 
                         </button>
 
@@ -2517,17 +2486,9 @@ textarea:focus-visible {
             </article>
 
 
-            <!-- =================================================
-                 GULBADAN
-            ================================================== -->
+            <!-- GULBADAN -->
 
-            <article
-                class="single-card"
-                data-product-id="gulbadan"
-                data-name="Gulbadan"
-                data-price="0"
-                data-image="Gulbadan.jpg">
-
+            <article class="single-card">
 
                 <div class="image-container">
 
@@ -2537,7 +2498,7 @@ textarea:focus-visible {
 
                     <img
                         src="Gulbadan.jpg"
-                        alt="Gulbadan collection"
+                        alt="Gulbadan"
                         loading="lazy">
 
                 </div>
@@ -2573,7 +2534,7 @@ textarea:focus-visible {
                             class="card-button checkout buy-now"
                             data-id="gulbadan">
 
-                            Checkout
+                            Buy Now
 
                         </button>
 
@@ -2595,17 +2556,9 @@ textarea:focus-visible {
             </article>
 
 
-            <!-- =================================================
-                 MAHRU
-            ================================================== -->
+            <!-- MAHRU -->
 
-            <article
-                class="single-card"
-                data-product-id="mahru"
-                data-name="Mahru"
-                data-price="0"
-                data-image="Mahru.jpg">
-
+            <article class="single-card">
 
                 <div class="image-container">
 
@@ -2615,7 +2568,7 @@ textarea:focus-visible {
 
                     <img
                         src="Mahru.jpg"
-                        alt="Mahru collection"
+                        alt="Mahru"
                         loading="lazy">
 
                 </div>
@@ -2651,7 +2604,7 @@ textarea:focus-visible {
                             class="card-button checkout buy-now"
                             data-id="mahru">
 
-                            Checkout
+                            Buy Now
 
                         </button>
 
@@ -2688,7 +2641,6 @@ textarea:focus-visible {
 
     <div class="container">
 
-
         <div class="section-heading">
 
             <div class="section-number">
@@ -2701,118 +2653,166 @@ textarea:focus-visible {
 
             <p class="section-description">
 
-                Three variations, presented together.
-                Use the arrows or dots to explore each design.
+                Explore all three Nazakat designs
+                in one horizontal collection.
 
             </p>
 
         </div>
 
 
-        <div
-            class="slider-card"
-            data-slider="nazakat"
-            data-name="Nazakat"
-            data-price="0">
+        <div class="collection-slider">
+
+            <div
+                class="horizontal-track"
+                id="nazakatTrack">
 
 
-            <div class="slider-wrapper">
+                <article class="collection-slide">
 
-                <span class="slider-badge">
-                    3 Varieties
-                </span>
+                    <div class="collection-image">
 
+                        <span class="collection-image-number">
+                            01
+                        </span>
+
+                        <img
+                            src="Nazakat 1.jpeg"
+                            alt="Nazakat 1"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="collection-product-info">
+
+                        <div class="collection-product-name">
+                            Nazakat
+                        </div>
+
+                        <div class="collection-product-number">
+                            Design 01
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="collection-slide">
+
+                    <div class="collection-image">
+
+                        <span class="collection-image-number">
+                            02
+                        </span>
+
+                        <img
+                            src="Nazakat 2.jpeg"
+                            alt="Nazakat 2"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="collection-product-info">
+
+                        <div class="collection-product-name">
+                            Nazakat
+                        </div>
+
+                        <div class="collection-product-number">
+                            Design 02
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="collection-slide">
+
+                    <div class="collection-image">
+
+                        <span class="collection-image-number">
+                            03
+                        </span>
+
+                        <img
+                            src="Nazakat 3.jpeg"
+                            alt="Nazakat 3"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="collection-product-info">
+
+                        <div class="collection-product-name">
+                            Nazakat
+                        </div>
+
+                        <div class="collection-product-number">
+                            Design 03
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <div class="collection-scroll-buttons">
 
                 <button
-                    class="slider-arrow previous"
-                    onclick="changeSlide('nazakat', -1)"
-                    aria-label="Previous Nazakat variety">
+                    class="collection-scroll-button"
+                    onclick="scrollCollection('nazakatTrack', -1)"
+                    aria-label="Previous Nazakat designs">
 
-                    ‹
+                    ←
+
+                </button>
+
+                <button
+                    class="collection-scroll-button"
+                    onclick="scrollCollection('nazakatTrack', 1)"
+                    aria-label="Next Nazakat designs">
+
+                    →
+
+                </button>
+
+            </div>
+
+
+            <div class="collection-actions">
+
+                <button
+                    class="card-button add-cart"
+                    data-id="nazakat">
+
+                    Add Nazakat to Cart
 
                 </button>
 
 
-                <img
-                    id="nazakat-image"
-                    src="Nazakat1.jpg"
-                    alt="Nazakat variety 1">
-
-
                 <button
-                    class="slider-arrow next"
-                    onclick="changeSlide('nazakat', 1)"
-                    aria-label="Next Nazakat variety">
+                    class="card-button checkout buy-now"
+                    data-id="nazakat">
 
-                    ›
+                    Buy Nazakat
 
                 </button>
 
-            </div>
 
+                <a
+                    class="card-button whatsapp-button"
+                    href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20the%20Nazakat%20collection."
+                    target="_blank"
+                    rel="noopener">
 
-            <div
-                class="slider-dots"
-                id="nazakat-dots">
+                    Enquire on WhatsApp
 
-            </div>
-
-
-            <div
-                class="slide-counter"
-                id="nazakat-counter">
-
-                Variety 1 of 3
-
-            </div>
-
-
-            <div class="slider-info">
-
-                <h3 class="slider-name">
-                    Nazakat
-                </h3>
-
-                <p class="slider-subtitle">
-                    Elegant Collection • Multiple Varieties
-                </p>
-
-                <div class="slider-price">
-                    Price on Request
-                </div>
-
-
-                <div class="slider-actions">
-
-                    <button
-                        class="card-button add-cart"
-                        data-id="nazakat">
-
-                        Add to Cart
-
-                    </button>
-
-
-                    <button
-                        class="card-button checkout buy-now"
-                        data-id="nazakat">
-
-                        Checkout
-
-                    </button>
-
-
-                    <a
-                        class="card-button whatsapp-button"
-                        href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20Nazakat."
-                        target="_blank"
-                        rel="noopener">
-
-                        Enquire on WhatsApp
-
-                    </a>
-
-                </div>
+                </a>
 
             </div>
 
@@ -2824,13 +2824,12 @@ textarea:focus-visible {
 
 
 <!-- =======================================================
-     RAAT KI RANI
+     RAAT
 ======================================================= -->
 
 <section class="shop-section">
 
     <div class="container">
-
 
         <div class="section-heading">
 
@@ -2839,123 +2838,201 @@ textarea:focus-visible {
             </div>
 
             <h2 class="section-title">
-                Raat ki Rani
+                Raat
             </h2>
 
             <p class="section-description">
 
-                Four varieties of one collection.
-                Browse through every available design.
+                Explore all four Raat designs
+                in one horizontal collection.
 
             </p>
 
         </div>
 
 
-        <div
-            class="slider-card"
-            data-slider="raat"
-            data-name="Raat ki Rani"
-            data-price="0">
+        <div class="collection-slider">
+
+            <div
+                class="horizontal-track"
+                id="raatTrack">
 
 
-            <div class="slider-wrapper">
+                <article class="collection-slide">
 
-                <span class="slider-badge">
-                    4 Varieties
-                </span>
+                    <div class="collection-image">
 
+                        <span class="collection-image-number">
+                            04
+                        </span>
+
+                        <img
+                            src="Raat 1.jpeg"
+                            alt="Raat 1"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="collection-product-info">
+
+                        <div class="collection-product-name">
+                            Raat
+                        </div>
+
+                        <div class="collection-product-number">
+                            Design 01
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="collection-slide">
+
+                    <div class="collection-image">
+
+                        <span class="collection-image-number">
+                            05
+                        </span>
+
+                        <img
+                            src="Raat 2.jpeg"
+                            alt="Raat 2"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="collection-product-info">
+
+                        <div class="collection-product-name">
+                            Raat
+                        </div>
+
+                        <div class="collection-product-number">
+                            Design 02
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="collection-slide">
+
+                    <div class="collection-image">
+
+                        <span class="collection-image-number">
+                            06
+                        </span>
+
+                        <img
+                            src="Raat 3.jpeg"
+                            alt="Raat 3"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="collection-product-info">
+
+                        <div class="collection-product-name">
+                            Raat
+                        </div>
+
+                        <div class="collection-product-number">
+                            Design 03
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="collection-slide">
+
+                    <div class="collection-image">
+
+                        <span class="collection-image-number">
+                            07
+                        </span>
+
+                        <img
+                            src="Raat 4.jpeg"
+                            alt="Raat 4"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="collection-product-info">
+
+                        <div class="collection-product-name">
+                            Raat
+                        </div>
+
+                        <div class="collection-product-number">
+                            Design 04
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <div class="collection-scroll-buttons">
 
                 <button
-                    class="slider-arrow previous"
-                    onclick="changeSlide('raat', -1)"
-                    aria-label="Previous Raat ki Rani variety">
+                    class="collection-scroll-button"
+                    onclick="scrollCollection('raatTrack', -1)"
+                    aria-label="Previous Raat designs">
 
-                    ‹
+                    ←
+
+                </button>
+
+                <button
+                    class="collection-scroll-button"
+                    onclick="scrollCollection('raatTrack', 1)"
+                    aria-label="Next Raat designs">
+
+                    →
+
+                </button>
+
+            </div>
+
+
+            <div class="collection-actions">
+
+                <button
+                    class="card-button add-cart"
+                    data-id="raat">
+
+                    Add Raat to Cart
 
                 </button>
 
 
-                <img
-                    id="raat-image"
-                    src="Raat ki rani1.jpg"
-                    alt="Raat ki Rani variety 1">
-
-
                 <button
-                    class="slider-arrow next"
-                    onclick="changeSlide('raat', 1)"
-                    aria-label="Next Raat ki Rani variety">
+                    class="card-button checkout buy-now"
+                    data-id="raat">
 
-                    ›
+                    Buy Raat
 
                 </button>
 
-            </div>
 
+                <a
+                    class="card-button whatsapp-button"
+                    href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20the%20Raat%20collection."
+                    target="_blank"
+                    rel="noopener">
 
-            <div
-                class="slider-dots"
-                id="raat-dots">
+                    Enquire on WhatsApp
 
-            </div>
-
-
-            <div
-                class="slide-counter"
-                id="raat-counter">
-
-                Variety 1 of 4
-
-            </div>
-
-
-            <div class="slider-info">
-
-                <h3 class="slider-name">
-                    Raat ki Rani
-                </h3>
-
-                <p class="slider-subtitle">
-                    Occasion Collection • Multiple Varieties
-                </p>
-
-                <div class="slider-price">
-                    Price on Request
-                </div>
-
-
-                <div class="slider-actions">
-
-                    <button
-                        class="card-button add-cart"
-                        data-id="raat-ki-rani">
-
-                        Add to Cart
-
-                    </button>
-
-
-                    <button
-                        class="card-button checkout buy-now"
-                        data-id="raat-ki-rani">
-
-                        Checkout
-
-                    </button>
-
-
-                    <a
-                        class="card-button whatsapp-button"
-                        href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20Raat%20ki%20Rani."
-                        target="_blank"
-                        rel="noopener">
-
-                        Enquire on WhatsApp
-
-                    </a>
-
-                </div>
+                </a>
 
             </div>
 
@@ -2974,7 +3051,6 @@ textarea:focus-visible {
 
     <div class="container">
 
-
         <div class="section-heading">
 
             <div class="section-number">
@@ -2982,123 +3058,171 @@ textarea:focus-visible {
             </div>
 
             <h2 class="section-title">
-                Noor e Gul
+                Noor-e-Gul
             </h2>
 
             <p class="section-description">
 
-                Three varieties brought together in one
-                elegant collection.
+                Explore all three Noor-e-Gul designs
+                in one horizontal collection.
 
             </p>
 
         </div>
 
 
-        <div
-            class="slider-card"
-            data-slider="noor"
-            data-name="Noor e Gul"
-            data-price="0">
+        <div class="collection-slider">
+
+            <div
+                class="horizontal-track"
+                id="noorTrack">
 
 
-            <div class="slider-wrapper">
+                <article class="collection-slide">
 
-                <span class="slider-badge">
-                    3 Varieties
-                </span>
+                    <div class="collection-image">
 
+                        <span class="collection-image-number">
+                            08
+                        </span>
+
+                        <img
+                            src="Noor e gul 2.jpeg"
+                            alt="Noor e Gul 1"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="collection-product-info">
+
+                        <div class="collection-product-name">
+                            Noor-e-Gul
+                        </div>
+
+                        <div class="collection-product-number">
+                            Design 01
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="collection-slide">
+
+                    <div class="collection-image">
+
+                        <span class="collection-image-number">
+                            09
+                        </span>
+
+                        <img
+                            src="Noor e gu3.jpg"
+                            alt="Noor e Gul 2"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="collection-product-info">
+
+                        <div class="collection-product-name">
+                            Noor-e-Gul
+                        </div>
+
+                        <div class="collection-product-number">
+                            Design 02
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="collection-slide">
+
+                    <div class="collection-image">
+
+                        <span class="collection-image-number">
+                            10
+                        </span>
+
+                        <img
+                            src="Noor e gul4.jpg"
+                            alt="Noor e Gul 3"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="collection-product-info">
+
+                        <div class="collection-product-name">
+                            Noor-e-Gul
+                        </div>
+
+                        <div class="collection-product-number">
+                            Design 03
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <div class="collection-scroll-buttons">
 
                 <button
-                    class="slider-arrow previous"
-                    onclick="changeSlide('noor', -1)"
-                    aria-label="Previous Noor e Gul variety">
+                    class="collection-scroll-button"
+                    onclick="scrollCollection('noorTrack', -1)"
+                    aria-label="Previous Noor-e-Gul designs">
 
-                    ‹
+                    ←
+
+                </button>
+
+                <button
+                    class="collection-scroll-button"
+                    onclick="scrollCollection('noorTrack', 1)"
+                    aria-label="Next Noor-e-Gul designs">
+
+                    →
+
+                </button>
+
+            </div>
+
+
+            <div class="collection-actions">
+
+                <button
+                    class="card-button add-cart"
+                    data-id="noor-e-gul">
+
+                    Add Noor-e-Gul to Cart
 
                 </button>
 
 
-                <img
-                    id="noor-image"
-                    src="Noor e gul2.jpg"
-                    alt="Noor e Gul variety 1">
-
-
                 <button
-                    class="slider-arrow next"
-                    onclick="changeSlide('noor', 1)"
-                    aria-label="Next Noor e Gul variety">
+                    class="card-button checkout buy-now"
+                    data-id="noor-e-gul">
 
-                    ›
+                    Buy Noor-e-Gul
 
                 </button>
 
-            </div>
 
+                <a
+                    class="card-button whatsapp-button"
+                    href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20the%20Noor-e-Gul%20collection."
+                    target="_blank"
+                    rel="noopener">
 
-            <div
-                class="slider-dots"
-                id="noor-dots">
+                    Enquire on WhatsApp
 
-            </div>
-
-
-            <div
-                class="slide-counter"
-                id="noor-counter">
-
-                Variety 1 of 3
-
-            </div>
-
-
-            <div class="slider-info">
-
-                <h3 class="slider-name">
-                    Noor e Gul
-                </h3>
-
-                <p class="slider-subtitle">
-                    Floral Collection • Multiple Varieties
-                </p>
-
-                <div class="slider-price">
-                    Price on Request
-                </div>
-
-
-                <div class="slider-actions">
-
-                    <button
-                        class="card-button add-cart"
-                        data-id="noor-e-gul">
-
-                        Add to Cart
-
-                    </button>
-
-
-                    <button
-                        class="card-button checkout buy-now"
-                        data-id="noor-e-gul">
-
-                        Checkout
-
-                    </button>
-
-
-                    <a
-                        class="card-button whatsapp-button"
-                        href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20Noor%20e%20Gul."
-                        target="_blank"
-                        rel="noopener">
-
-                        Enquire on WhatsApp
-
-                    </a>
-
-                </div>
+                </a>
 
             </div>
 
@@ -3110,7 +3234,7 @@ textarea:focus-visible {
 
 
 <!-- =======================================================
-     COLLECTION STATEMENT
+     STATEMENT
 ======================================================= -->
 
 <section class="collection-divider">
@@ -3120,8 +3244,10 @@ textarea:focus-visible {
     </div>
 
     <h2 class="collection-divider-title">
+
         Where Fashion<br>
         Meets Elegance
+
     </h2>
 
 </section>
@@ -3169,7 +3295,6 @@ textarea:focus-visible {
     rel="noopener"
     aria-label="Chat on WhatsApp">
 
-
     <svg viewBox="0 0 24 24">
 
         <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.6 5.9L.2 24l6.5-1.7c1.8 1 3.8 1.5 5.8 1.5h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.4-6.2-3.9-8.5ZM12.6 21.8h-.1c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 0 1-1.5-5.2c0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.5-4.4 9.9-9.8 9.9Zm5.4-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.9-1.6.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.1 3.1 1.2 3.3c.2.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.8.7.8.3 1.5.3 2 .2.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/>
@@ -3198,7 +3323,6 @@ textarea:focus-visible {
     id="cartDrawer"
     aria-label="Shopping cart">
 
-
     <div class="cart-header">
 
         <h2>
@@ -3220,7 +3344,6 @@ textarea:focus-visible {
     <div
         class="cart-items"
         id="cartItems">
-
     </div>
 
 
@@ -3236,7 +3359,7 @@ textarea:focus-visible {
                 class="cart-total"
                 id="cartTotal">
 
-                PKR 0
+                Price on Request
 
             </span>
 
@@ -3273,7 +3396,6 @@ textarea:focus-visible {
     class="checkout-overlay"
     id="checkoutOverlay">
 
-
     <div class="checkout-box">
 
 
@@ -3294,176 +3416,227 @@ textarea:focus-visible {
         </div>
 
 
-        <div class="checkout-content">
+        <!-- CHECKOUT CONTENT -->
+
+        <div id="checkoutMainContent">
+
+            <div class="checkout-content">
 
 
-            <!-- FORM -->
+                <!-- FORM -->
 
-            <div class="checkout-form-area">
+                <div class="checkout-form-area">
 
-                <div class="form-heading">
-                    Delivery Details
-                </div>
-
-
-                <form id="checkoutForm">
-
-
-                    <div class="form-group">
-
-                        <label for="customerName">
-                            Full Name
-                        </label>
-
-                        <input
-                            id="customerName"
-                            type="text"
-                            autocomplete="name"
-                            placeholder="Enter your full name"
-                            required>
-
+                    <div class="form-heading">
+                        Delivery Details
                     </div>
 
 
-                    <div class="form-group">
-
-                        <label for="customerPhone">
-                            Phone / WhatsApp Number
-                        </label>
-
-                        <input
-                            id="customerPhone"
-                            type="tel"
-                            autocomplete="tel"
-                            placeholder="03XXXXXXXXX"
-                            required>
-
-                    </div>
+                    <form id="checkoutForm">
 
 
-                    <div class="form-group">
+                        <div class="form-group">
 
-                        <label for="customerCity">
-                            City
-                        </label>
+                            <label for="customerName">
+                                Full Name
+                            </label>
 
-                        <input
-                            id="customerCity"
-                            type="text"
-                            autocomplete="address-level2"
-                            placeholder="Enter your city"
-                            required>
+                            <input
+                                id="customerName"
+                                type="text"
+                                autocomplete="name"
+                                placeholder="Enter your full name"
+                                required>
 
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="customerAddress">
-                            Complete Delivery Address
-                        </label>
-
-                        <textarea
-                            id="customerAddress"
-                            autocomplete="street-address"
-                            placeholder="House / Flat, Street, Area, Landmark"
-                            required></textarea>
-
-                    </div>
+                        </div>
 
 
-                    <div class="form-group">
+                        <div class="form-group">
 
-                        <label for="orderNotes">
-                            Order Notes
-                        </label>
+                            <label for="customerPhone">
+                                Phone / WhatsApp Number
+                            </label>
 
-                        <textarea
-                            id="orderNotes"
-                            placeholder="Size, colour or any special instructions"></textarea>
+                            <input
+                                id="customerPhone"
+                                type="tel"
+                                autocomplete="tel"
+                                placeholder="03XXXXXXXXX"
+                                required>
 
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label>
-                            Payment Method
-                        </label>
+                        </div>
 
 
-                        <div class="cod-box">
+                        <div class="form-group">
 
-                            <div class="cod-radio"></div>
+                            <label for="customerCity">
+                                City
+                            </label>
 
-                            <div>
+                            <input
+                                id="customerCity"
+                                type="text"
+                                autocomplete="address-level2"
+                                placeholder="Enter your city"
+                                required>
 
-                                <div class="cod-title">
-                                    Cash on Delivery
-                                </div>
+                        </div>
 
-                                <div class="cod-description">
-                                    Pay when your order is delivered.
+
+                        <div class="form-group">
+
+                            <label for="customerAddress">
+                                Complete Delivery Address
+                            </label>
+
+                            <textarea
+                                id="customerAddress"
+                                autocomplete="street-address"
+                                placeholder="House / Flat, Street, Area, Landmark"
+                                required></textarea>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="orderNotes">
+                                Order Notes
+                            </label>
+
+                            <textarea
+                                id="orderNotes"
+                                placeholder="Size, colour or any special instructions"></textarea>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Payment Method
+                            </label>
+
+
+                            <div class="cod-box">
+
+                                <div class="cod-radio"></div>
+
+                                <div>
+
+                                    <div class="cod-title">
+                                        Cash on Delivery
+                                    </div>
+
+                                    <div class="cod-description">
+                                        Pay when your order is delivered.
+                                    </div>
+
                                 </div>
 
                             </div>
 
                         </div>
 
+
+                        <button
+                            type="submit"
+                            class="place-order">
+
+                            Place Order via WhatsApp
+
+                        </button>
+
+
+                        <div class="checkout-note">
+
+                            Your order will be prepared in WhatsApp
+                            for confirmation.
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+
+                <!-- SUMMARY -->
+
+                <div class="checkout-summary">
+
+                    <div class="form-heading">
+                        Order Summary
                     </div>
 
 
-                    <button
-                        type="submit"
-                        class="place-order">
-
-                        Place Order via WhatsApp
-
-                    </button>
-
-
-                    <div class="checkout-note">
-
-                        Your order details will be prepared
-                        in WhatsApp for confirmation.
-
+                    <div id="checkoutSummaryItems">
                     </div>
 
 
-                </form>
+                    <div class="summary-total">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <span id="checkoutSummaryTotal">
+                            Price on Request
+                        </span>
+
+                    </div>
+
+                </div>
+
 
             </div>
-
-
-            <!-- SUMMARY -->
-
-            <div class="checkout-summary">
-
-                <div class="form-heading">
-                    Order Summary
-                </div>
-
-
-                <div id="checkoutSummaryItems">
-                </div>
-
-
-                <div class="summary-total">
-
-                    <span>
-                        Total
-                    </span>
-
-                    <span id="checkoutSummaryTotal">
-                        PKR 0
-                    </span>
-
-                </div>
-
-            </div>
-
 
         </div>
+
+
+        <!-- SUCCESS -->
+
+        <div
+            class="order-success"
+            id="orderSuccess">
+
+            <div class="order-success-icon">
+                ✓
+            </div>
+
+            <h3>
+                Order Prepared
+            </h3>
+
+            <p>
+
+                Your order has been prepared successfully.
+                Please send it through WhatsApp to confirm
+                your Cash on Delivery order.
+
+            </p>
+
+
+            <div
+                class="order-number-display"
+                id="orderNumberDisplay">
+
+            </div>
+
+
+            <a
+                href="#"
+                target="_blank"
+                rel="noopener"
+                class="success-whatsapp"
+                id="successWhatsapp">
+
+                Send Order on WhatsApp
+
+            </a>
+
+        </div>
+
 
     </div>
 
@@ -3486,250 +3659,15 @@ textarea:focus-visible {
 
 <script>
 
-
 /* =========================================================
-   COLLECTION SLIDERS
+   WHATSAPP NUMBER
 ========================================================= */
 
-const sliders = {
-
-    nazakat: {
-
-        images: [
-
-            "Nazakat1.jpg",
-
-            "Nazakat2.jpg",
-
-            "Nazakat3.jpg"
-
-        ],
-
-        current: 0,
-
-        altName: "Nazakat"
-
-    },
-
-
-    raat: {
-
-        images: [
-
-            "Raat ki rani1.jpg",
-
-            "Raat ki rani2.jpg",
-
-            "Raat ki rani3.jpg",
-
-            "Raat ki rani4.jpg"
-
-        ],
-
-        current: 0,
-
-        altName: "Raat ki Rani"
-
-    },
-
-
-    noor: {
-
-        images: [
-
-            "Noor e gul2.jpg",
-
-            "Noor e gu3.jpg",
-
-            "Noor e gul4.jpg"
-
-        ],
-
-        current: 0,
-
-        altName: "Noor e Gul"
-
-    }
-
-};
-
-
-/* =========================================================
-   CREATE SLIDER DOTS
-========================================================= */
-
-function createSliderDots(sliderName) {
-
-    const slider = sliders[sliderName];
-
-    const dotsContainer =
-        document.getElementById(
-            sliderName + "-dots"
-        );
-
-
-    dotsContainer.innerHTML = "";
-
-
-    slider.images.forEach(
-        function(image, index) {
-
-            const dot =
-                document.createElement("button");
-
-
-            dot.className =
-                "slider-dot";
-
-
-            dot.setAttribute(
-                "aria-label",
-                "View variety " + (index + 1)
-            );
-
-
-            dot.addEventListener(
-                "click",
-                function() {
-
-                    slider.current = index;
-
-                    updateSlider(sliderName);
-
-                }
-            );
-
-
-            dotsContainer.appendChild(dot);
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   UPDATE SLIDER
-========================================================= */
-
-function updateSlider(sliderName) {
-
-    const slider = sliders[sliderName];
-
-
-    const imageElement =
-        document.getElementById(
-            sliderName + "-image"
-        );
-
-
-    const counter =
-        document.getElementById(
-            sliderName + "-counter"
-        );
-
-
-    imageElement.src =
-        slider.images[slider.current];
-
-
-    imageElement.alt =
-        slider.altName +
-        " variety " +
-        (slider.current + 1);
-
-
-    counter.textContent =
-        "Variety " +
-        (slider.current + 1) +
-        " of " +
-        slider.images.length;
-
-
-    const dots =
-        document.querySelectorAll(
-            "#" +
-            sliderName +
-            "-dots .slider-dot"
-        );
-
-
-    dots.forEach(
-        function(dot, index) {
-
-            dot.classList.toggle(
-                "active",
-                index === slider.current
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   CHANGE SLIDE
-========================================================= */
-
-function changeSlide(sliderName, direction) {
-
-    const slider = sliders[sliderName];
-
-
-    slider.current += direction;
-
-
-    if (slider.current < 0) {
-
-        slider.current =
-            slider.images.length - 1;
-
-    }
-
-
-    if (
-        slider.current >=
-        slider.images.length
-    ) {
-
-        slider.current = 0;
-
-    }
-
-
-    updateSlider(sliderName);
-
-}
-
-
-/* =========================================================
-   INITIALIZE SLIDERS
-========================================================= */
-
-Object.keys(sliders).forEach(
-    function(sliderName) {
-
-        createSliderDots(sliderName);
-
-        updateSlider(sliderName);
-
-    }
-);
+const WHATSAPP_NUMBER = "923705260258";
 
 
 /* =========================================================
    PRODUCT DATA
-=========================================================
-
-   IMPORTANT:
-
-   Prices are currently 0 because you have not
-   provided prices yet.
-
-   Replace the 0 values below with the actual
-   prices when you are ready.
-
 ========================================================= */
 
 const products = {
@@ -3739,6 +3677,8 @@ const products = {
         id: "mahogany-muse",
 
         name: "Mahogany Muse",
+
+        category: "Signature Collection",
 
         price: 0,
 
@@ -3753,6 +3693,8 @@ const products = {
 
         name: "Velvet Noor",
 
+        category: "Premium Collection",
+
         price: 0,
 
         image: "Velvet Noor.jpg"
@@ -3765,6 +3707,8 @@ const products = {
         id: "gulbadan",
 
         name: "Gulbadan",
+
+        category: "Elegant Collection",
 
         price: 0,
 
@@ -3779,6 +3723,8 @@ const products = {
 
         name: "Mahru",
 
+        category: "Contemporary Collection",
+
         price: 0,
 
         image: "Mahru.jpg"
@@ -3792,22 +3738,26 @@ const products = {
 
         name: "Nazakat",
 
+        category: "Nazakat Collection",
+
         price: 0,
 
-        image: "Nazakat1.jpg"
+        image: "Nazakat 1.jpeg"
 
     },
 
 
-    "raat-ki-rani": {
+    "raat": {
 
-        id: "raat-ki-rani",
+        id: "raat",
 
-        name: "Raat ki Rani",
+        name: "Raat",
+
+        category: "Raat Collection",
 
         price: 0,
 
-        image: "Raat ki rani1.jpg"
+        image: "Raat 1.jpeg"
 
     },
 
@@ -3816,11 +3766,13 @@ const products = {
 
         id: "noor-e-gul",
 
-        name: "Noor e Gul",
+        name: "Noor-e-Gul",
+
+        category: "Noor-e-Gul Collection",
 
         price: 0,
 
-        image: "Noor e gul2.jpg"
+        image: "Noor e gul 2.jpeg"
 
     }
 
@@ -3828,121 +3780,101 @@ const products = {
 
 
 /* =========================================================
-   CART
-=========================================================
-
-   SAME STORAGE KEY AS YOUR INDEX.HTML
-
+   CART STORAGE
 ========================================================= */
 
-let cart = JSON.parse(
+const CART_KEY = "luminaraclothingCart";
 
-    localStorage.getItem(
-        "luminaraclothingCart"
-    ) || "[]"
 
-);
+let cart = [];
+
+
+try {
+
+    cart =
+        JSON.parse(
+            localStorage.getItem(CART_KEY)
+        ) || [];
+
+} catch (error) {
+
+    cart = [];
+
+}
 
 
 /* =========================================================
    ELEMENTS
 ========================================================= */
 
-const body =
-    document.body;
-
+const body = document.body;
 
 const cartButton =
-    document.getElementById(
-        "cartButton"
-    );
-
+    document.getElementById("cartButton");
 
 const cartClose =
-    document.getElementById(
-        "cartClose"
-    );
-
+    document.getElementById("cartClose");
 
 const cartOverlay =
-    document.getElementById(
-        "cartOverlay"
-    );
-
+    document.getElementById("cartOverlay");
 
 const cartItems =
-    document.getElementById(
-        "cartItems"
-    );
-
+    document.getElementById("cartItems");
 
 const cartCount =
-    document.getElementById(
-        "cartCount"
-    );
-
+    document.getElementById("cartCount");
 
 const cartTotal =
-    document.getElementById(
-        "cartTotal"
-    );
-
+    document.getElementById("cartTotal");
 
 const checkoutButton =
-    document.getElementById(
-        "checkoutButton"
-    );
-
+    document.getElementById("checkoutButton");
 
 const continueShopping =
-    document.getElementById(
-        "continueShopping"
-    );
-
+    document.getElementById("continueShopping");
 
 const checkoutOverlay =
-    document.getElementById(
-        "checkoutOverlay"
-    );
-
+    document.getElementById("checkoutOverlay");
 
 const checkoutClose =
-    document.getElementById(
-        "checkoutClose"
-    );
-
+    document.getElementById("checkoutClose");
 
 const checkoutForm =
-    document.getElementById(
-        "checkoutForm"
-    );
-
+    document.getElementById("checkoutForm");
 
 const checkoutSummaryItems =
-    document.getElementById(
-        "checkoutSummaryItems"
-    );
-
+    document.getElementById("checkoutSummaryItems");
 
 const checkoutSummaryTotal =
-    document.getElementById(
-        "checkoutSummaryTotal"
-    );
+    document.getElementById("checkoutSummaryTotal");
 
+const checkoutMainContent =
+    document.getElementById("checkoutMainContent");
+
+const orderSuccess =
+    document.getElementById("orderSuccess");
+
+const orderNumberDisplay =
+    document.getElementById("orderNumberDisplay");
+
+const successWhatsapp =
+    document.getElementById("successWhatsapp");
 
 const toast =
-    document.getElementById(
-        "toast"
-    );
+    document.getElementById("toast");
 
 
 /* =========================================================
-   PRICE FORMAT
+   FORMAT PRICE
 ========================================================= */
 
 function formatPrice(price) {
 
-    if (!price || Number(price) === 0) {
+    const numericPrice =
+        Number(price) || 0;
+
+
+    if (numericPrice <= 0) {
 
         return "Price on Request";
 
@@ -3950,9 +3882,7 @@ function formatPrice(price) {
 
 
     return "PKR " +
-        Number(price).toLocaleString(
-            "en-PK"
-        );
+        numericPrice.toLocaleString("en-PK");
 
 }
 
@@ -3965,7 +3895,7 @@ function saveCart() {
 
     localStorage.setItem(
 
-        "luminaraclothingCart",
+        CART_KEY,
 
         JSON.stringify(cart)
 
@@ -3975,7 +3905,7 @@ function saveCart() {
 
 
 /* =========================================================
-   UPDATE CART COUNT
+   CART COUNT
 ========================================================= */
 
 function updateCartCount() {
@@ -3985,7 +3915,7 @@ function updateCartCount() {
             function(total, item) {
 
                 return total +
-                    item.quantity;
+                    Number(item.quantity || 0);
 
             },
             0
@@ -4010,8 +3940,8 @@ function getCartTotal() {
 
             return total +
                 (
-                    Number(item.price) *
-                    Number(item.quantity)
+                    Number(item.price || 0) *
+                    Number(item.quantity || 0)
                 );
 
         },
@@ -4019,6 +3949,25 @@ function getCartTotal() {
         0
 
     );
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHtml(text) {
+
+    const div =
+        document.createElement("div");
+
+
+    div.textContent =
+        text == null ? "" : text;
+
+
+    return div.innerHTML;
 
 }
 
@@ -4038,6 +3987,8 @@ function addToCart(
 
     if (!product) {
 
+        showToast("Product could not be found.");
+
         return;
 
     }
@@ -4047,8 +3998,7 @@ function addToCart(
         cart.find(
             function(item) {
 
-                return item.id ===
-                    productId;
+                return item.id === productId;
 
             }
         );
@@ -4056,7 +4006,8 @@ function addToCart(
 
     if (existing) {
 
-        existing.quantity += 1;
+        existing.quantity =
+            Number(existing.quantity || 0) + 1;
 
     } else {
 
@@ -4065,6 +4016,8 @@ function addToCart(
             id: product.id,
 
             name: product.name,
+
+            category: product.category,
 
             price: product.price,
 
@@ -4097,7 +4050,7 @@ function addToCart(
 
 
 /* =========================================================
-   REMOVE
+   REMOVE FROM CART
 ========================================================= */
 
 function removeFromCart(productId) {
@@ -4106,8 +4059,7 @@ function removeFromCart(productId) {
         cart.filter(
             function(item) {
 
-                return item.id !==
-                    productId;
+                return item.id !== productId;
 
             }
         );
@@ -4119,11 +4071,13 @@ function removeFromCart(productId) {
 
     updateCartCount();
 
+    renderCheckoutSummary();
+
 }
 
 
 /* =========================================================
-   QUANTITY
+   CHANGE QUANTITY
 ========================================================= */
 
 function changeQuantity(
@@ -4135,8 +4089,7 @@ function changeQuantity(
         cart.find(
             function(item) {
 
-                return item.id ===
-                    productId;
+                return item.id === productId;
 
             }
         );
@@ -4149,14 +4102,14 @@ function changeQuantity(
     }
 
 
-    item.quantity += amount;
+    item.quantity =
+        Number(item.quantity || 0) +
+        amount;
 
 
     if (item.quantity <= 0) {
 
-        removeFromCart(
-            productId
-        );
+        removeFromCart(productId);
 
         return;
 
@@ -4169,26 +4122,7 @@ function changeQuantity(
 
     updateCartCount();
 
-}
-
-
-/* =========================================================
-   ESCAPE HTML
-========================================================= */
-
-function escapeHtml(text) {
-
-    const div =
-        document.createElement(
-            "div"
-        );
-
-
-    div.textContent =
-        text;
-
-
-    return div.innerHTML;
+    renderCheckoutSummary();
 
 }
 
@@ -4198,7 +4132,6 @@ function escapeHtml(text) {
 ========================================================= */
 
 function renderCart() {
-
 
     if (cart.length === 0) {
 
@@ -4221,7 +4154,6 @@ function renderCart() {
 
     } else {
 
-
         cartItems.innerHTML =
 
             cart.map(
@@ -4234,7 +4166,7 @@ function renderCart() {
                             <div class="cart-item-image">
 
                                 <img
-                                    src="${item.image || "pic.jpg"}"
+                                    src="${escapeHtml(item.image || "pic.jpg")}"
                                     alt="${escapeHtml(item.name)}">
 
                             </div>
@@ -4258,12 +4190,11 @@ function renderCart() {
 
                                 <div class="cart-item-controls">
 
-
                                     <div class="quantity">
 
                                         <button
                                             type="button"
-                                            onclick="changeQuantity('${item.id}', -1)">
+                                            onclick="changeQuantity('${escapeHtml(item.id)}', -1)">
 
                                             −
 
@@ -4271,13 +4202,13 @@ function renderCart() {
 
 
                                         <span>
-                                            ${item.quantity}
+                                            ${Number(item.quantity || 0)}
                                         </span>
 
 
                                         <button
                                             type="button"
-                                            onclick="changeQuantity('${item.id}', 1)">
+                                            onclick="changeQuantity('${escapeHtml(item.id)}', 1)">
 
                                             +
 
@@ -4289,7 +4220,7 @@ function renderCart() {
                                     <button
                                         type="button"
                                         class="remove-item"
-                                        onclick="removeFromCart('${item.id}')">
+                                        onclick="removeFromCart('${escapeHtml(item.id)}')">
 
                                         Remove
 
@@ -4323,7 +4254,7 @@ function renderCart() {
 
 
 /* =========================================================
-   CHECKOUT SUMMARY
+   RENDER CHECKOUT SUMMARY
 ========================================================= */
 
 function renderCheckoutSummary() {
@@ -4340,6 +4271,10 @@ function renderCheckoutSummary() {
 
         `;
 
+
+        checkoutSummaryTotal.textContent =
+            "Price on Request";
+
         return;
 
     }
@@ -4349,6 +4284,11 @@ function renderCheckoutSummary() {
 
         cart.map(
             function(item) {
+
+                const itemTotal =
+                    Number(item.price || 0) *
+                    Number(item.quantity || 0);
+
 
                 return `
 
@@ -4365,7 +4305,7 @@ function renderCheckoutSummary() {
                             <div class="summary-quantity">
 
                                 Quantity:
-                                ${item.quantity}
+                                ${Number(item.quantity || 0)}
 
                             </div>
 
@@ -4374,10 +4314,12 @@ function renderCheckoutSummary() {
 
                         <div class="summary-price">
 
-                            ${formatPrice(
-                                item.price *
-                                item.quantity
-                            )}
+                            ${
+                                itemTotal > 0
+                                    ? "PKR " +
+                                      itemTotal.toLocaleString("en-PK")
+                                    : "Price on Request"
+                            }
 
                         </div>
 
@@ -4408,14 +4350,9 @@ function renderCheckoutSummary() {
 
 function openCart() {
 
-    body.classList.remove(
-        "checkout-open"
-    );
+    body.classList.remove("checkout-open");
 
-
-    body.classList.add(
-        "cart-open"
-    );
+    body.classList.add("cart-open");
 
 }
 
@@ -4426,9 +4363,7 @@ function openCart() {
 
 function closeCart() {
 
-    body.classList.remove(
-        "cart-open"
-    );
+    body.classList.remove("cart-open");
 
 }
 
@@ -4450,10 +4385,14 @@ function openCheckout() {
     }
 
 
+    checkoutMainContent.style.display =
+        "block";
+
+    orderSuccess.classList.remove("show");
+
     renderCheckoutSummary();
 
     closeCart();
-
 
     body.classList.add(
         "checkout-open"
@@ -4488,14 +4427,10 @@ function showToast(message) {
         message;
 
 
-    toast.classList.add(
-        "show"
-    );
+    toast.classList.add("show");
 
 
-    clearTimeout(
-        toastTimer
-    );
+    clearTimeout(toastTimer);
 
 
     toastTimer =
@@ -4514,137 +4449,243 @@ function showToast(message) {
 
 
 /* =========================================================
-   CART BUTTON
+   SCROLL COLLECTION
 ========================================================= */
 
-cartButton.addEventListener(
-    "click",
-    openCart
-);
+function scrollCollection(
+    trackId,
+    direction
+) {
+
+    const track =
+        document.getElementById(trackId);
+
+
+    if (!track) {
+
+        return;
+
+    }
+
+
+    const amount =
+        Math.min(
+            track.clientWidth * .82,
+            500
+        );
+
+
+    track.scrollBy({
+
+        left:
+            direction * amount,
+
+        behavior:
+            "smooth"
+
+    });
+
+}
 
 
 /* =========================================================
-   CART CLOSE
+   GENERATE ORDER NUMBER
 ========================================================= */
 
-cartClose.addEventListener(
-    "click",
-    closeCart
-);
+function generateOrderNumber() {
+
+    const now =
+        new Date();
 
 
-cartOverlay.addEventListener(
-    "click",
-    closeCart
-);
+    const year =
+        now.getFullYear();
+
+
+    const random =
+        Math.floor(
+            1000 +
+            Math.random() * 9000
+        );
+
+
+    return "LUM-" +
+        year +
+        "-" +
+        random;
+
+}
 
 
 /* =========================================================
-   CONTINUE SHOPPING
+   CREATE WHATSAPP ORDER
 ========================================================= */
 
-continueShopping.addEventListener(
-    "click",
-    closeCart
-);
+function createWhatsAppMessage(
+    orderNumber,
+    name,
+    phone,
+    city,
+    address,
+    notes
+) {
+
+    let message =
+
+        "Hello luminaraclothing!\n\n" +
+
+        "*NEW COD ORDER*\n" +
+
+        "Order No: " +
+        orderNumber +
+        "\n\n" +
+
+        "*CUSTOMER DETAILS*\n" +
+
+        "Name: " +
+        name +
+        "\n" +
+
+        "Phone: " +
+        phone +
+        "\n" +
+
+        "City: " +
+        city +
+        "\n" +
+
+        "Address: " +
+        address +
+        "\n";
 
 
-/* =========================================================
-   CHECKOUT
-========================================================= */
+    if (notes) {
 
-checkoutButton.addEventListener(
-    "click",
-    openCheckout
-);
+        message +=
 
+            "Notes: " +
+            notes +
+            "\n";
 
-checkoutClose.addEventListener(
-    "click",
-    closeCheckout
-);
+    }
 
 
-checkoutOverlay.addEventListener(
-    "click",
-    function(event) {
+    message +=
 
-        if (
-            event.target ===
-            checkoutOverlay
-        ) {
+        "\n*ORDER DETAILS*\n";
 
-            closeCheckout();
+
+    cart.forEach(
+        function(item) {
+
+            message +=
+
+                "• " +
+                item.name +
+                " x " +
+                item.quantity;
+
+
+            if (Number(item.price) > 0) {
+
+                message +=
+
+                    " — PKR " +
+                    (
+                        Number(item.price) *
+                        Number(item.quantity)
+                    ).toLocaleString("en-PK");
+
+            }
+
+
+            message += "\n";
 
         }
+    );
+
+
+    const total =
+        getCartTotal();
+
+
+    message += "\n";
+
+
+    if (total > 0) {
+
+        message +=
+
+            "*TOTAL: PKR " +
+            total.toLocaleString("en-PK") +
+            "*\n";
+
+    } else {
+
+        message +=
+
+            "*TOTAL: PRICE TO BE CONFIRMED*\n";
 
     }
-);
+
+
+    message +=
+
+        "Payment: Cash on Delivery\n\n" +
+
+        "Please confirm my order. Thank you!";
+
+
+    return message;
+
+}
 
 
 /* =========================================================
-   ADD TO CART BUTTONS
+   SAVE ORDER LOCALLY
 ========================================================= */
 
-document.querySelectorAll(
-    ".add-cart"
-).forEach(
-    function(button) {
+function saveOrderLocally(order) {
 
-        button.addEventListener(
-            "click",
-            function() {
+    const ORDER_KEY =
+        "luminaraclothingOrders";
 
-                addToCart(
-                    this.dataset.id
-                );
 
-            }
-        );
+    let orders = [];
+
+
+    try {
+
+        orders =
+            JSON.parse(
+                localStorage.getItem(
+                    ORDER_KEY
+                )
+            ) || [];
+
+    } catch (error) {
+
+        orders = [];
 
     }
-);
+
+
+    orders.push(order);
+
+
+    localStorage.setItem(
+
+        ORDER_KEY,
+
+        JSON.stringify(orders)
+
+    );
+
+}
 
 
 /* =========================================================
-   BUY NOW / CHECKOUT
-========================================================= */
-
-document.querySelectorAll(
-    ".buy-now"
-).forEach(
-    function(button) {
-
-        button.addEventListener(
-            "click",
-            function() {
-
-                const productId =
-                    this.dataset.id;
-
-
-                addToCart(
-                    productId,
-                    false
-                );
-
-
-                renderCheckoutSummary();
-
-
-                body.classList.add(
-                    "checkout-open"
-                );
-
-            }
-        );
-
-    }
-);
-
-
-/* =========================================================
-   CHECKOUT FORM
+   CHECKOUT SUBMIT
 ========================================================= */
 
 checkoutForm.addEventListener(
@@ -4695,137 +4736,134 @@ checkoutForm.addEventListener(
             ).value.trim();
 
 
-        const orderNumber =
-            "LUM-" +
-            Date.now()
-                .toString()
-                .slice(-7);
+        if (
+            name.length < 2 ||
+            phone.length < 7 ||
+            city.length < 2 ||
+            address.length < 5
+        ) {
 
+            showToast(
+                "Please complete your delivery details."
+            );
 
-        let message =
-            "Hello luminaraclothing!%0A%0A";
-
-
-        message +=
-            "*NEW COD ORDER*%0A";
-
-
-        message +=
-            "Order No: " +
-            encodeURIComponent(
-                orderNumber
-            ) +
-            "%0A%0A";
-
-
-        message +=
-            "*CUSTOMER DETAILS*%0A";
-
-
-        message +=
-            "Name: " +
-            encodeURIComponent(
-                name
-            ) +
-            "%0A";
-
-
-        message +=
-            "Phone: " +
-            encodeURIComponent(
-                phone
-            ) +
-            "%0A";
-
-
-        message +=
-            "City: " +
-            encodeURIComponent(
-                city
-            ) +
-            "%0A";
-
-
-        message +=
-            "Address: " +
-            encodeURIComponent(
-                address
-            ) +
-            "%0A";
-
-
-        if (notes) {
-
-            message +=
-                "Notes: " +
-                encodeURIComponent(
-                    notes
-                ) +
-                "%0A";
+            return;
 
         }
 
 
-        message +=
-            "%0A*ORDER DETAILS*%0A";
-
-
-        cart.forEach(
-            function(item) {
-
-                message +=
-
-                    encodeURIComponent(
-                        item.name
-                    ) +
-
-                    " x " +
-
-                    item.quantity +
-
-                    "%0A";
-
-            }
-        );
+        const orderNumber =
+            generateOrderNumber();
 
 
         const total =
             getCartTotal();
 
 
-        if (total > 0) {
+        const order = {
 
-            message +=
+            orderNumber:
+                orderNumber,
 
-                "%0A*TOTAL: PKR " +
+            customer: {
 
-                total.toLocaleString(
-                    "en-PK"
-                ) +
+                name:
+                    name,
 
-                "*%0A";
+                phone:
+                    phone,
 
-        } else {
+                city:
+                    city,
 
-            message +=
+                address:
+                    address,
 
-                "%0A*TOTAL: PRICE TO BE CONFIRMED*%0A";
+                notes:
+                    notes
 
-        }
+            },
+
+            paymentMethod:
+                "Cash on Delivery",
+
+            items:
+                cart.map(
+                    function(item) {
+
+                        return {
+
+                            id:
+                                item.id,
+
+                            name:
+                                item.name,
+
+                            quantity:
+                                item.quantity,
+
+                            price:
+                                item.price,
+
+                            image:
+                                item.image
+
+                        };
+
+                    }
+                ),
+
+            total:
+                total,
+
+            createdAt:
+                new Date().toISOString()
+
+        };
 
 
-        message +=
-            "Payment: Cash on Delivery%0A";
+        saveOrderLocally(order);
 
 
-        message +=
-            "%0APlease confirm my order. Thank you!";
+        const message =
+            createWhatsAppMessage(
+                orderNumber,
+                name,
+                phone,
+                city,
+                address,
+                notes
+            );
 
 
         const whatsappURL =
-            "https://wa.me/923705260258?text=" +
-            message;
+            "https://wa.me/" +
+            WHATSAPP_NUMBER +
+            "?text=" +
+            encodeURIComponent(message);
 
+
+        orderNumberDisplay.textContent =
+            "ORDER " +
+            orderNumber;
+
+
+        successWhatsapp.href =
+            whatsappURL;
+
+
+        checkoutMainContent.style.display =
+            "none";
+
+
+        orderSuccess.classList.add(
+            "show"
+        );
+
+
+        /*
+         * Open WhatsApp automatically.
+         */
 
         window.open(
             whatsappURL,
@@ -4833,9 +4871,194 @@ checkoutForm.addEventListener(
         );
 
 
+        /*
+         * Clear cart after preparing order.
+         */
+
+        cart = [];
+
+
+        saveCart();
+
+        renderCart();
+
+        updateCartCount();
+
+
+        checkoutForm.reset();
+
+
         showToast(
-            "Order prepared for WhatsApp."
+            "Your order has been prepared."
         );
+
+    }
+);
+
+
+/* =========================================================
+   CART BUTTON
+========================================================= */
+
+cartButton.addEventListener(
+    "click",
+    openCart
+);
+
+
+/* =========================================================
+   CART CLOSE
+========================================================= */
+
+cartClose.addEventListener(
+    "click",
+    closeCart
+);
+
+
+cartOverlay.addEventListener(
+    "click",
+    closeCart
+);
+
+
+/* =========================================================
+   CONTINUE SHOPPING
+========================================================= */
+
+continueShopping.addEventListener(
+    "click",
+    closeCart
+);
+
+
+/* =========================================================
+   CHECKOUT BUTTON
+========================================================= */
+
+checkoutButton.addEventListener(
+    "click",
+    openCheckout
+);
+
+
+/* =========================================================
+   CHECKOUT CLOSE
+========================================================= */
+
+checkoutClose.addEventListener(
+    "click",
+    closeCheckout
+);
+
+
+checkoutOverlay.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target ===
+            checkoutOverlay
+        ) {
+
+            closeCheckout();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ADD TO CART BUTTONS
+========================================================= */
+
+document.querySelectorAll(
+    ".add-cart"
+).forEach(
+    function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                addToCart(
+                    this.dataset.id
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   BUY NOW BUTTONS
+========================================================= */
+
+document.querySelectorAll(
+    ".buy-now"
+).forEach(
+    function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                const productId =
+                    this.dataset.id;
+
+
+                addToCart(
+                    productId,
+                    false
+                );
+
+
+                openCheckout();
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   UPDATE CART WHEN ANOTHER TAB CHANGES IT
+========================================================= */
+
+window.addEventListener(
+    "storage",
+    function(event) {
+
+        if (
+            event.key ===
+            CART_KEY
+        ) {
+
+            try {
+
+                cart =
+                    JSON.parse(
+                        event.newValue
+                    ) || [];
+
+            } catch (error) {
+
+                cart = [];
+
+            }
+
+
+            renderCart();
+
+            updateCartCount();
+
+            renderCheckoutSummary();
+
+        }
 
     }
 );
@@ -4871,6 +5094,8 @@ document.addEventListener(
 renderCart();
 
 updateCartCount();
+
+renderCheckoutSummary();
 
 
 </script>
