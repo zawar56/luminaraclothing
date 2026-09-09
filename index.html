@@ -742,64 +742,41 @@ body.menu-open .menu-panel {
 
     padding: 35px;
 
-    background: var(--cream-dark);
+    background: #ddd;
 
 }
 
-.collection-card:nth-child(1) {
 
-    background:
-        linear-gradient(
-            145deg,
-            #d9d1c6,
-            #f7f3ed
-        );
+/* REAL COLLECTION IMAGES */
 
-}
-
-.collection-card:nth-child(2) {
-
-    background:
-        linear-gradient(
-            145deg,
-            #c9c0b5,
-            #eee9e1
-        );
-
-}
-
-.collection-card:nth-child(3) {
-
-    background:
-        linear-gradient(
-            145deg,
-            #ded9d0,
-            #bdb5a8
-        );
-
-}
-
-.collection-card::before {
-
-    content: "";
+.collection-card img {
 
     position: absolute;
 
-    width: 210px;
+    inset: 0;
 
-    height: 330px;
+    width: 100%;
 
-    left: 50%;
+    height: 100%;
 
-    top: 35%;
+    object-fit: cover;
 
-    transform: translate(-50%,-50%);
+    object-position: center;
 
-    border-radius: 100px 100px 20px 20px;
+    display: block;
 
-    border: 1px solid rgba(0,0,0,.12);
+    transition: transform .6s ease;
 
 }
+
+.collection-card:hover img {
+
+    transform: scale(1.04);
+
+}
+
+
+/* DARK IMAGE OVERLAY */
 
 .collection-card::after {
 
@@ -807,19 +784,18 @@ body.menu-open .menu-panel {
 
     position: absolute;
 
-    width: 100px;
+    inset: 0;
 
-    height: 150px;
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.72),
+            rgba(0,0,0,.05) 65%
+        );
 
-    left: 50%;
+    z-index: 1;
 
-    top: 32%;
-
-    transform: translate(-50%,-50%);
-
-    border-radius: 50px 50px 20px 20px;
-
-    background: rgba(255,255,255,.35);
+    pointer-events: none;
 
 }
 
@@ -828,6 +804,8 @@ body.menu-open .menu-panel {
     position: relative;
 
     z-index: 2;
+
+    color: var(--white);
 
 }
 
@@ -863,7 +841,7 @@ body.menu-open .menu-panel {
 
     text-transform: uppercase;
 
-    border-bottom: 1px solid var(--black);
+    border-bottom: 1px solid var(--white);
 
     padding-bottom: 4px;
 
@@ -904,115 +882,54 @@ body.menu-open .menu-panel {
 
     overflow: hidden;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
+    background: #eee;
 
 }
 
-.product-card:nth-child(1) .product-visual {
 
-    background:
-        linear-gradient(
-            145deg,
-            #e9e2d7,
-            #cfc3b2
-        );
+/* REAL PRODUCT IMAGES */
 
-}
+.product-visual img {
 
-.product-card:nth-child(2) .product-visual {
+    width: 100%;
 
-    background:
-        linear-gradient(
-            145deg,
-            #e7ddd9,
-            #c8b7b1
-        );
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+    transition: transform .6s ease;
 
 }
 
-.product-card:nth-child(3) .product-visual {
+.product-card:hover .product-visual img {
 
-    background:
-        linear-gradient(
-            145deg,
-            #ddd9d1,
-            #aaa394
-        );
+    transform: scale(1.035);
 
 }
 
-.product-card:nth-child(4) .product-visual {
 
-    background:
-        linear-gradient(
-            145deg,
-            #d5d0c9,
-            #aaa59e
-        );
+/* IMAGE OVERLAY */
 
-}
-
-.product-silhouette {
-
-    position: relative;
-
-    width: 170px;
-
-    height: 290px;
-
-    border-radius: 90px 90px 25px 25px;
-
-    background: rgba(255,255,255,.35);
-
-    border: 1px solid rgba(0,0,0,.08);
-
-}
-
-.product-silhouette::before {
+.product-visual::after {
 
     content: "";
 
     position: absolute;
 
-    width: 70px;
+    inset: 0;
 
-    height: 70px;
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.20),
+            transparent 50%
+        );
 
-    border-radius: 50%;
-
-    background: rgba(255,255,255,.42);
-
-    top: -35px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-}
-
-.product-silhouette::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 80px;
-
-    height: 180px;
-
-    left: 50%;
-
-    top: 55px;
-
-    transform: translateX(-50%);
-
-    border-left: 1px solid rgba(0,0,0,.08);
-
-    border-right: 1px solid rgba(0,0,0,.08);
+    pointer-events: none;
 
 }
 
@@ -1023,6 +940,8 @@ body.menu-open .menu-panel {
     top: 18px;
 
     left: 18px;
+
+    z-index: 3;
 
     font-size: 8px;
 
@@ -1108,6 +1027,14 @@ body.menu-open .menu-panel {
 
     transition: .25s;
 
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
 }
 
 .product-button:hover {
@@ -1144,7 +1071,7 @@ body.menu-open .menu-panel {
 
 
 /* =========================================================
-   EDITORIAL / MIDDLE IMAGE
+   EDITORIAL
 ========================================================= */
 
 .editorial {
@@ -1513,7 +1440,7 @@ body.menu-open .menu-panel {
 
 
 /* =========================================================
-   WHATSAPP FLOATING BUTTON
+   WHATSAPP
 ========================================================= */
 
 .whatsapp-float {
@@ -1566,7 +1493,7 @@ body.menu-open .menu-panel {
 
 
 /* =========================================================
-   CART OVERLAY
+   CART
 ========================================================= */
 
 .cart-overlay {
@@ -1594,11 +1521,6 @@ body.cart-open .cart-overlay {
     visibility: visible;
 
 }
-
-
-/* =========================================================
-   CART DRAWER
-========================================================= */
 
 .cart-drawer {
 
@@ -1734,25 +1656,19 @@ body.cart-open .cart-drawer {
 
     height: 95px;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
+    overflow: hidden;
 
     background: var(--cream-dark);
 
 }
 
-.cart-item-silhouette {
+.cart-item-visual img {
 
-    width: 38px;
+    width: 100%;
 
-    height: 65px;
+    height: 100%;
 
-    border-radius: 25px 25px 8px 8px;
-
-    background: rgba(255,255,255,.5);
+    object-fit: cover;
 
 }
 
@@ -1934,7 +1850,7 @@ body.cart-open .cart-drawer {
 
 
 /* =========================================================
-   CHECKOUT MODAL
+   CHECKOUT
 ========================================================= */
 
 .checkout-overlay {
@@ -2519,34 +2435,6 @@ body.checkout-open .checkout-overlay {
 
     }
 
-    .product-silhouette {
-
-        width: 110px;
-
-        height: 200px;
-
-    }
-
-    .product-silhouette::before {
-
-        width: 45px;
-
-        height: 45px;
-
-        top: -23px;
-
-    }
-
-    .product-silhouette::after {
-
-        width: 50px;
-
-        height: 125px;
-
-        top: 38px;
-
-    }
-
     .product-name {
 
         font-size: 21px;
@@ -2864,6 +2752,10 @@ textarea:focus-visible {
         </li>
 
         <li>
+            <a href="shop.html">Shop</a>
+        </li>
+
+        <li>
             <a href="#new-arrivals">New Arrivals</a>
         </li>
 
@@ -2908,7 +2800,6 @@ textarea:focus-visible {
 
 <!-- =======================================================
      HERO
-     pic.jpg appears HERE only for the first/main page
 ======================================================= -->
 
 <section class="hero" id="home">
@@ -2946,7 +2837,7 @@ textarea:focus-visible {
         </p>
 
         <a
-            href="#new-arrivals"
+            href="shop.html"
             class="hero-button">
 
             Shop Now
@@ -2960,7 +2851,6 @@ textarea:focus-visible {
 
 <!-- =======================================================
      COLLECTIONS
-     NO pic.jpg here
 ======================================================= -->
 
 <section
@@ -2993,7 +2883,14 @@ textarea:focus-visible {
         <div class="collection-grid">
 
 
+            <!-- NAZAKAT -->
+
             <article class="collection-card">
+
+                <img
+                    src="Nazakat1.jpg"
+                    alt="Nazakat collection"
+                    loading="lazy">
 
                 <div class="collection-content">
 
@@ -3002,11 +2899,11 @@ textarea:focus-visible {
                     </div>
 
                     <h3 class="collection-title">
-                        Everyday
+                        Nazakat
                     </h3>
 
                     <a
-                        href="#new-arrivals"
+                        href="shop.html"
                         class="collection-link">
                         Discover
                     </a>
@@ -3016,7 +2913,14 @@ textarea:focus-visible {
             </article>
 
 
+            <!-- RAAT KI RANI -->
+
             <article class="collection-card">
+
+                <img
+                    src="Raat ki rani1.jpg"
+                    alt="Raat ki Rani collection"
+                    loading="lazy">
 
                 <div class="collection-content">
 
@@ -3025,11 +2929,11 @@ textarea:focus-visible {
                     </div>
 
                     <h3 class="collection-title">
-                        Signature
+                        Raat ki Rani
                     </h3>
 
                     <a
-                        href="#new-arrivals"
+                        href="shop.html"
                         class="collection-link">
                         Discover
                     </a>
@@ -3039,7 +2943,14 @@ textarea:focus-visible {
             </article>
 
 
+            <!-- NOOR E GUL -->
+
             <article class="collection-card">
+
+                <img
+                    src="Noor e gul2.jpg"
+                    alt="Noor e Gul collection"
+                    loading="lazy">
 
                 <div class="collection-content">
 
@@ -3048,11 +2959,11 @@ textarea:focus-visible {
                     </div>
 
                     <h3 class="collection-title">
-                        Occasion
+                        Noor e Gul
                     </h3>
 
                     <a
-                        href="#new-arrivals"
+                        href="shop.html"
                         class="collection-link">
                         Discover
                     </a>
@@ -3071,7 +2982,6 @@ textarea:focus-visible {
 
 <!-- =======================================================
      NEW ARRIVALS
-     Products intentionally do NOT use pic.jpg
 ======================================================= -->
 
 <section
@@ -3110,7 +3020,7 @@ textarea:focus-visible {
             <article
                 class="product-card"
                 data-id="classic-edit"
-                data-name="The Classic Edit"
+                data-name="Mahogany Muse"
                 data-price="4999">
 
 
@@ -3120,7 +3030,10 @@ textarea:focus-visible {
                         New
                     </span>
 
-                    <div class="product-silhouette"></div>
+                    <img
+                        src="Mahogany muse.jpg"
+                        alt="Mahogany Muse"
+                        loading="lazy">
 
                 </div>
 
@@ -3128,7 +3041,7 @@ textarea:focus-visible {
                 <div class="product-info">
 
                     <h3 class="product-name">
-                        The Classic Edit
+                        Mahogany Muse
                     </h3>
 
                     <p class="product-subtitle">
@@ -3163,7 +3076,7 @@ textarea:focus-visible {
 
                         <a
                             class="product-button product-whatsapp"
-                            href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20The%20Classic%20Edit%20%28PKR%204%2C999%29."
+                            href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20Mahogany%20Muse%20%28PKR%204%2C999%29."
                             target="_blank"
                             rel="noopener">
 
@@ -3183,7 +3096,7 @@ textarea:focus-visible {
             <article
                 class="product-card"
                 data-id="signature"
-                data-name="The Signature"
+                data-name="Gulbadan"
                 data-price="5499">
 
 
@@ -3193,7 +3106,10 @@ textarea:focus-visible {
                         Featured
                     </span>
 
-                    <div class="product-silhouette"></div>
+                    <img
+                        src="Gulbadan.jpg"
+                        alt="Gulbadan"
+                        loading="lazy">
 
                 </div>
 
@@ -3201,7 +3117,7 @@ textarea:focus-visible {
                 <div class="product-info">
 
                     <h3 class="product-name">
-                        The Signature
+                        Gulbadan
                     </h3>
 
                     <p class="product-subtitle">
@@ -3236,7 +3152,7 @@ textarea:focus-visible {
 
                         <a
                             class="product-button product-whatsapp"
-                            href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20The%20Signature%20%28PKR%205%2C499%29."
+                            href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20Gulbadan%20%28PKR%205%2C499%29."
                             target="_blank"
                             rel="noopener">
 
@@ -3256,7 +3172,7 @@ textarea:focus-visible {
             <article
                 class="product-card"
                 data-id="muse"
-                data-name="The Muse"
+                data-name="Mahru"
                 data-price="6499">
 
 
@@ -3266,7 +3182,10 @@ textarea:focus-visible {
                         New
                     </span>
 
-                    <div class="product-silhouette"></div>
+                    <img
+                        src="Mahru.jpg"
+                        alt="Mahru"
+                        loading="lazy">
 
                 </div>
 
@@ -3274,7 +3193,7 @@ textarea:focus-visible {
                 <div class="product-info">
 
                     <h3 class="product-name">
-                        The Muse
+                        Mahru
                     </h3>
 
                     <p class="product-subtitle">
@@ -3309,7 +3228,7 @@ textarea:focus-visible {
 
                         <a
                             class="product-button product-whatsapp"
-                            href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20The%20Muse%20%28PKR%206%2C499%29."
+                            href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20Mahru%20%28PKR%206%2C499%29."
                             target="_blank"
                             rel="noopener">
 
@@ -3329,7 +3248,7 @@ textarea:focus-visible {
             <article
                 class="product-card"
                 data-id="luxe-edit"
-                data-name="The Luxe Edit"
+                data-name="Nazakat"
                 data-price="7499">
 
 
@@ -3339,7 +3258,10 @@ textarea:focus-visible {
                         Limited
                     </span>
 
-                    <div class="product-silhouette"></div>
+                    <img
+                        src="Nazakat1.jpg"
+                        alt="Nazakat"
+                        loading="lazy">
 
                 </div>
 
@@ -3347,7 +3269,7 @@ textarea:focus-visible {
                 <div class="product-info">
 
                     <h3 class="product-name">
-                        The Luxe Edit
+                        Nazakat
                     </h3>
 
                     <p class="product-subtitle">
@@ -3382,7 +3304,7 @@ textarea:focus-visible {
 
                         <a
                             class="product-button product-whatsapp"
-                            href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20The%20Luxe%20Edit%20%28PKR%207%2C499%29."
+                            href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20Nazakat%20%28PKR%207%2C499%29."
                             target="_blank"
                             rel="noopener">
 
@@ -3405,8 +3327,7 @@ textarea:focus-visible {
 
 
 <!-- =======================================================
-     EDITORIAL / MIDDLE
-     pic.jpg appears HERE only
+     EDITORIAL
 ======================================================= -->
 
 <section class="section editorial">
@@ -3420,7 +3341,8 @@ textarea:focus-visible {
 
                 <img
                     src="pic.jpg"
-                    alt="luminaraclothing editorial fashion">
+                    alt="luminaraclothing editorial fashion"
+                    loading="lazy">
 
             </div>
 
@@ -3448,7 +3370,7 @@ textarea:focus-visible {
                 </p>
 
                 <a
-                    href="#new-arrivals"
+                    href="shop.html"
                     class="editorial-button">
 
                     Explore Collection
@@ -3719,6 +3641,12 @@ textarea:focus-visible {
                     </li>
 
                     <li>
+                        <a href="shop.html">
+                            Shop
+                        </a>
+                    </li>
+
+                    <li>
                         <a href="#new-arrivals">
                             New Arrivals
                         </a>
@@ -3789,7 +3717,7 @@ textarea:focus-visible {
                     </li>
 
                     <li>
-                        <a href="#new-arrivals">
+                        <a href="shop.html">
                             Shop Now
                         </a>
                     </li>
@@ -3956,8 +3884,6 @@ textarea:focus-visible {
         <div class="checkout-content">
 
 
-            <!-- FORM -->
-
             <div class="checkout-form-area">
 
                 <div class="form-heading">
@@ -4095,8 +4021,6 @@ textarea:focus-visible {
             </div>
 
 
-            <!-- ORDER SUMMARY -->
-
             <div class="checkout-summary">
 
                 <div class="form-heading">
@@ -4145,7 +4069,6 @@ textarea:focus-visible {
 
 <script>
 
-
 /* =========================================================
    PRODUCT DATA
 ========================================================= */
@@ -4156,7 +4079,7 @@ const products = {
 
         id: "classic-edit",
 
-        name: "The Classic Edit",
+        name: "Mahogany Muse",
 
         price: 4999
 
@@ -4166,7 +4089,7 @@ const products = {
 
         id: "signature",
 
-        name: "The Signature",
+        name: "Gulbadan",
 
         price: 5499
 
@@ -4176,7 +4099,7 @@ const products = {
 
         id: "muse",
 
-        name: "The Muse",
+        name: "Mahru",
 
         price: 6499
 
@@ -4186,7 +4109,7 @@ const products = {
 
         id: "luxe-edit",
 
-        name: "The Luxe Edit",
+        name: "Nazakat",
 
         price: 7499
 
@@ -4422,7 +4345,6 @@ function changeQuantity(productId, amount) {
 
 function renderCart() {
 
-
     if (cart.length === 0) {
 
         cartItems.innerHTML = `
@@ -4443,14 +4365,13 @@ function renderCart() {
 
     } else {
 
-
         cartItems.innerHTML = cart.map(item => `
 
             <div class="cart-item">
 
                 <div class="cart-item-visual">
 
-                    <div class="cart-item-silhouette"></div>
+                    ${getProductImage(item.id)}
 
                 </div>
 
@@ -4513,6 +4434,38 @@ function renderCart() {
 
     cartTotal.textContent =
         formatPrice(getCartTotal());
+
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE FOR CART
+========================================================= */
+
+function getProductImage(productId) {
+
+    const images = {
+
+        "classic-edit": "Mahogany muse.jpg",
+
+        "signature": "Gulbadan.jpg",
+
+        "muse": "Mahru.jpg",
+
+        "luxe-edit": "Nazakat1.jpg"
+
+    };
+
+    const image = images[productId];
+
+    if (!image) return "";
+
+    return `
+        <img
+            src="${image}"
+            alt=""
+            loading="lazy">
+    `;
 
 }
 
@@ -4781,7 +4734,6 @@ document.querySelectorAll(".buy-now")
                 body.classList.add(
                     "checkout-open"
                 );
-
 
             }
         );
