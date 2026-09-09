@@ -434,6 +434,55 @@ header{
 }
 
 
+
+/* =========================
+   CART CONFIRMATION
+========================= */
+
+function showCartConfirmation(name, image, size){
+
+    document.getElementById("cartConfirmationImage").src = image;
+    document.getElementById("cartConfirmationImage").alt = name;
+    document.getElementById("cartConfirmationName").textContent = name;
+
+    const sizeNames = {
+        XS: "Extra Small",
+        S: "Small",
+        M: "Medium",
+        L: "Large"
+    };
+
+    document.getElementById("cartConfirmationSize").textContent =
+        sizeNames[size] || size || "Not selected";
+
+    document.getElementById("cartConfirmationCount").textContent =
+        cart.reduce(function(total, item){
+            return total + Number(item.quantity || 0);
+        }, 0);
+
+    closeProductModal();
+
+    document
+        .getElementById("cartConfirmationOverlay")
+        .classList.add("active");
+}
+
+function closeCartConfirmation(event){
+
+    if(
+        event &&
+        event.target &&
+        event.target.id !== "cartConfirmationOverlay"
+    ){
+        return;
+    }
+
+    document
+        .getElementById("cartConfirmationOverlay")
+        .classList.remove("active");
+}
+
+
 /* =========================
    PRODUCT DETAILS MODAL
 ========================= */
@@ -629,6 +678,160 @@ header{
     text-transform:uppercase;
 }
 
+
+
+/* =========================
+   CART CONFIRMATION
+========================= */
+
+.cart-confirmation-overlay{
+    position:fixed;
+    inset:0;
+    z-index:4200;
+    background:rgba(0,0,0,.18);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:.25s;
+}
+
+.cart-confirmation-overlay.active{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
+
+.cart-confirmation{
+    position:fixed;
+    top:0;
+    right:0;
+    width:min(590px,100%);
+    min-height:100vh;
+    background:#fff;
+    box-shadow:-12px 0 35px rgba(0,0,0,.12);
+    padding:10px 18px 28px;
+    transform:translateX(100%);
+    transition:.3s ease;
+    display:flex;
+    flex-direction:column;
+}
+
+.cart-confirmation-overlay.active .cart-confirmation{
+    transform:translateX(0);
+}
+
+.cart-confirmation-close{
+    width:28px;
+    height:28px;
+    margin-left:auto;
+    border:0;
+    background:transparent;
+    font-size:28px;
+    line-height:1;
+    cursor:pointer;
+    font-weight:300;
+}
+
+.cart-confirmation-content{
+    display:grid;
+    grid-template-columns:1.05fr 1fr;
+    gap:48px;
+    align-items:center;
+    flex:1;
+    padding:0 0 15px;
+}
+
+.cart-confirmation-heading{
+    display:inline-block;
+    border-bottom:1px solid #111;
+    padding-bottom:6px;
+    font-size:14px;
+    margin-bottom:26px;
+}
+
+.cart-confirmation-item{
+    display:grid;
+    grid-template-columns:85px 1fr;
+    gap:18px;
+    align-items:start;
+}
+
+.cart-confirmation-item img{
+    width:85px;
+    height:115px;
+    object-fit:cover;
+}
+
+.cart-confirmation-item h3{
+    font-size:19px;
+    line-height:1.25;
+    margin:0 0 12px;
+}
+
+.cart-confirmation-item p{
+    margin:0;
+    color:#777;
+    font-size:16px;
+    line-height:1.5;
+}
+
+.cart-confirmation-actions{
+    border-left:1px solid #ddd;
+    padding-left:48px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.cart-confirmation-actions button{
+    width:100%;
+    min-height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:0;
+    cursor:pointer;
+    font-size:14px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.cart-confirmation-view,
+.cart-confirmation-checkout{
+    background:#050505;
+    color:#fff;
+}
+
+.cart-confirmation-continue{
+    margin-top:74px;
+    width:max-content !important;
+    min-width:202px;
+    padding:0 14px;
+    background:#15947f;
+    color:#fff;
+}
+
+@media(max-width:700px){
+    .cart-confirmation{
+        width:100%;
+    }
+
+    .cart-confirmation-content{
+        grid-template-columns:1fr;
+        gap:28px;
+    }
+
+    .cart-confirmation-actions{
+        border-left:0;
+        border-top:1px solid #ddd;
+        padding-left:0;
+        padding-top:24px;
+    }
+
+    .cart-confirmation-continue{
+        margin-top:20px;
+    }
+}
 
 /* =========================
    CHECKOUT
@@ -1264,6 +1467,10 @@ footer h3{
                     alt="Nazakat 1"
                 >
 
+                <button type="button" class="collection-lock-button" onclick="openCollectionModal('Nazakat','./Nazakat1.jpg')" aria-label="View Nazakat" title="View Nazakat">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="10" width="12" height="10" rx="1.5"></rect><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"></path></svg>
+                </button>
+
                 <div class="collection-overlay">
                     <h3>Nazakat</h3>
                 </div>
@@ -1278,6 +1485,10 @@ footer h3{
                     alt="Nazakat 2"
                 >
 
+                <button type="button" class="collection-lock-button" onclick="openCollectionModal('Nazakat','./Nazakat2.jpg')" aria-label="View Nazakat" title="View Nazakat">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="10" width="12" height="10" rx="1.5"></rect><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"></path></svg>
+                </button>
+
                 <div class="collection-overlay">
                     <h3>Nazakat</h3>
                 </div>
@@ -1291,6 +1502,10 @@ footer h3{
                     src="./Nazakat3.jpg"
                     alt="Nazakat 3"
                 >
+
+                <button type="button" class="collection-lock-button" onclick="openCollectionModal('Nazakat','./Nazakat3.jpg')" aria-label="View Nazakat" title="View Nazakat">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="10" width="12" height="10" rx="1.5"></rect><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"></path></svg>
+                </button>
 
                 <div class="collection-overlay">
                     <h3>Nazakat</h3>
@@ -1564,6 +1779,85 @@ footer h3{
     </div>
 
 </aside>
+
+
+
+<!-- =========================
+     CART CONFIRMATION
+========================= -->
+
+<div
+    class="cart-confirmation-overlay"
+    id="cartConfirmationOverlay"
+    onclick="closeCartConfirmation(event)"
+>
+    <aside
+        class="cart-confirmation"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cartConfirmationHeading"
+        onclick="event.stopPropagation()"
+    >
+        <button
+            type="button"
+            class="cart-confirmation-close"
+            onclick="closeCartConfirmation()"
+            aria-label="Close"
+        >×</button>
+
+        <div class="cart-confirmation-content">
+
+            <div>
+                <div
+                    class="cart-confirmation-heading"
+                    id="cartConfirmationHeading"
+                >
+                    This Item Has Been Added In Your Cart
+                </div>
+
+                <div class="cart-confirmation-item">
+                    <img id="cartConfirmationImage" src="" alt="">
+                    <div>
+                        <h3 id="cartConfirmationName"></h3>
+                        <p>
+                            SIZE:
+                            <span id="cartConfirmationSize">Not selected</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-confirmation-actions">
+
+                <button
+                    type="button"
+                    class="cart-confirmation-view"
+                    onclick="closeCartConfirmation(); openCart();"
+                >
+                    View Cart (<span id="cartConfirmationCount">1</span>)
+                </button>
+
+                <button
+                    type="button"
+                    class="cart-confirmation-checkout"
+                    onclick="closeCartConfirmation(); openCheckout();"
+                >
+                    Checkout
+                </button>
+
+                <button
+                    type="button"
+                    class="cart-confirmation-continue"
+                    onclick="closeCartConfirmation()"
+                >
+                    Continue Shopping
+                </button>
+
+            </div>
+
+        </div>
+    </aside>
+</div>
 
 
 <!-- =========================
@@ -1855,10 +2149,11 @@ function addToCart(
     }
 
     saveCart();
-    openCart();
-    showToast(
-        name + " added to your cart" +
-        (size ? " (Size " + size + ")" : "")
+
+    showCartConfirmation(
+        name,
+        image,
+        size
     );
 }
 
@@ -1904,7 +2199,7 @@ function openCollectionModal(collectionName, imageSrc){
     document.getElementById("productModalImage").src = imageSrc;
     document.getElementById("productModalImage").alt = collectionName;
     document.getElementById("productModalTitle").textContent = collectionName;
-    document.querySelector(".product-modal-label").textContent = "Collection";
+    document.querySelector(".product-modal-label").textContent = "COLLECTION";
 
     document.querySelector(".product-modal-price-row").style.display = "none";
     document.querySelector(".product-modal-divider").style.display = "none";
