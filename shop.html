@@ -436,54 +436,6 @@ header{
 
 
 /* =========================
-   CART CONFIRMATION
-========================= */
-
-function showCartConfirmation(name, image, size){
-
-    document.getElementById("cartConfirmationImage").src = image;
-    document.getElementById("cartConfirmationImage").alt = name;
-    document.getElementById("cartConfirmationName").textContent = name;
-
-    const sizeNames = {
-        XS: "Extra Small",
-        S: "Small",
-        M: "Medium",
-        L: "Large"
-    };
-
-    document.getElementById("cartConfirmationSize").textContent =
-        sizeNames[size] || size || "Not selected";
-
-    document.getElementById("cartConfirmationCount").textContent =
-        cart.reduce(function(total, item){
-            return total + Number(item.quantity || 0);
-        }, 0);
-
-    closeProductModal();
-
-    document
-        .getElementById("cartConfirmationOverlay")
-        .classList.add("active");
-}
-
-function closeCartConfirmation(event){
-
-    if(
-        event &&
-        event.target &&
-        event.target.id !== "cartConfirmationOverlay"
-    ){
-        return;
-    }
-
-    document
-        .getElementById("cartConfirmationOverlay")
-        .classList.remove("active");
-}
-
-
-/* =========================
    PRODUCT DETAILS MODAL
 ========================= */
 
@@ -2122,39 +2074,52 @@ function saveCart(){
    ADD TO CART
 ========================= */
 
-function addToCart(
-    name,
-    price,
-    image,
-    size=""
-){
+function addToCart(name, price, image, size="", showConfirmation=true, quantity=1){
 
-    const existing =
-        cart.find(
-            item =>
-                item.name === name &&
-                (item.size || "") === size
-        );
+    const existing = cart.find(item =>
+        item.name === name &&
+        (item.size || "") === size
+    );
 
     if(existing){
-        existing.quantity += 1;
+        existing.quantity += quantity;
     }else{
         cart.push({
             name:name,
             price:Number(price),
             image:image,
             size:size,
-            quantity:1
+            quantity:quantity
         });
     }
 
     saveCart();
 
-    showCartConfirmation(
-        name,
-        image,
-        size
-    );
+    if(showConfirmation){
+        showCartConfirmation(name, image, size);
+    }
+}
+
+function showCartConfirmation(name, image, size){
+    const imageEl = document.getElementById("cartConfirmationImage");
+    const nameEl = document.getElementById("cartConfirmationName");
+    const sizeEl = document.getElementById("cartConfirmationSize");
+    const countEl = document.getElementById("cartConfirmationCount");
+    const overlay = document.getElementById("cartConfirmationOverlay");
+
+    if(imageEl){ imageEl.src = image || ""; imageEl.alt = name || ""; }
+    if(nameEl){ nameEl.textContent = name || ""; }
+    if(sizeEl){ sizeEl.textContent = size || "Not selected"; }
+    if(countEl){
+        countEl.textContent = cart.reduce((total,item) => total + Number(item.quantity || 0), 0);
+    }
+    if(overlay){ overlay.classList.add("active"); }
+}
+
+function closeCartConfirmation(event){
+    if(event && event.target && event.target.id !== "cartConfirmationOverlay") return;
+    const overlay = document.getElementById("cartConfirmationOverlay");
+    if(overlay) overlay.classList.remove("active");
 }
 
 
@@ -2243,27 +2208,41 @@ document.querySelectorAll(".product-size").forEach(function(button){
 });
 
 function addSelectedProductToCart(){
-    if(!selectedProduct){
-        return;
-    }
+    if(!selectedProduct) return;
 
-    for(let i=0; i<selectedProductQuantity; i++){
-        addToCart(
-            selectedProduct.name,
-            selectedProduct.price,
-            selectedProduct.image,
-            selectedProductSize
-        );
-    }
+    addToCart(
+        selectedProduct.name,
+        selectedProduct.price,
+        selectedProduct.image,
+        selectedProductSize,
+        false,
+        selectedProductQuantity
+    );
+
+    const productName = selectedProduct.name;
+    const productImage = selectedProduct.image;
+    const productSize = selectedProductSize;
 
     closeProductModal();
+    showCartConfirmation(productName, productImage, productSize);
 }
+
 
 document.getElementById("productModalOverlay").addEventListener("click", function(event){
     if(event.target === this){
         closeProductModal();
     }
 });
+
+
+const cartConfirmationOverlay = document.getElementById("cartConfirmationOverlay");
+if(cartConfirmationOverlay){
+    cartConfirmationOverlay.addEventListener("click", function(event){
+        if(event.target === cartConfirmationOverlay){
+            closeCartConfirmation();
+        }
+    });
+}
 
 
 /* =========================
@@ -2824,6 +2803,8 @@ document.addEventListener(
             closeCheckout();
 
             closeProductModal();
+
+            closeCartConfirmation();
 
         }
 
