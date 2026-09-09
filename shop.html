@@ -1,1 +1,4881 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Shop Collections | luminaraclothing</title>
+
+    <meta name="description"
+        content="Explore the complete luminaraclothing collection. Discover elegant Pakistani fashion, curated collections and timeless designs.">
+
+    <meta name="keywords"
+        content="luminaraclothing, Pakistani clothing, women's clothing, Pakistani fashion, dresses, unstitched suits, fashion collections">
+
+    <meta name="theme-color" content="#111111">
+
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23111111'/%3E%3Ctext x='50' y='67' font-size='58' text-anchor='middle' fill='%23ffffff' font-family='Georgia'%3EL%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --black: #111111;
+
+    --white: #ffffff;
+
+    --cream: #f8f6f2;
+
+    --cream-dark: #eeeae3;
+
+    --gold: #b49767;
+
+    --grey: #777777;
+
+    --dark-grey: #444444;
+
+    --border: rgba(0,0,0,.12);
+
+    --serif: "Cormorant Garamond", Georgia, serif;
+
+    --sans: "Montserrat", Arial, sans-serif;
+
+    --max-width: 1240px;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family: var(--sans);
+
+    color: var(--black);
+
+    background: var(--white);
+
+    overflow-x: hidden;
+
+}
+
+
+body.cart-open,
+body.checkout-open {
+
+    overflow: hidden;
+
+}
+
+
+button,
+input,
+textarea {
+
+    font-family: inherit;
+
+}
+
+
+button {
+
+    border: 0;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+/* =========================================================
+   ANNOUNCEMENT
+========================================================= */
+
+.announcement {
+
+    background: var(--black);
+
+    color: var(--white);
+
+    text-align: center;
+
+    padding: 10px 15px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+
+    position: sticky;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(255,255,255,.96);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.header-inner {
+
+    width: min(
+        calc(100% - 40px),
+        var(--max-width)
+    );
+
+    margin: auto;
+
+    min-height: 90px;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+}
+
+
+.back-button {
+
+    justify-self: start;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+.back-arrow {
+
+    font-size: 18px;
+
+    line-height: 1;
+
+}
+
+
+.logo {
+
+    text-align: center;
+
+}
+
+
+.logo-name {
+
+    font-family: var(--serif);
+
+    font-size: clamp(30px, 4vw, 43px);
+
+    font-weight: 600;
+
+    line-height: .9;
+
+    letter-spacing: 1px;
+
+}
+
+
+.logo-tagline {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: var(--grey);
+
+}
+
+
+.header-tools {
+
+    justify-self: end;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.header-tool {
+
+    background: transparent;
+
+    color: var(--black);
+
+    cursor: pointer;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.header-tool svg {
+
+    width: 21px;
+
+    height: 21px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.5;
+
+}
+
+
+.cart-count {
+
+    position: absolute;
+
+    top: -9px;
+
+    right: -11px;
+
+    width: 17px;
+
+    height: 17px;
+
+    border-radius: 50%;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    font-size: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   SHOP HERO
+========================================================= */
+
+.shop-hero {
+
+    background: var(--cream);
+
+    padding: 95px 20px 85px;
+
+    text-align: center;
+
+}
+
+
+.shop-label {
+
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+
+}
+
+
+.shop-title {
+
+    font-family: var(--serif);
+
+    font-size: clamp(55px, 9vw, 100px);
+
+    font-weight: 500;
+
+    line-height: .9;
+
+}
+
+
+.shop-description {
+
+    max-width: 620px;
+
+    margin: 25px auto 0;
+
+    color: var(--grey);
+
+    font-size: 12px;
+
+    line-height: 1.9;
+
+}
+
+
+/* =========================================================
+   COLLECTION SECTION
+========================================================= */
+
+.shop-section {
+
+    padding: 100px 0;
+
+}
+
+
+.container {
+
+    width: min(
+        calc(100% - 40px),
+        var(--max-width)
+    );
+
+    margin: 0 auto;
+
+}
+
+
+.section-heading {
+
+    text-align: center;
+
+    margin-bottom: 55px;
+
+}
+
+
+.section-number {
+
+    color: var(--gold);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.section-title {
+
+    font-family: var(--serif);
+
+    font-size: clamp(38px, 5vw, 58px);
+
+    font-weight: 500;
+
+}
+
+
+.section-description {
+
+    max-width: 550px;
+
+    margin: 15px auto 0;
+
+    color: var(--grey);
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   SINGLE COLLECTION GRID
+========================================================= */
+
+.single-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.single-card {
+
+    position: relative;
+
+}
+
+
+.image-container {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 520px;
+
+    background: var(--cream-dark);
+
+    overflow: hidden;
+
+}
+
+
+.image-container img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+    transition: transform .7s ease;
+
+}
+
+
+.single-card:hover img {
+
+    transform: scale(1.035);
+
+}
+
+
+.image-number {
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 15px;
+
+    z-index: 2;
+
+    background: var(--white);
+
+    padding: 8px 10px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+.card-info {
+
+    padding: 18px 0 0;
+
+}
+
+
+.card-name {
+
+    font-family: var(--serif);
+
+    font-size: 28px;
+
+    font-weight: 500;
+
+}
+
+
+.card-subtitle {
+
+    color: var(--grey);
+
+    font-size: 9px;
+
+    margin-top: 4px;
+
+    letter-spacing: .3px;
+
+}
+
+
+.card-price {
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    margin-top: 10px;
+
+}
+
+
+.card-actions {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 7px;
+
+    margin-top: 15px;
+
+}
+
+
+.card-button {
+
+    min-height: 42px;
+
+    padding: 9px 7px;
+
+    border: 1px solid var(--black);
+
+    background: var(--white);
+
+    color: var(--black);
+
+    cursor: pointer;
+
+    font-size: 7px;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+
+    transition: .25s;
+
+}
+
+
+.card-button:hover {
+
+    background: var(--black);
+
+    color: var(--white);
+
+}
+
+
+.card-button.checkout {
+
+    background: var(--black);
+
+    color: var(--white);
+
+}
+
+
+.card-button.checkout:hover {
+
+    background: var(--gold);
+
+    border-color: var(--gold);
+
+}
+
+
+.whatsapp-button {
+
+    grid-column: 1 / -1;
+
+}
+
+
+/* =========================================================
+   SLIDER COLLECTION
+========================================================= */
+
+.slider-section {
+
+    background: var(--cream);
+
+}
+
+
+.slider-card {
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+}
+
+
+.slider-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    height: min(760px, 75vh);
+
+    min-height: 500px;
+
+    background: var(--cream-dark);
+
+    overflow: hidden;
+
+}
+
+
+.slider-wrapper img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    background: var(--cream-dark);
+
+}
+
+
+.slider-badge {
+
+    position: absolute;
+
+    top: 18px;
+
+    left: 18px;
+
+    z-index: 3;
+
+    background: var(--white);
+
+    padding: 9px 12px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+.slider-arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 4;
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.92);
+
+    color: var(--black);
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 23px;
+
+    transition: .25s;
+
+}
+
+
+.slider-arrow:hover {
+
+    background: var(--black);
+
+    color: var(--white);
+
+}
+
+
+.slider-arrow.previous {
+
+    left: 18px;
+
+}
+
+
+.slider-arrow.next {
+
+    right: 18px;
+
+}
+
+
+.slider-dots {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 17px;
+
+}
+
+
+.slider-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--black);
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+
+.slider-dot.active {
+
+    background: var(--black);
+
+}
+
+
+.slide-counter {
+
+    text-align: center;
+
+    margin-top: 10px;
+
+    color: var(--grey);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   SLIDER INFO
+========================================================= */
+
+.slider-info {
+
+    text-align: center;
+
+    padding-top: 25px;
+
+}
+
+
+.slider-name {
+
+    font-family: var(--serif);
+
+    font-size: 36px;
+
+    font-weight: 500;
+
+}
+
+
+.slider-subtitle {
+
+    color: var(--grey);
+
+    font-size: 9px;
+
+    margin-top: 5px;
+
+}
+
+
+.slider-price {
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    margin-top: 10px;
+
+}
+
+
+.slider-actions {
+
+    width: min(500px, 100%);
+
+    margin: 18px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+
+}
+
+
+.slider-actions .whatsapp-button {
+
+    grid-column: 1 / -1;
+
+}
+
+
+/* =========================================================
+   ALL COLLECTIONS DIVIDER
+========================================================= */
+
+.collection-divider {
+
+    text-align: center;
+
+    padding: 90px 20px;
+
+    background: var(--black);
+
+    color: var(--white);
+
+}
+
+
+.collection-divider-label {
+
+    color: var(--gold);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+
+}
+
+
+.collection-divider-title {
+
+    font-family: var(--serif);
+
+    font-size: clamp(42px, 7vw, 75px);
+
+    font-weight: 500;
+
+}
+
+
+/* =========================================================
+   CART OVERLAY
+========================================================= */
+
+.cart-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.55);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 2400;
+
+    transition: .3s;
+
+}
+
+
+body.cart-open .cart-overlay {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+/* =========================================================
+   CART DRAWER
+========================================================= */
+
+.cart-drawer {
+
+    position: fixed;
+
+    top: 0;
+
+    right: 0;
+
+    width: min(460px, 100%);
+
+    height: 100vh;
+
+    background: var(--white);
+
+    z-index: 2500;
+
+    transform: translateX(100%);
+
+    transition: transform .4s ease;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+body.cart-open .cart-drawer {
+
+    transform: translateX(0);
+
+}
+
+
+.cart-header {
+
+    padding: 28px;
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.cart-header h2 {
+
+    font-family: var(--serif);
+
+    font-size: 34px;
+
+    font-weight: 500;
+
+}
+
+
+.cart-close {
+
+    width: 38px;
+
+    height: 38px;
+
+    border: 1px solid var(--border);
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+}
+
+
+.cart-items {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 20px 28px;
+
+}
+
+
+.empty-cart {
+
+    min-height: 300px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+}
+
+
+.empty-cart-title {
+
+    font-family: var(--serif);
+
+    font-size: 31px;
+
+}
+
+
+.empty-cart-text {
+
+    color: var(--grey);
+
+    font-size: 10px;
+
+    margin-top: 8px;
+
+}
+
+
+.cart-item {
+
+    display: grid;
+
+    grid-template-columns: 78px 1fr;
+
+    gap: 15px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.cart-item-image {
+
+    width: 78px;
+
+    height: 95px;
+
+    background: var(--cream-dark);
+
+    overflow: hidden;
+
+}
+
+
+.cart-item-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.cart-item-info {
+
+    min-width: 0;
+
+}
+
+
+.cart-item-name {
+
+    font-family: var(--serif);
+
+    font-size: 22px;
+
+}
+
+
+.cart-item-price {
+
+    font-size: 10px;
+
+    margin-top: 4px;
+
+}
+
+
+.cart-item-controls {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 12px;
+
+}
+
+
+.quantity {
+
+    display: flex;
+
+    align-items: center;
+
+    border: 1px solid var(--border);
+
+}
+
+
+.quantity button {
+
+    width: 29px;
+
+    height: 29px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+}
+
+
+.quantity span {
+
+    width: 30px;
+
+    text-align: center;
+
+    font-size: 9px;
+
+}
+
+
+.remove-item {
+
+    background: transparent;
+
+    color: #999;
+
+    cursor: pointer;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+}
+
+
+.remove-item:hover {
+
+    color: var(--black);
+
+}
+
+
+.cart-footer {
+
+    border-top: 1px solid var(--border);
+
+    padding: 22px 28px 28px;
+
+    background: var(--white);
+
+}
+
+
+.cart-total-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+
+}
+
+
+.cart-total-label {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+.cart-total {
+
+    font-family: var(--serif);
+
+    font-size: 29px;
+
+}
+
+
+.checkout-main-button {
+
+    width: 100%;
+
+    min-height: 52px;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    cursor: pointer;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition: .25s;
+
+}
+
+
+.checkout-main-button:hover {
+
+    background: var(--gold);
+
+}
+
+
+.continue-shopping {
+
+    width: 100%;
+
+    background: transparent;
+
+    color: var(--grey);
+
+    cursor: pointer;
+
+    padding: 15px 0 0;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   CHECKOUT
+========================================================= */
+
+.checkout-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.7);
+
+    z-index: 3000;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: .3s;
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+}
+
+
+body.checkout-open .checkout-overlay {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+.checkout-box {
+
+    width: min(850px, 100%);
+
+    background: var(--white);
+
+    margin: 30px auto;
+
+}
+
+
+.checkout-header {
+
+    padding: 25px 30px;
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.checkout-header h2 {
+
+    font-family: var(--serif);
+
+    font-size: 38px;
+
+    font-weight: 500;
+
+}
+
+
+.checkout-close {
+
+    width: 38px;
+
+    height: 38px;
+
+    background: transparent;
+
+    border: 1px solid var(--border);
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+}
+
+
+.checkout-content {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+}
+
+
+.checkout-form-area {
+
+    padding: 30px;
+
+}
+
+
+.checkout-summary {
+
+    padding: 30px;
+
+    background: var(--cream);
+
+}
+
+
+.form-heading {
+
+    font-family: var(--serif);
+
+    font-size: 27px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.form-group {
+
+    margin-bottom: 17px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 7px;
+
+}
+
+
+.form-group input,
+.form-group textarea {
+
+    width: 100%;
+
+    border: 1px solid #d7d4ce;
+
+    background: var(--white);
+
+    padding: 13px;
+
+    outline: none;
+
+    font-size: 11px;
+
+    color: var(--black);
+
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+
+    border-color: var(--black);
+
+}
+
+
+.form-group textarea {
+
+    min-height: 95px;
+
+    resize: vertical;
+
+}
+
+
+.cod-box {
+
+    border: 1px solid var(--border);
+
+    padding: 15px;
+
+    display: flex;
+
+    gap: 12px;
+
+    align-items: center;
+
+}
+
+
+.cod-radio {
+
+    width: 16px;
+
+    height: 16px;
+
+    border-radius: 50%;
+
+    background: var(--black);
+
+    position: relative;
+
+}
+
+
+.cod-radio::after {
+
+    content: "";
+
+    width: 6px;
+
+    height: 6px;
+
+    background: var(--white);
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    top: 5px;
+
+    left: 5px;
+
+}
+
+
+.cod-title {
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+}
+
+
+.cod-description {
+
+    font-size: 8px;
+
+    color: var(--grey);
+
+    margin-top: 3px;
+
+}
+
+
+.place-order {
+
+    width: 100%;
+
+    min-height: 52px;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    cursor: pointer;
+
+    margin-top: 10px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+.place-order:hover {
+
+    background: var(--gold);
+
+}
+
+
+.checkout-note {
+
+    color: var(--grey);
+
+    font-size: 8px;
+
+    line-height: 1.7;
+
+    margin-top: 10px;
+
+    text-align: center;
+
+}
+
+
+.summary-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.summary-name {
+
+    font-family: var(--serif);
+
+    font-size: 20px;
+
+}
+
+
+.summary-quantity {
+
+    font-size: 8px;
+
+    color: var(--grey);
+
+}
+
+
+.summary-price {
+
+    font-size: 10px;
+
+}
+
+
+.summary-total {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 25px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid var(--black);
+
+}
+
+
+.summary-total span:first-child {
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+}
+
+
+.summary-total span:last-child {
+
+    font-family: var(--serif);
+
+    font-size: 30px;
+
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.whatsapp-float {
+
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    z-index: 1600;
+
+    width: 58px;
+
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: #25D366;
+
+    color: var(--white);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.2);
+
+    transition: .3s;
+
+}
+
+
+.whatsapp-float:hover {
+
+    transform: translateY(-4px);
+
+}
+
+
+.whatsapp-float svg {
+
+    width: 27px;
+
+    height: 27px;
+
+    fill: currentColor;
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 25px;
+
+    transform: translate(-50%, 30px);
+
+    background: var(--black);
+
+    color: var(--white);
+
+    padding: 13px 22px;
+
+    z-index: 4000;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: .3s;
+
+}
+
+
+.toast.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translate(-50%, 0);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    background: var(--black);
+
+    color: var(--white);
+
+    padding: 70px 0 25px;
+
+    text-align: center;
+
+}
+
+
+.footer-logo {
+
+    font-family: var(--serif);
+
+    font-size: 43px;
+
+}
+
+
+.footer-description {
+
+    max-width: 450px;
+
+    margin: 15px auto 0;
+
+    color: #aaa;
+
+    font-size: 10px;
+
+    line-height: 1.9;
+
+}
+
+
+.footer-bottom {
+
+    border-top: 1px solid rgba(255,255,255,.12);
+
+    margin-top: 50px;
+
+    padding-top: 20px;
+
+    color: #777;
+
+    font-size: 8px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .single-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .container {
+
+        width: min(
+            calc(100% - 28px),
+            var(--max-width)
+        );
+
+    }
+
+
+    .announcement {
+
+        font-size: 7px;
+
+        letter-spacing: 1.5px;
+
+    }
+
+
+    .header-inner {
+
+        width: calc(100% - 28px);
+
+        min-height: 75px;
+
+    }
+
+
+    .back-button {
+
+        font-size: 0;
+
+    }
+
+
+    .back-arrow {
+
+        font-size: 22px;
+
+    }
+
+
+    .logo-name {
+
+        font-size: 29px;
+
+    }
+
+
+    .logo-tagline {
+
+        font-size: 5px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .header-tools {
+
+        gap: 13px;
+
+    }
+
+
+    .header-tool svg {
+
+        width: 18px;
+
+        height: 18px;
+
+    }
+
+
+    .shop-hero {
+
+        padding: 70px 20px 65px;
+
+    }
+
+
+    .shop-title {
+
+        font-size: clamp(52px, 15vw, 80px);
+
+    }
+
+
+    .shop-description {
+
+        font-size: 10px;
+
+    }
+
+
+    .shop-section {
+
+        padding: 70px 0;
+
+    }
+
+
+    .single-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 14px;
+
+    }
+
+
+    .image-container {
+
+        height: 390px;
+
+    }
+
+
+    .card-name {
+
+        font-size: 22px;
+
+    }
+
+
+    .card-subtitle {
+
+        line-height: 1.5;
+
+    }
+
+
+    .card-actions {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .whatsapp-button {
+
+        grid-column: auto;
+
+    }
+
+
+    .slider-wrapper {
+
+        height: 72vh;
+
+        min-height: 440px;
+
+    }
+
+
+    .slider-arrow {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 19px;
+
+    }
+
+
+    .slider-arrow.previous {
+
+        left: 10px;
+
+    }
+
+
+    .slider-arrow.next {
+
+        right: 10px;
+
+    }
+
+
+    .slider-name {
+
+        font-size: 31px;
+
+    }
+
+
+    .slider-actions {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .slider-actions .whatsapp-button {
+
+        grid-column: auto;
+
+    }
+
+
+    .checkout-content {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .checkout-summary {
+
+        order: -1;
+
+    }
+
+
+    .checkout-header h2 {
+
+        font-size: 31px;
+
+    }
+
+
+    .checkout-form-area,
+    .checkout-summary {
+
+        padding: 22px;
+
+    }
+
+
+    .whatsapp-float {
+
+        width: 53px;
+
+        height: 53px;
+
+        right: 14px;
+
+        bottom: 14px;
+
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .single-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .image-container {
+
+        height: 520px;
+
+    }
+
+
+    .slider-wrapper {
+
+        height: 68vh;
+
+        min-height: 420px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+
+    outline: 2px solid var(--gold);
+
+    outline-offset: 3px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     ANNOUNCEMENT
+======================================================= -->
+
+<div class="announcement">
+
+    Worldwide & Nationwide Shipping • New Collection Available
+
+</div>
+
+
+<!-- =======================================================
+     HEADER
+======================================================= -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+
+        <a
+            href="index.html"
+            class="back-button"
+            aria-label="Back to home">
+
+            <span class="back-arrow">
+                ←
+            </span>
+
+            <span>
+                Back to Home
+            </span>
+
+        </a>
+
+
+        <a
+            href="index.html"
+            class="logo">
+
+            <div class="logo-name">
+                luminaraclothing
+            </div>
+
+            <span class="logo-tagline">
+                Where Fashion Meets Elegance
+            </span>
+
+        </a>
+
+
+        <div class="header-tools">
+
+
+            <button
+                class="header-tool"
+                id="cartButton"
+                aria-label="Shopping bag">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M5 8h14l-1 13H6L5 8z">
+                    </path>
+
+                    <path
+                        d="M9 8a3 3 0 0 1 6 0">
+                    </path>
+
+                </svg>
+
+                <span
+                    class="cart-count"
+                    id="cartCount">
+                    0
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =======================================================
+     SHOP HERO
+======================================================= -->
+
+<section class="shop-hero">
+
+    <span class="shop-label">
+        luminaraclothing
+    </span>
+
+    <h1 class="shop-title">
+        The Collections
+    </h1>
+
+    <p class="shop-description">
+
+        Discover our complete collection of carefully
+        selected Pakistani fashion, designed with
+        elegance, individuality and timeless style.
+
+    </p>
+
+</section>
+
+
+<!-- =======================================================
+     SINGLE COLLECTIONS
+======================================================= -->
+
+<section class="shop-section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                01 — 04
+            </div>
+
+            <h2 class="section-title">
+                Signature Pieces
+            </h2>
+
+            <p class="section-description">
+
+                Explore some of our signature designs,
+                each selected to bring effortless elegance
+                to your wardrobe.
+
+            </p>
+
+        </div>
+
+
+        <div class="single-grid">
+
+
+            <!-- =================================================
+                 MAHOGANY MUSE
+            ================================================== -->
+
+            <article
+                class="single-card"
+                data-product-id="mahogany-muse"
+                data-name="Mahogany Muse"
+                data-price="0"
+                data-image="Mahogany muse.jpg">
+
+
+                <div class="image-container">
+
+                    <span class="image-number">
+                        01
+                    </span>
+
+                    <img
+                        src="Mahogany muse.jpg"
+                        alt="Mahogany Muse collection"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="card-info">
+
+                    <h3 class="card-name">
+                        Mahogany Muse
+                    </h3>
+
+                    <p class="card-subtitle">
+                        Signature Collection
+                    </p>
+
+                    <div class="card-price">
+                        Price on Request
+                    </div>
+
+
+                    <div class="card-actions">
+
+                        <button
+                            class="card-button add-cart"
+                            data-id="mahogany-muse">
+
+                            Add to Cart
+
+                        </button>
+
+
+                        <button
+                            class="card-button checkout buy-now"
+                            data-id="mahogany-muse">
+
+                            Checkout
+
+                        </button>
+
+
+                        <a
+                            class="card-button whatsapp-button"
+                            href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20Mahogany%20Muse."
+                            target="_blank"
+                            rel="noopener">
+
+                            Enquire on WhatsApp
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 VELVET NOOR
+            ================================================== -->
+
+            <article
+                class="single-card"
+                data-product-id="velvet-noor"
+                data-name="Velvet Noor"
+                data-price="0"
+                data-image="Velvet Noor.jpg">
+
+
+                <div class="image-container">
+
+                    <span class="image-number">
+                        02
+                    </span>
+
+                    <img
+                        src="Velvet Noor.jpg"
+                        alt="Velvet Noor collection"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="card-info">
+
+                    <h3 class="card-name">
+                        Velvet Noor
+                    </h3>
+
+                    <p class="card-subtitle">
+                        Premium Collection
+                    </p>
+
+                    <div class="card-price">
+                        Price on Request
+                    </div>
+
+
+                    <div class="card-actions">
+
+                        <button
+                            class="card-button add-cart"
+                            data-id="velvet-noor">
+
+                            Add to Cart
+
+                        </button>
+
+
+                        <button
+                            class="card-button checkout buy-now"
+                            data-id="velvet-noor">
+
+                            Checkout
+
+                        </button>
+
+
+                        <a
+                            class="card-button whatsapp-button"
+                            href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20Velvet%20Noor."
+                            target="_blank"
+                            rel="noopener">
+
+                            Enquire on WhatsApp
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 GULBADAN
+            ================================================== -->
+
+            <article
+                class="single-card"
+                data-product-id="gulbadan"
+                data-name="Gulbadan"
+                data-price="0"
+                data-image="Gulbadan.jpg">
+
+
+                <div class="image-container">
+
+                    <span class="image-number">
+                        03
+                    </span>
+
+                    <img
+                        src="Gulbadan.jpg"
+                        alt="Gulbadan collection"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="card-info">
+
+                    <h3 class="card-name">
+                        Gulbadan
+                    </h3>
+
+                    <p class="card-subtitle">
+                        Elegant Collection
+                    </p>
+
+                    <div class="card-price">
+                        Price on Request
+                    </div>
+
+
+                    <div class="card-actions">
+
+                        <button
+                            class="card-button add-cart"
+                            data-id="gulbadan">
+
+                            Add to Cart
+
+                        </button>
+
+
+                        <button
+                            class="card-button checkout buy-now"
+                            data-id="gulbadan">
+
+                            Checkout
+
+                        </button>
+
+
+                        <a
+                            class="card-button whatsapp-button"
+                            href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20Gulbadan."
+                            target="_blank"
+                            rel="noopener">
+
+                            Enquire on WhatsApp
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 MAHRU
+            ================================================== -->
+
+            <article
+                class="single-card"
+                data-product-id="mahru"
+                data-name="Mahru"
+                data-price="0"
+                data-image="Mahru.jpg">
+
+
+                <div class="image-container">
+
+                    <span class="image-number">
+                        04
+                    </span>
+
+                    <img
+                        src="Mahru.jpg"
+                        alt="Mahru collection"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="card-info">
+
+                    <h3 class="card-name">
+                        Mahru
+                    </h3>
+
+                    <p class="card-subtitle">
+                        Contemporary Collection
+                    </p>
+
+                    <div class="card-price">
+                        Price on Request
+                    </div>
+
+
+                    <div class="card-actions">
+
+                        <button
+                            class="card-button add-cart"
+                            data-id="mahru">
+
+                            Add to Cart
+
+                        </button>
+
+
+                        <button
+                            class="card-button checkout buy-now"
+                            data-id="mahru">
+
+                            Checkout
+
+                        </button>
+
+
+                        <a
+                            class="card-button whatsapp-button"
+                            href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20Mahru."
+                            target="_blank"
+                            rel="noopener">
+
+                            Enquire on WhatsApp
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     NAZAKAT
+======================================================= -->
+
+<section class="shop-section slider-section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                05
+            </div>
+
+            <h2 class="section-title">
+                Nazakat
+            </h2>
+
+            <p class="section-description">
+
+                Three variations, presented together.
+                Use the arrows or dots to explore each design.
+
+            </p>
+
+        </div>
+
+
+        <div
+            class="slider-card"
+            data-slider="nazakat"
+            data-name="Nazakat"
+            data-price="0">
+
+
+            <div class="slider-wrapper">
+
+                <span class="slider-badge">
+                    3 Varieties
+                </span>
+
+
+                <button
+                    class="slider-arrow previous"
+                    onclick="changeSlide('nazakat', -1)"
+                    aria-label="Previous Nazakat variety">
+
+                    ‹
+
+                </button>
+
+
+                <img
+                    id="nazakat-image"
+                    src="Nazakat1.jpg"
+                    alt="Nazakat variety 1">
+
+
+                <button
+                    class="slider-arrow next"
+                    onclick="changeSlide('nazakat', 1)"
+                    aria-label="Next Nazakat variety">
+
+                    ›
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="slider-dots"
+                id="nazakat-dots">
+
+            </div>
+
+
+            <div
+                class="slide-counter"
+                id="nazakat-counter">
+
+                Variety 1 of 3
+
+            </div>
+
+
+            <div class="slider-info">
+
+                <h3 class="slider-name">
+                    Nazakat
+                </h3>
+
+                <p class="slider-subtitle">
+                    Elegant Collection • Multiple Varieties
+                </p>
+
+                <div class="slider-price">
+                    Price on Request
+                </div>
+
+
+                <div class="slider-actions">
+
+                    <button
+                        class="card-button add-cart"
+                        data-id="nazakat">
+
+                        Add to Cart
+
+                    </button>
+
+
+                    <button
+                        class="card-button checkout buy-now"
+                        data-id="nazakat">
+
+                        Checkout
+
+                    </button>
+
+
+                    <a
+                        class="card-button whatsapp-button"
+                        href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20Nazakat."
+                        target="_blank"
+                        rel="noopener">
+
+                        Enquire on WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     RAAT KI RANI
+======================================================= -->
+
+<section class="shop-section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                06
+            </div>
+
+            <h2 class="section-title">
+                Raat ki Rani
+            </h2>
+
+            <p class="section-description">
+
+                Four varieties of one collection.
+                Browse through every available design.
+
+            </p>
+
+        </div>
+
+
+        <div
+            class="slider-card"
+            data-slider="raat"
+            data-name="Raat ki Rani"
+            data-price="0">
+
+
+            <div class="slider-wrapper">
+
+                <span class="slider-badge">
+                    4 Varieties
+                </span>
+
+
+                <button
+                    class="slider-arrow previous"
+                    onclick="changeSlide('raat', -1)"
+                    aria-label="Previous Raat ki Rani variety">
+
+                    ‹
+
+                </button>
+
+
+                <img
+                    id="raat-image"
+                    src="Raat ki rani1.jpg"
+                    alt="Raat ki Rani variety 1">
+
+
+                <button
+                    class="slider-arrow next"
+                    onclick="changeSlide('raat', 1)"
+                    aria-label="Next Raat ki Rani variety">
+
+                    ›
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="slider-dots"
+                id="raat-dots">
+
+            </div>
+
+
+            <div
+                class="slide-counter"
+                id="raat-counter">
+
+                Variety 1 of 4
+
+            </div>
+
+
+            <div class="slider-info">
+
+                <h3 class="slider-name">
+                    Raat ki Rani
+                </h3>
+
+                <p class="slider-subtitle">
+                    Occasion Collection • Multiple Varieties
+                </p>
+
+                <div class="slider-price">
+                    Price on Request
+                </div>
+
+
+                <div class="slider-actions">
+
+                    <button
+                        class="card-button add-cart"
+                        data-id="raat-ki-rani">
+
+                        Add to Cart
+
+                    </button>
+
+
+                    <button
+                        class="card-button checkout buy-now"
+                        data-id="raat-ki-rani">
+
+                        Checkout
+
+                    </button>
+
+
+                    <a
+                        class="card-button whatsapp-button"
+                        href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20Raat%20ki%20Rani."
+                        target="_blank"
+                        rel="noopener">
+
+                        Enquire on WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     NOOR E GUL
+======================================================= -->
+
+<section class="shop-section slider-section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                07
+            </div>
+
+            <h2 class="section-title">
+                Noor e Gul
+            </h2>
+
+            <p class="section-description">
+
+                Three varieties brought together in one
+                elegant collection.
+
+            </p>
+
+        </div>
+
+
+        <div
+            class="slider-card"
+            data-slider="noor"
+            data-name="Noor e Gul"
+            data-price="0">
+
+
+            <div class="slider-wrapper">
+
+                <span class="slider-badge">
+                    3 Varieties
+                </span>
+
+
+                <button
+                    class="slider-arrow previous"
+                    onclick="changeSlide('noor', -1)"
+                    aria-label="Previous Noor e Gul variety">
+
+                    ‹
+
+                </button>
+
+
+                <img
+                    id="noor-image"
+                    src="Noor e gul2.jpg"
+                    alt="Noor e Gul variety 1">
+
+
+                <button
+                    class="slider-arrow next"
+                    onclick="changeSlide('noor', 1)"
+                    aria-label="Next Noor e Gul variety">
+
+                    ›
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="slider-dots"
+                id="noor-dots">
+
+            </div>
+
+
+            <div
+                class="slide-counter"
+                id="noor-counter">
+
+                Variety 1 of 3
+
+            </div>
+
+
+            <div class="slider-info">
+
+                <h3 class="slider-name">
+                    Noor e Gul
+                </h3>
+
+                <p class="slider-subtitle">
+                    Floral Collection • Multiple Varieties
+                </p>
+
+                <div class="slider-price">
+                    Price on Request
+                </div>
+
+
+                <div class="slider-actions">
+
+                    <button
+                        class="card-button add-cart"
+                        data-id="noor-e-gul">
+
+                        Add to Cart
+
+                    </button>
+
+
+                    <button
+                        class="card-button checkout buy-now"
+                        data-id="noor-e-gul">
+
+                        Checkout
+
+                    </button>
+
+
+                    <a
+                        class="card-button whatsapp-button"
+                        href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20am%20interested%20in%20Noor%20e%20Gul."
+                        target="_blank"
+                        rel="noopener">
+
+                        Enquire on WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     COLLECTION STATEMENT
+======================================================= -->
+
+<section class="collection-divider">
+
+    <div class="collection-divider-label">
+        luminaraclothing
+    </div>
+
+    <h2 class="collection-divider-title">
+        Where Fashion<br>
+        Meets Elegance
+    </h2>
+
+</section>
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-logo">
+            luminaraclothing
+        </div>
+
+        <p class="footer-description">
+
+            Contemporary Pakistani fashion,
+            carefully curated for modern women.
+
+        </p>
+
+
+        <div class="footer-bottom">
+
+            © 2026 luminaraclothing. All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =======================================================
+     FLOATING WHATSAPP
+======================================================= -->
+
+<a
+    href="https://wa.me/923705260258?text=Hello%20luminaraclothing%2C%20I%20would%20like%20to%20know%20more%20about%20your%20collection."
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat on WhatsApp">
+
+
+    <svg viewBox="0 0 24 24">
+
+        <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.6 5.9L.2 24l6.5-1.7c1.8 1 3.8 1.5 5.8 1.5h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.4-6.2-3.9-8.5ZM12.6 21.8h-.1c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 0 1-1.5-5.2c0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.5-4.4 9.9-9.8 9.9Zm5.4-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.9-1.6.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.1 3.1 1.2 3.3c.2.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.8.7.8.3 1.5.3 2 .2.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/>
+
+    </svg>
+
+</a>
+
+
+<!-- =======================================================
+     CART OVERLAY
+======================================================= -->
+
+<div
+    class="cart-overlay"
+    id="cartOverlay">
+</div>
+
+
+<!-- =======================================================
+     CART DRAWER
+======================================================= -->
+
+<aside
+    class="cart-drawer"
+    id="cartDrawer"
+    aria-label="Shopping cart">
+
+
+    <div class="cart-header">
+
+        <h2>
+            Your Cart
+        </h2>
+
+        <button
+            class="cart-close"
+            id="cartClose"
+            aria-label="Close cart">
+
+            ×
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="cart-items"
+        id="cartItems">
+
+    </div>
+
+
+    <div class="cart-footer">
+
+        <div class="cart-total-row">
+
+            <span class="cart-total-label">
+                Total
+            </span>
+
+            <span
+                class="cart-total"
+                id="cartTotal">
+
+                PKR 0
+
+            </span>
+
+        </div>
+
+
+        <button
+            class="checkout-main-button"
+            id="checkoutButton">
+
+            Checkout
+
+        </button>
+
+
+        <button
+            class="continue-shopping"
+            id="continueShopping">
+
+            Continue Shopping
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =======================================================
+     CHECKOUT
+======================================================= -->
+
+<div
+    class="checkout-overlay"
+    id="checkoutOverlay">
+
+
+    <div class="checkout-box">
+
+
+        <div class="checkout-header">
+
+            <h2>
+                Checkout
+            </h2>
+
+            <button
+                class="checkout-close"
+                id="checkoutClose">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div class="checkout-content">
+
+
+            <!-- FORM -->
+
+            <div class="checkout-form-area">
+
+                <div class="form-heading">
+                    Delivery Details
+                </div>
+
+
+                <form id="checkoutForm">
+
+
+                    <div class="form-group">
+
+                        <label for="customerName">
+                            Full Name
+                        </label>
+
+                        <input
+                            id="customerName"
+                            type="text"
+                            autocomplete="name"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="customerPhone">
+                            Phone / WhatsApp Number
+                        </label>
+
+                        <input
+                            id="customerPhone"
+                            type="tel"
+                            autocomplete="tel"
+                            placeholder="03XXXXXXXXX"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="customerCity">
+                            City
+                        </label>
+
+                        <input
+                            id="customerCity"
+                            type="text"
+                            autocomplete="address-level2"
+                            placeholder="Enter your city"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="customerAddress">
+                            Complete Delivery Address
+                        </label>
+
+                        <textarea
+                            id="customerAddress"
+                            autocomplete="street-address"
+                            placeholder="House / Flat, Street, Area, Landmark"
+                            required></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="orderNotes">
+                            Order Notes
+                        </label>
+
+                        <textarea
+                            id="orderNotes"
+                            placeholder="Size, colour or any special instructions"></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Payment Method
+                        </label>
+
+
+                        <div class="cod-box">
+
+                            <div class="cod-radio"></div>
+
+                            <div>
+
+                                <div class="cod-title">
+                                    Cash on Delivery
+                                </div>
+
+                                <div class="cod-description">
+                                    Pay when your order is delivered.
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="place-order">
+
+                        Place Order via WhatsApp
+
+                    </button>
+
+
+                    <div class="checkout-note">
+
+                        Your order details will be prepared
+                        in WhatsApp for confirmation.
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="checkout-summary">
+
+                <div class="form-heading">
+                    Order Summary
+                </div>
+
+
+                <div id="checkoutSummaryItems">
+                </div>
+
+
+                <div class="summary-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <span id="checkoutSummaryTotal">
+                        PKR 0
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =======================================================
+     TOAST
+======================================================= -->
+
+<div
+    class="toast"
+    id="toast">
+</div>
+
+
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
+
+<script>
+
+
+/* =========================================================
+   COLLECTION SLIDERS
+========================================================= */
+
+const sliders = {
+
+    nazakat: {
+
+        images: [
+
+            "Nazakat1.jpg",
+
+            "Nazakat2.jpg",
+
+            "Nazakat3.jpg"
+
+        ],
+
+        current: 0,
+
+        altName: "Nazakat"
+
+    },
+
+
+    raat: {
+
+        images: [
+
+            "Raat ki rani1.jpg",
+
+            "Raat ki rani2.jpg",
+
+            "Raat ki rani3.jpg",
+
+            "Raat ki rani4.jpg"
+
+        ],
+
+        current: 0,
+
+        altName: "Raat ki Rani"
+
+    },
+
+
+    noor: {
+
+        images: [
+
+            "Noor e gul2.jpg",
+
+            "Noor e gu3.jpg",
+
+            "Noor e gul4.jpg"
+
+        ],
+
+        current: 0,
+
+        altName: "Noor e Gul"
+
+    }
+
+};
+
+
+/* =========================================================
+   CREATE SLIDER DOTS
+========================================================= */
+
+function createSliderDots(sliderName) {
+
+    const slider = sliders[sliderName];
+
+    const dotsContainer =
+        document.getElementById(
+            sliderName + "-dots"
+        );
+
+
+    dotsContainer.innerHTML = "";
+
+
+    slider.images.forEach(
+        function(image, index) {
+
+            const dot =
+                document.createElement("button");
+
+
+            dot.className =
+                "slider-dot";
+
+
+            dot.setAttribute(
+                "aria-label",
+                "View variety " + (index + 1)
+            );
+
+
+            dot.addEventListener(
+                "click",
+                function() {
+
+                    slider.current = index;
+
+                    updateSlider(sliderName);
+
+                }
+            );
+
+
+            dotsContainer.appendChild(dot);
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   UPDATE SLIDER
+========================================================= */
+
+function updateSlider(sliderName) {
+
+    const slider = sliders[sliderName];
+
+
+    const imageElement =
+        document.getElementById(
+            sliderName + "-image"
+        );
+
+
+    const counter =
+        document.getElementById(
+            sliderName + "-counter"
+        );
+
+
+    imageElement.src =
+        slider.images[slider.current];
+
+
+    imageElement.alt =
+        slider.altName +
+        " variety " +
+        (slider.current + 1);
+
+
+    counter.textContent =
+        "Variety " +
+        (slider.current + 1) +
+        " of " +
+        slider.images.length;
+
+
+    const dots =
+        document.querySelectorAll(
+            "#" +
+            sliderName +
+            "-dots .slider-dot"
+        );
+
+
+    dots.forEach(
+        function(dot, index) {
+
+            dot.classList.toggle(
+                "active",
+                index === slider.current
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CHANGE SLIDE
+========================================================= */
+
+function changeSlide(sliderName, direction) {
+
+    const slider = sliders[sliderName];
+
+
+    slider.current += direction;
+
+
+    if (slider.current < 0) {
+
+        slider.current =
+            slider.images.length - 1;
+
+    }
+
+
+    if (
+        slider.current >=
+        slider.images.length
+    ) {
+
+        slider.current = 0;
+
+    }
+
+
+    updateSlider(sliderName);
+
+}
+
+
+/* =========================================================
+   INITIALIZE SLIDERS
+========================================================= */
+
+Object.keys(sliders).forEach(
+    function(sliderName) {
+
+        createSliderDots(sliderName);
+
+        updateSlider(sliderName);
+
+    }
+);
+
+
+/* =========================================================
+   PRODUCT DATA
+=========================================================
+
+   IMPORTANT:
+
+   Prices are currently 0 because you have not
+   provided prices yet.
+
+   Replace the 0 values below with the actual
+   prices when you are ready.
+
+========================================================= */
+
+const products = {
+
+    "mahogany-muse": {
+
+        id: "mahogany-muse",
+
+        name: "Mahogany Muse",
+
+        price: 0,
+
+        image: "Mahogany muse.jpg"
+
+    },
+
+
+    "velvet-noor": {
+
+        id: "velvet-noor",
+
+        name: "Velvet Noor",
+
+        price: 0,
+
+        image: "Velvet Noor.jpg"
+
+    },
+
+
+    "gulbadan": {
+
+        id: "gulbadan",
+
+        name: "Gulbadan",
+
+        price: 0,
+
+        image: "Gulbadan.jpg"
+
+    },
+
+
+    "mahru": {
+
+        id: "mahru",
+
+        name: "Mahru",
+
+        price: 0,
+
+        image: "Mahru.jpg"
+
+    },
+
+
+    "nazakat": {
+
+        id: "nazakat",
+
+        name: "Nazakat",
+
+        price: 0,
+
+        image: "Nazakat1.jpg"
+
+    },
+
+
+    "raat-ki-rani": {
+
+        id: "raat-ki-rani",
+
+        name: "Raat ki Rani",
+
+        price: 0,
+
+        image: "Raat ki rani1.jpg"
+
+    },
+
+
+    "noor-e-gul": {
+
+        id: "noor-e-gul",
+
+        name: "Noor e Gul",
+
+        price: 0,
+
+        image: "Noor e gul2.jpg"
+
+    }
+
+};
+
+
+/* =========================================================
+   CART
+=========================================================
+
+   SAME STORAGE KEY AS YOUR INDEX.HTML
+
+========================================================= */
+
+let cart = JSON.parse(
+
+    localStorage.getItem(
+        "luminaraclothingCart"
+    ) || "[]"
+
+);
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const body =
+    document.body;
+
+
+const cartButton =
+    document.getElementById(
+        "cartButton"
+    );
+
+
+const cartClose =
+    document.getElementById(
+        "cartClose"
+    );
+
+
+const cartOverlay =
+    document.getElementById(
+        "cartOverlay"
+    );
+
+
+const cartItems =
+    document.getElementById(
+        "cartItems"
+    );
+
+
+const cartCount =
+    document.getElementById(
+        "cartCount"
+    );
+
+
+const cartTotal =
+    document.getElementById(
+        "cartTotal"
+    );
+
+
+const checkoutButton =
+    document.getElementById(
+        "checkoutButton"
+    );
+
+
+const continueShopping =
+    document.getElementById(
+        "continueShopping"
+    );
+
+
+const checkoutOverlay =
+    document.getElementById(
+        "checkoutOverlay"
+    );
+
+
+const checkoutClose =
+    document.getElementById(
+        "checkoutClose"
+    );
+
+
+const checkoutForm =
+    document.getElementById(
+        "checkoutForm"
+    );
+
+
+const checkoutSummaryItems =
+    document.getElementById(
+        "checkoutSummaryItems"
+    );
+
+
+const checkoutSummaryTotal =
+    document.getElementById(
+        "checkoutSummaryTotal"
+    );
+
+
+const toast =
+    document.getElementById(
+        "toast"
+    );
+
+
+/* =========================================================
+   PRICE FORMAT
+========================================================= */
+
+function formatPrice(price) {
+
+    if (!price || Number(price) === 0) {
+
+        return "Price on Request";
+
+    }
+
+
+    return "PKR " +
+        Number(price).toLocaleString(
+            "en-PK"
+        );
+
+}
+
+
+/* =========================================================
+   SAVE CART
+========================================================= */
+
+function saveCart() {
+
+    localStorage.setItem(
+
+        "luminaraclothingCart",
+
+        JSON.stringify(cart)
+
+    );
+
+}
+
+
+/* =========================================================
+   UPDATE CART COUNT
+========================================================= */
+
+function updateCartCount() {
+
+    const count =
+        cart.reduce(
+            function(total, item) {
+
+                return total +
+                    item.quantity;
+
+            },
+            0
+        );
+
+
+    cartCount.textContent =
+        count;
+
+}
+
+
+/* =========================================================
+   CART TOTAL
+========================================================= */
+
+function getCartTotal() {
+
+    return cart.reduce(
+
+        function(total, item) {
+
+            return total +
+                (
+                    Number(item.price) *
+                    Number(item.quantity)
+                );
+
+        },
+
+        0
+
+    );
+
+}
+
+
+/* =========================================================
+   ADD TO CART
+========================================================= */
+
+function addToCart(
+    productId,
+    showMessage = true
+) {
+
+    const product =
+        products[productId];
+
+
+    if (!product) {
+
+        return;
+
+    }
+
+
+    const existing =
+        cart.find(
+            function(item) {
+
+                return item.id ===
+                    productId;
+
+            }
+        );
+
+
+    if (existing) {
+
+        existing.quantity += 1;
+
+    } else {
+
+        cart.push({
+
+            id: product.id,
+
+            name: product.name,
+
+            price: product.price,
+
+            image: product.image,
+
+            quantity: 1
+
+        });
+
+    }
+
+
+    saveCart();
+
+    renderCart();
+
+    updateCartCount();
+
+
+    if (showMessage) {
+
+        showToast(
+            product.name +
+            " added to your cart"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   REMOVE
+========================================================= */
+
+function removeFromCart(productId) {
+
+    cart =
+        cart.filter(
+            function(item) {
+
+                return item.id !==
+                    productId;
+
+            }
+        );
+
+
+    saveCart();
+
+    renderCart();
+
+    updateCartCount();
+
+}
+
+
+/* =========================================================
+   QUANTITY
+========================================================= */
+
+function changeQuantity(
+    productId,
+    amount
+) {
+
+    const item =
+        cart.find(
+            function(item) {
+
+                return item.id ===
+                    productId;
+
+            }
+        );
+
+
+    if (!item) {
+
+        return;
+
+    }
+
+
+    item.quantity += amount;
+
+
+    if (item.quantity <= 0) {
+
+        removeFromCart(
+            productId
+        );
+
+        return;
+
+    }
+
+
+    saveCart();
+
+    renderCart();
+
+    updateCartCount();
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHtml(text) {
+
+    const div =
+        document.createElement(
+            "div"
+        );
+
+
+    div.textContent =
+        text;
+
+
+    return div.innerHTML;
+
+}
+
+
+/* =========================================================
+   RENDER CART
+========================================================= */
+
+function renderCart() {
+
+
+    if (cart.length === 0) {
+
+        cartItems.innerHTML = `
+
+            <div class="empty-cart">
+
+                <div class="empty-cart-title">
+                    Your cart is empty
+                </div>
+
+                <div class="empty-cart-text">
+                    Discover something beautiful
+                    from our collection.
+                </div>
+
+            </div>
+
+        `;
+
+    } else {
+
+
+        cartItems.innerHTML =
+
+            cart.map(
+                function(item) {
+
+                    return `
+
+                        <div class="cart-item">
+
+                            <div class="cart-item-image">
+
+                                <img
+                                    src="${item.image || "pic.jpg"}"
+                                    alt="${escapeHtml(item.name)}">
+
+                            </div>
+
+
+                            <div class="cart-item-info">
+
+                                <div class="cart-item-name">
+
+                                    ${escapeHtml(item.name)}
+
+                                </div>
+
+
+                                <div class="cart-item-price">
+
+                                    ${formatPrice(item.price)}
+
+                                </div>
+
+
+                                <div class="cart-item-controls">
+
+
+                                    <div class="quantity">
+
+                                        <button
+                                            type="button"
+                                            onclick="changeQuantity('${item.id}', -1)">
+
+                                            −
+
+                                        </button>
+
+
+                                        <span>
+                                            ${item.quantity}
+                                        </span>
+
+
+                                        <button
+                                            type="button"
+                                            onclick="changeQuantity('${item.id}', 1)">
+
+                                            +
+
+                                        </button>
+
+                                    </div>
+
+
+                                    <button
+                                        type="button"
+                                        class="remove-item"
+                                        onclick="removeFromCart('${item.id}')">
+
+                                        Remove
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+                }
+            ).join("");
+
+    }
+
+
+    const total =
+        getCartTotal();
+
+
+    cartTotal.textContent =
+        total > 0
+            ? "PKR " +
+              total.toLocaleString("en-PK")
+            : "Price on Request";
+
+}
+
+
+/* =========================================================
+   CHECKOUT SUMMARY
+========================================================= */
+
+function renderCheckoutSummary() {
+
+    if (cart.length === 0) {
+
+        checkoutSummaryItems.innerHTML = `
+
+            <p style="font-size:10px;color:#777;">
+
+                Your cart is empty.
+
+            </p>
+
+        `;
+
+        return;
+
+    }
+
+
+    checkoutSummaryItems.innerHTML =
+
+        cart.map(
+            function(item) {
+
+                return `
+
+                    <div class="summary-item">
+
+                        <div>
+
+                            <div class="summary-name">
+
+                                ${escapeHtml(item.name)}
+
+                            </div>
+
+                            <div class="summary-quantity">
+
+                                Quantity:
+                                ${item.quantity}
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="summary-price">
+
+                            ${formatPrice(
+                                item.price *
+                                item.quantity
+                            )}
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            }
+        ).join("");
+
+
+    const total =
+        getCartTotal();
+
+
+    checkoutSummaryTotal.textContent =
+        total > 0
+            ? "PKR " +
+              total.toLocaleString("en-PK")
+            : "Price on Request";
+
+}
+
+
+/* =========================================================
+   OPEN CART
+========================================================= */
+
+function openCart() {
+
+    body.classList.remove(
+        "checkout-open"
+    );
+
+
+    body.classList.add(
+        "cart-open"
+    );
+
+}
+
+
+/* =========================================================
+   CLOSE CART
+========================================================= */
+
+function closeCart() {
+
+    body.classList.remove(
+        "cart-open"
+    );
+
+}
+
+
+/* =========================================================
+   OPEN CHECKOUT
+========================================================= */
+
+function openCheckout() {
+
+    if (cart.length === 0) {
+
+        showToast(
+            "Please add an outfit to your cart first."
+        );
+
+        return;
+
+    }
+
+
+    renderCheckoutSummary();
+
+    closeCart();
+
+
+    body.classList.add(
+        "checkout-open"
+    );
+
+}
+
+
+/* =========================================================
+   CLOSE CHECKOUT
+========================================================= */
+
+function closeCheckout() {
+
+    body.classList.remove(
+        "checkout-open"
+    );
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+let toastTimer;
+
+
+function showToast(message) {
+
+    toast.textContent =
+        message;
+
+
+    toast.classList.add(
+        "show"
+    );
+
+
+    clearTimeout(
+        toastTimer
+    );
+
+
+    toastTimer =
+        setTimeout(
+            function() {
+
+                toast.classList.remove(
+                    "show"
+                );
+
+            },
+            2500
+        );
+
+}
+
+
+/* =========================================================
+   CART BUTTON
+========================================================= */
+
+cartButton.addEventListener(
+    "click",
+    openCart
+);
+
+
+/* =========================================================
+   CART CLOSE
+========================================================= */
+
+cartClose.addEventListener(
+    "click",
+    closeCart
+);
+
+
+cartOverlay.addEventListener(
+    "click",
+    closeCart
+);
+
+
+/* =========================================================
+   CONTINUE SHOPPING
+========================================================= */
+
+continueShopping.addEventListener(
+    "click",
+    closeCart
+);
+
+
+/* =========================================================
+   CHECKOUT
+========================================================= */
+
+checkoutButton.addEventListener(
+    "click",
+    openCheckout
+);
+
+
+checkoutClose.addEventListener(
+    "click",
+    closeCheckout
+);
+
+
+checkoutOverlay.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target ===
+            checkoutOverlay
+        ) {
+
+            closeCheckout();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ADD TO CART BUTTONS
+========================================================= */
+
+document.querySelectorAll(
+    ".add-cart"
+).forEach(
+    function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                addToCart(
+                    this.dataset.id
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   BUY NOW / CHECKOUT
+========================================================= */
+
+document.querySelectorAll(
+    ".buy-now"
+).forEach(
+    function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                const productId =
+                    this.dataset.id;
+
+
+                addToCart(
+                    productId,
+                    false
+                );
+
+
+                renderCheckoutSummary();
+
+
+                body.classList.add(
+                    "checkout-open"
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   CHECKOUT FORM
+========================================================= */
+
+checkoutForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        if (cart.length === 0) {
+
+            showToast(
+                "Your cart is empty."
+            );
+
+            return;
+
+        }
+
+
+        const name =
+            document.getElementById(
+                "customerName"
+            ).value.trim();
+
+
+        const phone =
+            document.getElementById(
+                "customerPhone"
+            ).value.trim();
+
+
+        const city =
+            document.getElementById(
+                "customerCity"
+            ).value.trim();
+
+
+        const address =
+            document.getElementById(
+                "customerAddress"
+            ).value.trim();
+
+
+        const notes =
+            document.getElementById(
+                "orderNotes"
+            ).value.trim();
+
+
+        const orderNumber =
+            "LUM-" +
+            Date.now()
+                .toString()
+                .slice(-7);
+
+
+        let message =
+            "Hello luminaraclothing!%0A%0A";
+
+
+        message +=
+            "*NEW COD ORDER*%0A";
+
+
+        message +=
+            "Order No: " +
+            encodeURIComponent(
+                orderNumber
+            ) +
+            "%0A%0A";
+
+
+        message +=
+            "*CUSTOMER DETAILS*%0A";
+
+
+        message +=
+            "Name: " +
+            encodeURIComponent(
+                name
+            ) +
+            "%0A";
+
+
+        message +=
+            "Phone: " +
+            encodeURIComponent(
+                phone
+            ) +
+            "%0A";
+
+
+        message +=
+            "City: " +
+            encodeURIComponent(
+                city
+            ) +
+            "%0A";
+
+
+        message +=
+            "Address: " +
+            encodeURIComponent(
+                address
+            ) +
+            "%0A";
+
+
+        if (notes) {
+
+            message +=
+                "Notes: " +
+                encodeURIComponent(
+                    notes
+                ) +
+                "%0A";
+
+        }
+
+
+        message +=
+            "%0A*ORDER DETAILS*%0A";
+
+
+        cart.forEach(
+            function(item) {
+
+                message +=
+
+                    encodeURIComponent(
+                        item.name
+                    ) +
+
+                    " x " +
+
+                    item.quantity +
+
+                    "%0A";
+
+            }
+        );
+
+
+        const total =
+            getCartTotal();
+
+
+        if (total > 0) {
+
+            message +=
+
+                "%0A*TOTAL: PKR " +
+
+                total.toLocaleString(
+                    "en-PK"
+                ) +
+
+                "*%0A";
+
+        } else {
+
+            message +=
+
+                "%0A*TOTAL: PRICE TO BE CONFIRMED*%0A";
+
+        }
+
+
+        message +=
+            "Payment: Cash on Delivery%0A";
+
+
+        message +=
+            "%0APlease confirm my order. Thank you!";
+
+
+        const whatsappURL =
+            "https://wa.me/923705260258?text=" +
+            message;
+
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+
+        showToast(
+            "Order prepared for WhatsApp."
+        );
+
+    }
+);
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key ===
+            "Escape"
+        ) {
+
+            closeCart();
+
+            closeCheckout();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+renderCart();
+
+updateCartCount();
+
+
+</script>
+
+
+</body>
+
+</html>
