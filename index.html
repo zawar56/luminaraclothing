@@ -98,7 +98,8 @@ body {
 
 body.menu-open,
 body.cart-open,
-body.checkout-open {
+body.checkout-open,
+body.product-modal-open {
     overflow: hidden;
 }
 
@@ -1057,9 +1058,9 @@ body.menu-open .menu-panel {
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
 
-    gap: 7px;
+    gap: 10px;
 
     margin-top: 15px;
 
@@ -1097,25 +1098,67 @@ body.menu-open .menu-panel {
 
 }
 
-.product-button.checkout-product {
+.product-lock-button {
+
+    width: 48px;
+
+    height: 48px;
+
+    padding: 0;
+
+    margin: 0 auto;
+
+    border: 1px solid var(--black);
+
+    border-radius: 50%;
+
+    background: var(--white);
+
+    color: var(--black);
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: .25s;
+
+}
+
+.product-lock-button svg {
+
+    width: 20px;
+
+    height: 20px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.7;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+}
+
+.product-lock-button:hover {
 
     background: var(--black);
 
     color: var(--white);
 
-}
-
-.product-button.checkout-product:hover {
-
-    background: var(--gold);
-
-    border-color: var(--gold);
+    transform: translateY(-2px);
 
 }
 
 .product-whatsapp {
 
-    grid-column: 1 / -1;
+    width: 100%;
 
     border-color: #222;
 
@@ -1925,6 +1968,216 @@ body.cart-open .cart-drawer {
 
 
 /* =========================================================
+   PRODUCT DETAILS MODAL
+========================================================= */
+
+.product-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.7);
+    z-index: 2900;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+body.product-modal-open .product-modal-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.product-modal-box {
+    width: min(900px, 100%);
+    min-height: 540px;
+    margin: 20px auto;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+}
+
+.product-modal-image {
+    min-height: 540px;
+    background: var(--cream-dark);
+    overflow: hidden;
+}
+
+.product-modal-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 540px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+
+.product-modal-details {
+    padding: 55px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--black);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 300;
+    z-index: 2;
+}
+
+.product-modal-label {
+    font-size: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.product-modal-title {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 500;
+    line-height: 1;
+}
+
+.product-modal-price-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.product-modal-price {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.product-modal-delivery {
+    color: #d71920;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.product-modal-divider {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 25px 0;
+}
+
+.product-modal-option-label {
+    display: block;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.product-modal-sizes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.product-size {
+    min-width: 45px;
+    height: 36px;
+    padding: 0 13px;
+    border: 1px solid var(--black);
+    background: var(--white);
+    color: var(--black);
+    cursor: pointer;
+    font-size: 9px;
+    transition: .2s;
+}
+
+.product-size:hover,
+.product-size.selected {
+    background: var(--black);
+    color: var(--white);
+}
+
+.product-modal-quantity {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    border: 1px solid var(--border);
+}
+
+.product-modal-quantity button {
+    width: 38px;
+    height: 38px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.product-modal-quantity span {
+    width: 38px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.product-modal-add {
+    width: 100%;
+    min-height: 52px;
+    margin-top: 25px;
+    background: var(--black);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: .25s;
+}
+
+.product-modal-add:hover {
+    background: var(--gold);
+}
+
+@media (max-width: 700px) {
+    .product-modal-overlay {
+        padding: 12px;
+    }
+
+    .product-modal-box {
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+    }
+
+    .product-modal-image {
+        min-height: 360px;
+        height: 55vh;
+        max-height: 520px;
+    }
+
+    .product-modal-image img {
+        min-height: 0;
+        height: 100%;
+    }
+
+    .product-modal-details {
+        padding: 32px 24px 28px;
+    }
+
+    .product-modal-title {
+        font-size: 35px;
+    }
+}
+
+
+/* =========================================================
    CHECKOUT MODAL
 ========================================================= */
 
@@ -2538,6 +2791,14 @@ body.checkout-open .checkout-overlay {
 
     }
 
+    .product-lock-button {
+
+        width: 46px;
+
+        height: 46px;
+
+    }
+
     .editorial-layout {
 
         grid-template-columns: 1fr;
@@ -3136,19 +3397,16 @@ textarea:focus-visible {
 
 
                         <button
-                            class="product-button add-cart"
-                            data-id="classic-edit">
+                            type="button"
+                            class="product-lock-button open-product-modal"
+                            data-id="classic-edit"
+                            aria-label="View product details"
+                            title="View product details">
 
-                            Add to Cart
-
-                        </button>
-
-
-                        <button
-                            class="product-button checkout-product buy-now"
-                            data-id="classic-edit">
-
-                            Checkout
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="6" y="10" width="12" height="10" rx="1.5"></rect>
+                                <path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"></path>
+                            </svg>
 
                         </button>
 
@@ -3212,19 +3470,16 @@ textarea:focus-visible {
 
 
                         <button
-                            class="product-button add-cart"
-                            data-id="signature">
+                            type="button"
+                            class="product-lock-button open-product-modal"
+                            data-id="signature"
+                            aria-label="View product details"
+                            title="View product details">
 
-                            Add to Cart
-
-                        </button>
-
-
-                        <button
-                            class="product-button checkout-product buy-now"
-                            data-id="signature">
-
-                            Checkout
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="6" y="10" width="12" height="10" rx="1.5"></rect>
+                                <path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"></path>
+                            </svg>
 
                         </button>
 
@@ -3289,19 +3544,16 @@ textarea:focus-visible {
 
 
                         <button
-                            class="product-button add-cart"
-                            data-id="muse">
+                            type="button"
+                            class="product-lock-button open-product-modal"
+                            data-id="muse"
+                            aria-label="View product details"
+                            title="View product details">
 
-                            Add to Cart
-
-                        </button>
-
-
-                        <button
-                            class="product-button checkout-product buy-now"
-                            data-id="muse">
-
-                            Checkout
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="6" y="10" width="12" height="10" rx="1.5"></rect>
+                                <path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"></path>
+                            </svg>
 
                         </button>
 
@@ -3366,19 +3618,16 @@ textarea:focus-visible {
 
 
                         <button
-                            class="product-button add-cart"
-                            data-id="luxe-edit">
+                            type="button"
+                            class="product-lock-button open-product-modal"
+                            data-id="luxe-edit"
+                            aria-label="View product details"
+                            title="View product details">
 
-                            Add to Cart
-
-                        </button>
-
-
-                        <button
-                            class="product-button checkout-product buy-now"
-                            data-id="luxe-edit">
-
-                            Checkout
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="6" y="10" width="12" height="10" rx="1.5"></rect>
+                                <path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"></path>
+                            </svg>
 
                         </button>
 
@@ -3856,6 +4105,118 @@ textarea:focus-visible {
 
 
 <!-- =======================================================
+     PRODUCT DETAILS MODAL
+======================================================= -->
+
+<div
+    class="product-modal-overlay"
+    id="productModalOverlay">
+
+    <div
+        class="product-modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="productModalTitle">
+
+        <button
+            type="button"
+            class="product-modal-close"
+            id="productModalClose"
+            aria-label="Close product details">
+            ×
+        </button>
+
+        <div class="product-modal-image">
+            <img
+                id="productModalImage"
+                src=""
+                alt="">
+        </div>
+
+        <div class="product-modal-details">
+
+            <div
+                class="product-modal-label"
+                id="productModalLabel">
+                Product Details
+            </div>
+
+            <h2
+                class="product-modal-title"
+                id="productModalTitle">
+                Product
+            </h2>
+
+            <div class="product-modal-price-row">
+                <div
+                    class="product-modal-price"
+                    id="productModalPrice">
+                    PKR 0
+                </div>
+
+                <div class="product-modal-delivery">
+                    Free Delivery
+                </div>
+            </div>
+
+            <hr class="product-modal-divider">
+
+            <div>
+                <span class="product-modal-option-label">
+                    Size
+                </span>
+
+                <div
+                    class="product-modal-sizes"
+                    id="productModalSizes">
+
+                    <button type="button" class="product-size" data-size="XS">XS</button>
+                    <button type="button" class="product-size" data-size="S">S</button>
+                    <button type="button" class="product-size" data-size="M">M</button>
+                    <button type="button" class="product-size" data-size="L">L</button>
+
+                </div>
+            </div>
+
+            <div style="margin-top:25px;">
+                <span class="product-modal-option-label">
+                    Quantity
+                </span>
+
+                <div class="product-modal-quantity">
+                    <button
+                        type="button"
+                        id="productModalMinus"
+                        aria-label="Decrease quantity">
+                        −
+                    </button>
+
+                    <span id="productModalQuantity">1</span>
+
+                    <button
+                        type="button"
+                        id="productModalPlus"
+                        aria-label="Increase quantity">
+                        +
+                    </button>
+                </div>
+            </div>
+
+            <button
+                type="button"
+                class="product-modal-add"
+                id="productModalAdd">
+                Add to Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =======================================================
      CART OVERLAY
 ======================================================= -->
 
@@ -4272,6 +4633,41 @@ const toast =
     document.getElementById("toast");
 
 
+const productModalOverlay =
+    document.getElementById("productModalOverlay");
+
+const productModalClose =
+    document.getElementById("productModalClose");
+
+const productModalImage =
+    document.getElementById("productModalImage");
+
+const productModalTitle =
+    document.getElementById("productModalTitle");
+
+const productModalPrice =
+    document.getElementById("productModalPrice");
+
+const productModalLabel =
+    document.getElementById("productModalLabel");
+
+const productModalQuantity =
+    document.getElementById("productModalQuantity");
+
+const productModalMinus =
+    document.getElementById("productModalMinus");
+
+const productModalPlus =
+    document.getElementById("productModalPlus");
+
+const productModalAdd =
+    document.getElementById("productModalAdd");
+
+let selectedProductId = null;
+let selectedProductSize = "S";
+let selectedProductQuantity = 1;
+
+
 /* =========================================================
    FORMAT PRICE
 ========================================================= */
@@ -4333,7 +4729,7 @@ function getCartTotal() {
    ADD PRODUCT
 ========================================================= */
 
-function addToCart(productId, showMessage = true) {
+function addToCart(productId, showMessage = true, size = "") {
 
     const product = products[productId];
 
@@ -4341,7 +4737,10 @@ function addToCart(productId, showMessage = true) {
 
 
     const existing =
-        cart.find(item => item.id === productId);
+        cart.find(item =>
+            item.id === productId &&
+            (item.size || "") === size
+        );
 
 
     if (existing) {
@@ -4359,6 +4758,8 @@ function addToCart(productId, showMessage = true) {
             price: product.price,
 
             image: product.image || "",
+
+            size: size,
 
             quantity: 1
 
@@ -4484,6 +4885,7 @@ function renderCart() {
 
                     <div class="cart-item-price">
                         ${formatPrice(item.price)}
+                        ${item.size ? `<span style="color:#777;"> · Size ${escapeHtml(item.size)}</span>` : ""}
                     </div>
 
 
@@ -4567,6 +4969,7 @@ function renderCheckoutSummary() {
 
                         <div class="summary-quantity">
                             Quantity: ${item.quantity}
+                            ${item.size ? ` · Size: ${escapeHtml(item.size)}` : ""}
                         </div>
 
                     </div>
@@ -4749,6 +5152,8 @@ checkoutOverlay.addEventListener(
 
             closeCheckout();
 
+            closeProductModal();
+
         }
 
     }
@@ -4756,58 +5161,164 @@ checkoutOverlay.addEventListener(
 
 
 /* =========================================================
-   ADD TO CART BUTTONS
+   PRODUCT DETAILS MODAL
 ========================================================= */
 
-document.querySelectorAll(".add-cart")
+function openProductModal(productId) {
+
+    const product = products[productId];
+
+    if (!product) return;
+
+    selectedProductId = productId;
+    selectedProductSize = "S";
+    selectedProductQuantity = 1;
+
+    productModalImage.src = product.image || "";
+    productModalImage.alt = product.name;
+    productModalTitle.textContent = product.name;
+    productModalPrice.textContent = formatPrice(product.price);
+    productModalLabel.textContent = "Product Details";
+    productModalQuantity.textContent =
+        selectedProductQuantity;
+
+    document.querySelectorAll(".product-size")
+        .forEach(sizeButton => {
+            sizeButton.classList.toggle(
+                "selected",
+                sizeButton.dataset.size === selectedProductSize
+            );
+        });
+
+    closeCart();
+    closeCheckout();
+    closeMenu();
+
+    body.classList.add("product-modal-open");
+}
+
+function closeProductModal() {
+
+    body.classList.remove(
+        "product-modal-open"
+    );
+
+    selectedProductId = null;
+}
+
+function updateProductModalQuantity(amount) {
+
+    selectedProductQuantity =
+        Math.max(
+            1,
+            selectedProductQuantity + amount
+        );
+
+    productModalQuantity.textContent =
+        selectedProductQuantity;
+}
+
+productModalClose.addEventListener(
+    "click",
+    closeProductModal
+);
+
+productModalOverlay.addEventListener(
+    "click",
+    function(event) {
+        if (
+            event.target ===
+            productModalOverlay
+        ) {
+            closeProductModal();
+        }
+    }
+);
+
+productModalMinus.addEventListener(
+    "click",
+    function() {
+        updateProductModalQuantity(-1);
+    }
+);
+
+productModalPlus.addEventListener(
+    "click",
+    function() {
+        updateProductModalQuantity(1);
+    }
+);
+
+document.querySelectorAll(".product-size")
     .forEach(button => {
 
         button.addEventListener(
             "click",
             function() {
 
-                addToCart(
+                selectedProductSize =
+                    this.dataset.size;
+
+                document
+                    .querySelectorAll(".product-size")
+                    .forEach(sizeButton => {
+                        sizeButton.classList.toggle(
+                            "selected",
+                            sizeButton.dataset.size ===
+                            selectedProductSize
+                        );
+                    });
+            }
+        );
+
+    });
+
+document.querySelectorAll(".open-product-modal")
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function() {
+                openProductModal(
                     this.dataset.id
                 );
-
             }
         );
 
     });
 
+productModalAdd.addEventListener(
+    "click",
+    function() {
 
-/* =========================================================
-   PRODUCT CHECKOUT BUTTONS
-========================================================= */
+        if (!selectedProductId) return;
 
-document.querySelectorAll(".buy-now")
-    .forEach(button => {
+        const product =
+            products[selectedProductId];
 
-        button.addEventListener(
-            "click",
-            function() {
+        for (
+            let i = 0;
+            i < selectedProductQuantity;
+            i++
+        ) {
+            addToCart(
+                selectedProductId,
+                false,
+                selectedProductSize
+            );
+        }
 
-                const productId =
-                    this.dataset.id;
+        closeProductModal();
 
-
-                addToCart(
-                    productId,
-                    false
-                );
-
-
-                renderCheckoutSummary();
-
-                body.classList.add(
-                    "checkout-open"
-                );
-
-
-            }
+        showToast(
+            product.name +
+            " added to your cart (" +
+            selectedProductSize +
+            ")"
         );
 
-    });
+    }
+);
 
 
 /* =========================================================
@@ -4931,6 +5442,10 @@ checkoutForm.addEventListener(
                 " x " +
 
                 item.quantity +
+
+                (item.size
+                    ? " — Size " + encodeURIComponent(item.size)
+                    : "") +
 
                 " — " +
 
