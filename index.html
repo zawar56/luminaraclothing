@@ -1969,52 +1969,6 @@ body.cart-open .cart-drawer {
 
 
 /* =========================================================
-   CART CONFIRMATION
-========================================================= */
-
-function showCartConfirmation(name, image, size){
-
-    document.getElementById("cartConfirmationImage").src = image;
-    document.getElementById("cartConfirmationImage").alt = name;
-    document.getElementById("cartConfirmationName").textContent = name;
-
-    const sizeNames = {
-        XS: "Extra Small",
-        S: "Small",
-        M: "Medium",
-        L: "Large"
-    };
-
-    document.getElementById("cartConfirmationSize").textContent =
-        sizeNames[size] || size || "Not selected";
-
-    document.getElementById("cartConfirmationCount").textContent =
-        cart.reduce(function(total, item){
-            return total + Number(item.quantity || 0);
-        }, 0);
-
-    document
-        .getElementById("cartConfirmationOverlay")
-        .classList.add("active");
-}
-
-function closeCartConfirmation(event){
-
-    if(
-        event &&
-        event.target &&
-        event.target.id !== "cartConfirmationOverlay"
-    ){
-        return;
-    }
-
-    document
-        .getElementById("cartConfirmationOverlay")
-        .classList.remove("active");
-}
-
-
-/* =========================================================
    PRODUCT DETAILS MODAL
 ========================================================= */
 
@@ -4793,6 +4747,54 @@ textarea:focus-visible {
 
 <script>
 
+/* =========================================================
+   CART CONFIRMATION
+========================================================= */
+
+function showCartConfirmation(name, image, size){
+
+    document.getElementById("cartConfirmationImage").src = image;
+    document.getElementById("cartConfirmationImage").alt = name;
+    document.getElementById("cartConfirmationName").textContent = name;
+
+    const sizeNames = {
+        XS: "Extra Small",
+        S: "Small",
+        M: "Medium",
+        L: "Large"
+    };
+
+    document.getElementById("cartConfirmationSize").textContent =
+        sizeNames[size] || size || "Not selected";
+
+    document.getElementById("cartConfirmationCount").textContent =
+        cart.reduce(function(total, item){
+            return total + Number(item.quantity || 0);
+        }, 0);
+
+    document
+        .getElementById("cartConfirmationOverlay")
+        .classList.add("active");
+}
+
+function closeCartConfirmation(event){
+
+    if(
+        event &&
+        event.target &&
+        event.target.id !== "cartConfirmationOverlay"
+    ){
+        return;
+    }
+
+    document
+        .getElementById("cartConfirmationOverlay")
+        .classList.remove("active");
+}
+
+
+
+
 
 /* =========================================================
    PRODUCT DATA
@@ -5855,6 +5857,10 @@ document.addEventListener(
             closeCart();
 
             closeCheckout();
+
+            closeProductModal();
+
+            closeCartConfirmation();
 
         }
 
